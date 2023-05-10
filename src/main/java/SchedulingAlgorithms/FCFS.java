@@ -3,5 +3,15 @@
 
 package SchedulingAlgorithms;
 
-public class FCFS {
+import Util.Cpu;
+
+public class FCFS extends Algorithm{
+    public FCFS(Cpu cpu) {
+        super(cpu);
+    }
+
+    @Override
+    public void runExperiment() {
+
+    }
 }

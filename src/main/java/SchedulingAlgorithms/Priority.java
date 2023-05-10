@@ -3,5 +3,15 @@
 
 package SchedulingAlgorithms;
 
-public class Priority {
+import Util.Cpu;
+
+public class Priority extends Algorithm{
+    public Priority(Cpu cpu) {
+        super(cpu);
+    }
+
+    @Override
+    public void runExperiment() {
+
+    }
 }

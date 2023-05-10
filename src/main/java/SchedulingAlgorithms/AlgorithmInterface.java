@@ -1,2 +1,6 @@
-package SchedulingAlgorithms;public interface AlgorithmInterface {
+package SchedulingAlgorithms;
+
+@FunctionalInterface
+public interface AlgorithmInterface {
+    public void runExperiment();
 }
