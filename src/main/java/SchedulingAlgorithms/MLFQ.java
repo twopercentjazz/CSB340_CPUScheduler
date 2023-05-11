@@ -3,5 +3,15 @@
 
 package SchedulingAlgorithms;
 
-public class MLFQ {
+import Util.Cpu;
+
+public class MLFQ extends Algorithm{
+    public MLFQ(Cpu cpu) {
+        super(cpu);
+    }
+
+    @Override
+    public void runExperiment() {
+
+    }
 }

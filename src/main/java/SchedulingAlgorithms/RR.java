@@ -3,5 +3,15 @@
 
 package SchedulingAlgorithms;
 
-public class RR {
+import Util.Cpu;
+
+public class RR extends Algorithm{
+        public RR(Cpu cpu) {
+                super(cpu);
         }
+
+        @Override
+        public void runExperiment() {
+                System.out.println("Also running");
+        }
+}
