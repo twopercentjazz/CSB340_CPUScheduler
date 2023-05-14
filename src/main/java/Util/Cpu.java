@@ -54,7 +54,7 @@ public class Cpu implements Runnable{
             increaseIdleTime(delta - actualTimeNeeded); //the rest of the time it is in the idle state
             processMap.values().stream().filter(p -> !p.equals(processWorking)).forEach(p -> p.increaseTime(delta));    //update all the process that are not running
             processWorking.increaseTime(actualTimeNeeded);  //update the process that was running
-            if(processWorking.isCompleted()) processWorking = null; //if the process running finished set the processWorking to null
+            if(processWorking != null && processWorking.isCompleted()) processWorking = null; //if the process running finished set the processWorking to null
         }
     }
 
@@ -97,6 +97,9 @@ public class Cpu implements Runnable{
     {
         ensureProcessExists(processId);
         processMap.get(processId).setState(Process.State.WAITING);
+
+        if(processWorking == processMap.get(processId)) processWorking = null;
+
         return processMap.get(processId);
     }
 
@@ -221,6 +224,38 @@ public class Cpu implements Runnable{
         return timeWork + timeIdle;
     }
 
+    private List<Process> getProcessesInReady()
+    {
+        return processMap.values().stream().filter(p -> p.getState() == Process.State.READY).toList();
+    }
+
+    private List<Process> getProcessesInIO()
+    {
+        return  processMap.values().stream().filter(p -> p.getState() == Process.State.WAITING).toList();
+    }
+
+    public String getSnapShot(Process next)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("+------------------------------------------------+\n"+"|Algorithm Type: " + algorithmType.toString() + "\n");
+        sb.append(String.format("|Current Time: %d\n", getTime()));
+        sb.append(String.format("|Next process on the CPU: %s\n", (next != null) ? next.getId() : (!isAllProcessesComplete()) ? "No Process Scheduled Next" : "All Processes Complete"));
+        sb.append("+------------------------------------------------+\n");
+        sb.append("|List of processes in the ready queue:\n");
+        sb.append("|\t\tProcess\tBurst\n");
+
+        getProcessesInReady().stream().filter(p -> p != next && !p.isCompleted()).forEach(p -> sb.append(String.format("|\t\t  %s\t  %d\n", p.getId(), p.getRoutine()[p.currentRoutineIndex])));
+
+        sb.append("+------------------------------------------------+\n");
+        sb.append("|List of processes in I/O:\n");
+        sb.append("|\t\tProcess\tBurst\n");
+
+        getProcessesInIO().stream().filter(p -> !p.isCompleted()).forEach(p -> sb.append(String.format("|\t\t  %s\t  %d\n", p.getId(), p.getRoutine()[p.currentRoutineIndex])));
+
+        sb.append("+------------------------------------------------+\n");
+        return sb.toString();
+    }
+
     /**
      * Run the algorithm
      */
@@ -243,5 +278,10 @@ public class Cpu implements Runnable{
     public int getId()
     {
         return id;
+    }
+
+    public boolean isAllProcessesComplete()
+    {
+        return processMap.values().stream().filter(p -> p.getRoutine()[p.getRoutine().length-1] > 0).toList().isEmpty();
     }
 }

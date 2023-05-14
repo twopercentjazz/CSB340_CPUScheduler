@@ -85,8 +85,9 @@ public class Process {
             //from excecuting to waiting
             if(state == State.EXECUTING)
             {
+                //TODO : COME BACK
                 cpu.increaseTurnAroundTime((cpu.getTime() - routine[currentRoutineIndex]) - arrivalTime);
-                state = State.WAITING;
+                cpu.requestAwaiting(getId());
             }
             //from waiting to ready
             else if(state == State.WAITING) state = State.READY;

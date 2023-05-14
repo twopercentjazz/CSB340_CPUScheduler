@@ -21,7 +21,7 @@ public abstract class Algorithm implements AlgorithmInterface{
 
     public boolean isAllProcessesComplete()
     {
-        return processList.stream().filter(p -> p.getRoutine()[p.getRoutine().length-1] > 0).toList().size() == 0;
+        return processList.stream().filter(p -> p.getRoutine()[p.getRoutine().length-1] > 0).toList().isEmpty();
     }
 
     public static enum Type

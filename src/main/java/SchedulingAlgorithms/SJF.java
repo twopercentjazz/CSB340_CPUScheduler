@@ -22,17 +22,27 @@ public class SJF extends Algorithm{
     @Override
     public void runExperiment() {
 
-        Process curr = null;
+        Process curr = getNextShortestJob(null);
+        Process next = null;
+
+        System.out.println(cpu.getSnapShot(curr));
+
         while(!isAllProcessesComplete())
         {
-            curr = getNextShortestJob();
+
+            next = getNextShortestJob(curr);
+
             if(curr == null)
             {
+                curr = next;
                 cpu.increaseTime(1);    //there are no jobs currently running
                 continue;
             }
             cpu.requestExecuting(curr.getId());
             cpu.increaseTime(curr.getRoutine()[curr.currentRoutineIndex]);
+            System.out.println(cpu.getSnapShot(next));
+            curr = next;
+            if(curr != null) cpu.requestExecuting(curr.getId());
         }
 
         System.out.println(cpu.getCpuUtilization());
@@ -41,11 +51,11 @@ public class SJF extends Algorithm{
         System.out.println(cpu.getAvgWaitTime());
     }
 
-    private Process getNextShortestJob()
+    private Process getNextShortestJob(Process curr)
     {
         Process shortest = null;
         for (Process p : processList) {
-            if(p.isCompleted() || p.getState() != Process.State.READY) continue;
+            if(p.isCompleted() || p.getState() != Process.State.READY || p == curr) continue;
             if(shortest == null && p.getRoutine()[p.currentRoutineIndex] > 0) shortest = p;
             if(shortest != null && p.getRoutine()[p.currentRoutineIndex] < shortest.getRoutine()[shortest.currentRoutineIndex]) shortest = p;
         }
