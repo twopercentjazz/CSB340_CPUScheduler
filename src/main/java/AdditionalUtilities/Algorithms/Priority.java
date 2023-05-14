@@ -1,24 +1,22 @@
-/** First Come, First Served CPU Scheduling Algorithm
- * @author Chris */
+/** Priority Scheduling Preemptive*/
 
-package SchedulingAlgorithms;
+package AdditionalUtilities.Algorithms;
 import AdditionalUtilities.Utilities.*;
-import AdditionalUtilities.Algorithms.*;
 import java.util.*;
 
-public class FCFS implements AlgorithmsInterface {
+public class Priority implements AlgorithmsInterface {
     private Scheduler schedule;
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
-    public FCFS(SimulationInput input) {
+    public Priority(SimulationInput input) {
         this.ready = initializeReady(input.getInput());
         this.schedule = new Scheduler(input);
         this.dispatch = new Dispatcher();
     }
 
     private Queue<ProcessControlBlock> initializeReady(ArrayList<ProcessControlBlock> input) {
-        Queue<ProcessControlBlock> temp = new LinkedList<>();
+        Queue<ProcessControlBlock> temp = new PriorityQueue<>();
         for(ProcessControlBlock p : input) {
             temp.add(p);
             p.setCpuBurstTime();
@@ -28,7 +26,7 @@ public class FCFS implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
-        return AlgorithmTypes.FCFS;
+        return AlgorithmTypes.P;
     }
 
     /** {@inheritDoc} */
@@ -44,6 +42,7 @@ public class FCFS implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
+        Boolean preempt = false;
         if(running != null) {
             int time = running.getCpuBurstTime();
             if(!running.getHasBeenOnCpu()) {
@@ -54,25 +53,35 @@ public class FCFS implements AlgorithmsInterface {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
                         updateIo(pcb);
+                        if(ready.peek() != null && ready.peek().getPriority() < running.getPriority()) {
+                            preempt = true;
+                        }
                     } else if(pcb.getState() == ProcessControlBlock.ProcessState.READY) {
                         pcb.updateWaitingTime(1);
                     } else {
                         this.dispatch.updateExecutionTimer(1);
+                        pcb.updateCpuBurstTime(1);
                     }
                 }
+                if(preempt == true) {
+                    running.setState(ProcessControlBlock.ProcessState.READY);
+                    this.ready.add(running);
+                    break;
+                }
             }
-            if(running.isFinalBurst()) {
-                this.schedule.flagProcessAsComplete(running);
-            } else {
-                running.setIoTime();
-                running.setState(ProcessControlBlock.ProcessState.WAITING);
-                this.schedule.getIo().add(running);
+            if(preempt == false) {
+                if(running.isFinalBurst()) {
+                    this.schedule.flagProcessAsComplete(running);
+                } else {
+                    running.setIoTime();
+                    running.setState(ProcessControlBlock.ProcessState.WAITING);
+                    this.schedule.getIo().add(running);
+                }
             }
         } else {
             while(this.ready.isEmpty()) {
                 this.dispatch.updateExecutionTimer(1);
                 this.dispatch.updateIdleTimer(1);
-                //
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if (pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
                         updateIo(pcb);

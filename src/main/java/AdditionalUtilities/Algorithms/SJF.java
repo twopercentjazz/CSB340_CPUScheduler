@@ -1,34 +1,33 @@
-/** First Come, First Served CPU Scheduling Algorithm
- * @author Chris */
+/** Shortest job First */
 
-package SchedulingAlgorithms;
+package AdditionalUtilities.Algorithms;
 import AdditionalUtilities.Utilities.*;
-import AdditionalUtilities.Algorithms.*;
 import java.util.*;
 
-public class FCFS implements AlgorithmsInterface {
+public class SJF implements AlgorithmsInterface {
     private Scheduler schedule;
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
-    public FCFS(SimulationInput input) {
+    public SJF(SimulationInput input) {
         this.ready = initializeReady(input.getInput());
         this.schedule = new Scheduler(input);
         this.dispatch = new Dispatcher();
     }
 
     private Queue<ProcessControlBlock> initializeReady(ArrayList<ProcessControlBlock> input) {
-        Queue<ProcessControlBlock> temp = new LinkedList<>();
+        Queue<ProcessControlBlock> temp = new PriorityQueue<>();
         for(ProcessControlBlock p : input) {
-            temp.add(p);
             p.setCpuBurstTime();
+            p.setPriority(p.getCpuBurstTime());
+            temp.add(p);
         }
         return temp;
     }
 
     /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
-        return AlgorithmTypes.FCFS;
+        return AlgorithmTypes.SJF;
     }
 
     /** {@inheritDoc} */
@@ -72,7 +71,6 @@ public class FCFS implements AlgorithmsInterface {
             while(this.ready.isEmpty()) {
                 this.dispatch.updateExecutionTimer(1);
                 this.dispatch.updateIdleTimer(1);
-                //
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if (pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
                         updateIo(pcb);
@@ -87,6 +85,7 @@ public class FCFS implements AlgorithmsInterface {
         if (pcb.getIoTime() == 0) {
             pcb.setState(ProcessControlBlock.ProcessState.READY);
             pcb.setCpuBurstTime();
+            pcb.setPriority(pcb.getCpuBurstTime());
             this.schedule.getIo().remove(pcb);
             this.ready.add(pcb);
         }

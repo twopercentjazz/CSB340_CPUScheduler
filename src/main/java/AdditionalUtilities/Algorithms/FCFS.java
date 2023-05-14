@@ -1,9 +1,8 @@
 /** First Come, First Served CPU Scheduling Algorithm
  * @author Chris */
 
-package SchedulingAlgorithms;
+package AdditionalUtilities.Algorithms;
 import AdditionalUtilities.Utilities.*;
-import AdditionalUtilities.Algorithms.*;
 import java.util.*;
 
 public class FCFS implements AlgorithmsInterface {
