@@ -1,2 +1,4 @@
-package AdditionalUtilities;public class Priority {
+package AdditionalUtilities.Algorithms;
+
+public class Priority {
 }

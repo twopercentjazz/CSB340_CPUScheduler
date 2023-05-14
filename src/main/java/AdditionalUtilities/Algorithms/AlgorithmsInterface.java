@@ -1,2 +1,4 @@
-package AdditionalUtilities;public interface AlgorithmsInterface {
+package AdditionalUtilities.Algorithms;
+
+public interface AlgorithmsInterface {
 }

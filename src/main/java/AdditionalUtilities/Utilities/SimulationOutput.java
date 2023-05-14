@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public class SimulationOutput {
+package AdditionalUtilities.Utilities;
+
+public class SimulationOutput {
 }

@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/FCFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MLFQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/MLFQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MLQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/MLQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/Priority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/RR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SJF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SchedulingAlgorithms/SJF.java" afterDir="false" />
-    </list>
+    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "v1",
-    "last_opened_file_path": "C:/Users/chris/Desktop/CSB340/CPU_Scheduler/CSB340_CPUScheduler",
+    "last_opened_file_path": "C:/Users/chris/Desktop/CSB340/CpuSchedulerProject/CSB340_CPUScheduler",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,6 +80,7 @@
       <workItem from="1683223313740" duration="1200000" />
       <workItem from="1683226853617" duration="41000" />
       <workItem from="1683310535266" duration="473000" />
+      <workItem from="1684097449716" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, unfinished solution">
       <created>1678299887009</created>

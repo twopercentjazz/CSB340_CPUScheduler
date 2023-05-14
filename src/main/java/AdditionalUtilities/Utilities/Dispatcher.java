@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public class Dispatcher {
+package AdditionalUtilities.Utilities;
+
+public class Dispatcher {
 }

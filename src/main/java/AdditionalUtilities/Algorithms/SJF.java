@@ -1,2 +1,4 @@
-package AdditionalUtilities;public class SJF {
+package AdditionalUtilities.Algorithms;
+
+public class SJF {
 }

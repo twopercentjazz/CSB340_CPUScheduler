@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public class Scheduler {
+package AdditionalUtilities.Utilities;
+
+public class Scheduler {
 }

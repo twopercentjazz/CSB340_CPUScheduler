@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public enum SchedulingTypes {
+package AdditionalUtilities.Utilities;
+
+public enum SchedulingTypes {
 }

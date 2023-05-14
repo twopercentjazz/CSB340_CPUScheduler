@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public class CpuSchedulerSimulation {
+package AdditionalUtilities.Utilities;
+
+public class CpuSchedulerSimulation {
 }

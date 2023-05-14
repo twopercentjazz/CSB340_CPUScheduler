@@ -1,2 +1,4 @@
-package AdditionalUtilities;public class RR {
+package AdditionalUtilities.Algorithms;
+
+public class RR {
 }

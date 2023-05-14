@@ -1,2 +1,4 @@
-package AdditionalUtilities.Utilities;public class SimulationRecord {
+package AdditionalUtilities.Utilities;
+
+public class SimulationRecord {
 }

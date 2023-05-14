@@ -1,2 +1,4 @@
-package AdditionalUtilities;public class FCFS {
+package AdditionalUtilities.Algorithms;
+
+public class FCFS {
 }

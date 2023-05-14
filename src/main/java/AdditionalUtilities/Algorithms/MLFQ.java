@@ -1,2 +1,4 @@
-package AdditionalUtilities;public class MLFQ {
+package AdditionalUtilities.Algorithms;
+
+public class MLFQ {
 }
