@@ -15,7 +15,7 @@ public class CpuManager {
     private static final HashMap<Integer, Cpu> cpuMap;
     private static final HashMap<Cpu, List<Process>> cpuProcessMap;
 
-    private static final HashMap<String ,Process> processMap;
+    public static final HashMap<String ,Process> processMap;
 
     static
     {
@@ -98,10 +98,7 @@ public class CpuManager {
     public CpuManager(List<Algorithm.Type> algorithmList)
     {
         int count = 0;
-        for (Algorithm.Type type : algorithmList) {
-            cpuMap.put(count, new Cpu(count, processesCopy(), type));
-            count++;
-        }
+        for (Algorithm.Type type : algorithmList) cpuMap.put(count++, new Cpu(count, processesCopy(), type));
     }
 
     /**

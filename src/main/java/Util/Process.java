@@ -12,9 +12,9 @@ public class Process {
 
     private int priority;
 
-    private int arrivalTime;
-    private int startTime;
-    private int timeWaiting;
+    private Integer timeCompleted;
+
+    private int responseTime;
 
 
     public int currentRoutineIndex;
@@ -26,7 +26,8 @@ public class Process {
         state = State.READY;
         this.priority = priority;
 
-        arrivalTime = startTime = timeWaiting = 0;
+        responseTime = -1;
+        timeCompleted = null;
     }
 
     public State getState()
@@ -47,51 +48,46 @@ public class Process {
         this.priority = priority;
     }
 
-    public Integer getArrivalTime() {
-        return arrivalTime;
-    }
-    public void setArrivalTime(Integer arrivalTime)
-    {
-        this.arrivalTime = arrivalTime;
-    }
 
-    public Integer getStartTime() {
-        return startTime;
-    }
-    public void setStartTime(Integer startTime)
-    {
-        this.startTime = startTime;
-    }
-
-    public int getWaitingTime()
-    {
-        return timeWaiting;
-    }
     public void increaseTime(int delta)
     {
-        if(isCompleted()) return;   //if the process has already finished do nothin
+        if(isCompleted()) return;   //if the process has already finished do nothing
         if(state == State.EXECUTING) //if this process is in execution mode
         {
             if(routine[currentRoutineIndex] < delta) System.out.println("Cpu time increase exceeds process runtime");
             routine[currentRoutineIndex] -= delta;  //do work
-        }else if(state == State.WAITING)    //if the process is doint input output
+        }else if(state == State.WAITING)    //if the process is doing input output
         {
-            routine[currentRoutineIndex] -= delta;  //contine getting the input output
-            if(routine[currentRoutineIndex] < 0) arrivalTime = (cpu.getTime() + routine[currentRoutineIndex]);  //setting or updating the arrival Time
+            routine[currentRoutineIndex] -= delta;  //continue getting the input output
         }
 
         if(routine[currentRoutineIndex] <= 0)   //if ready to move on to next stage
         {
-            //from excecuting to waiting
+            //from executing to waiting
             if(state == State.EXECUTING)
             {
-                cpu.increaseTurnAroundTime((cpu.getTime() - routine[currentRoutineIndex]) - arrivalTime);
-                state = State.WAITING;
+                //turnAround += (cpu.getTime() + routine[currentRoutineIndex] - arrivalTime);
+                cpu.requestAwaiting(getId());
             }
             //from waiting to ready
-            else if(state == State.WAITING) state = State.READY;
+            else if(state == State.WAITING)
+            {
+                cpu.requestReady(getId());
+            }
             currentRoutineIndex++;  //finally moves on
+            if(isCompleted() && timeCompleted == null) timeCompleted = cpu.getTime() + routine[currentRoutineIndex-1];
+
         }
+    }
+
+    public int getResponseTime()
+    {
+        return responseTime;
+    }
+
+    public void setResponseTime(int responseTime)
+    {
+        this.responseTime = responseTime;
     }
 
     public String getId()
@@ -131,6 +127,11 @@ public class Process {
     public boolean isCompleted()
     {
         return currentRoutineIndex >= routine.length;
+    }
+
+    public int getTimeCompleted()
+    {
+        return (timeCompleted == null) ? -1 : (int) timeCompleted;
     }
 
     /**
