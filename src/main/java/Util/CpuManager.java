@@ -39,7 +39,7 @@ public class CpuManager {
                 int[] routine;
                 try {
                     routine = Arrays.stream(line.replaceAll(" ", "").split(",")).mapToInt(Integer::parseInt).toArray();
-                    processMap.put(processId, new Process(processId, routine));
+                    processMap.put(processId, new Process(processId, routine, 5));
                 }catch (NumberFormatException e)
                 {
                     System.out.println(String.format("The Process %s has a routine [%s] that contains burst cycles and waiting cycles that are not numbers", processId, line));
@@ -65,7 +65,6 @@ public class CpuManager {
                     System.out.println(String.format("Failed trying to set priorities failed to find process with id = %s", processes[i]));
                     System.exit(1);
                 }
-
                 processMap.get(processes[i]).setPriority(priorities[i]);
             }
 
@@ -123,7 +122,7 @@ public class CpuManager {
         List<Process> copy = new LinkedList<>();
 
         processMap.values().stream().forEach(p -> {
-            copy.add(new Process(p.getId(), Arrays.copyOf(p.getRoutine(), p.getRoutine().length)));
+            copy.add(new Process(p.getId(), Arrays.copyOf(p.getRoutine(), p.getRoutine().length), p.getPriority()));
         });
 
         return copy;

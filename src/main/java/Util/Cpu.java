@@ -232,7 +232,8 @@ public class Cpu implements Runnable{
             case MLQ -> new MLQ(this).runExperiment();
             case FCFS -> new FCFS(this).runExperiment();
             case MLFQ -> new MLFQ(this).runExperiment();
-            default -> System.out.println(String.format("The Algorithm type %s has yet to be added in the Cpu Run Method\nGo Added it if you wish to have the ability to run it in a thread"));
+            case Priority -> new Priority(this).runExperiment();
+            default -> System.out.println(String.format("The Algorithm type %s has yet to be added in the Cpu Run Method\nGo Added it if you wish to have the ability to run it in a thread", algorithmType));
         }
     }
 
