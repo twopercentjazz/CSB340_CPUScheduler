@@ -16,10 +16,6 @@ public class Cpu implements Runnable{
     private int timeWork;
     private int timeIdle;
 
-    private int processWaitingTime;
-    private int processTurnAroundTime;
-    private int processResponseTime;
-
     private Process processWorking;
 
     private final Algorithm.Type algorithmType;
@@ -27,7 +23,7 @@ public class Cpu implements Runnable{
     public Cpu(int id, List<Process> processList, Algorithm.Type algorithmType)
     {
         this.id = id;
-        timeWork = timeIdle = processWaitingTime = processTurnAroundTime = processResponseTime  = 0;
+        timeWork = timeIdle = 0;
         processWorking = null;
         this.algorithmType = algorithmType;
         processMap = new HashMap<>();
@@ -79,7 +75,7 @@ public class Cpu implements Runnable{
     /**
      * Used to Put a certain processes in the ready state
      * @param processId that processes id
-     * @return  the process who's state has been changed
+     * @return  the process whose state has been changed
      */
     public Process requestReady(String processId)
     {
@@ -113,7 +109,7 @@ public class Cpu implements Runnable{
         ensureProcessExists(processId);
         processMap.get(processId).setState(Process.State.EXECUTING);
         processWorking = processMap.get(processId);
-        processResponseTime += getTime() - processWorking.getArrivalTime();
+        if(processWorking.getResponseTime() < 0) processWorking.setResponseTime(getTime());
         return processMap.get(processId);
     }
 
@@ -147,7 +143,15 @@ public class Cpu implements Runnable{
      */
     public double getAvgWaitTime()
     {
-        return processWaitingTime/processMap.size();
+        double sum = 0;
+        int burstTime;
+        for(Process p : processMap.values())
+        {
+            burstTime = 0;
+            for(int i = 0; i < p.getRoutine().length; i+=2) burstTime += CpuManager.processMap.get(p.getId()).getRoutine()[i];
+            sum += p.getTimeCompleted() - burstTime;
+        }
+        return sum/processMap.size();
     }
 
     /**
@@ -156,7 +160,12 @@ public class Cpu implements Runnable{
      */
     public double getAvgTurnAroundTime()
     {
-        return processTurnAroundTime/processMap.size();
+        double sum = 0;
+        for(Process p : processMap.values())
+        {
+            sum += p.getTimeCompleted();
+        }
+        return sum/processMap.size();
     }
 
     /**
@@ -165,36 +174,13 @@ public class Cpu implements Runnable{
      */
     public double getAvgResponseTime()
     {
-        return processResponseTime/processMap.size();
+        double sum = 0;
+        for(Process p : processMap.values())
+        {
+            sum += p.getResponseTime();
+        }
+        return sum/processMap.size();
     }
-
-    /**
-     * Increases the turn around time
-     * @param delta the amount to increase by
-     */
-    public void increaseTurnAroundTime(int delta)
-    {
-        processTurnAroundTime += delta;
-    }
-
-    /**
-     * Increase the response time
-     * @param delta the amount to increase by
-     */
-    public void increaseResponseTime(int delta)
-    {
-        processResponseTime += delta;
-    }
-
-    /**
-     * Increase the Waiting time
-     * @param delta the amount to increase by
-     */
-    public void increaseWaitingTime(int delta)
-    {
-        processWaitingTime += delta;
-    }
-
 
     /**
      * Determines if the process exists
@@ -237,7 +223,7 @@ public class Cpu implements Runnable{
     public String getSnapShot(Process next)
     {
         StringBuilder sb = new StringBuilder();
-        sb.append("+------------------------------------------------+\n"+"|Algorithm Type: " + algorithmType.toString() + "\n");
+        sb.append("+------------------------------------------------+\n");
         sb.append(String.format("|Current Time: %d\n", getTime()));
         sb.append(String.format("|Next process on the CPU: %s\n", (next != null) ? next.getId() : (!isAllProcessesComplete()) ? "No Process Scheduled Next" : "All Processes Complete"));
         sb.append("+------------------------------------------------+\n");
@@ -252,6 +238,20 @@ public class Cpu implements Runnable{
 
         getProcessesInIO().stream().filter(p -> !p.isCompleted()).forEach(p -> sb.append(String.format("|\t\t  %s\t  %d\n", p.getId(), p.getRoutine()[p.currentRoutineIndex])));
 
+        sb.append("+------------------------------------------------+\n");
+        return sb.toString();
+    }
+
+    public String getPerformanceShot()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("+------------------------------------------------+\n");
+        sb.append("|Algorithm Type: " + algorithmType.toString() + String.format("\tCpu :%d\n", getId()));
+        sb.append("|Current Time : " + getTime()+"\n");
+        sb.append("|CPU utilization: " + getCpuUtilization() +"%\n");
+        sb.append("|Avg turn around time: " + getAvgTurnAroundTime() + "\n");
+        sb.append("|Avg response time: " + getAvgResponseTime() + "\n");
+        sb.append("|Avg wait time: " + getAvgWaitTime()+"\n");
         sb.append("+------------------------------------------------+\n");
         return sb.toString();
     }
@@ -283,6 +283,12 @@ public class Cpu implements Runnable{
 
     public boolean isAllProcessesComplete()
     {
-        return processMap.values().stream().filter(p -> p.getRoutine()[p.getRoutine().length-1] > 0).toList().isEmpty();
+        for(Process p : processMap.values()) if(!p.isCompleted()) return false;
+        return true;
+    }
+
+    public Algorithm.Type getAlgorithmType()
+    {
+        return algorithmType;
     }
 }

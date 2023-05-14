@@ -6,8 +6,6 @@ package SchedulingAlgorithms;
 import Util.Cpu;
 import Util.Process;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 
 public class SJF extends Algorithm{
@@ -23,9 +21,9 @@ public class SJF extends Algorithm{
     public void runExperiment() {
 
         Process curr = getNextShortestJob(null);
-        Process next = null;
+        Process next;
 
-        System.out.println(cpu.getSnapShot(curr));
+        writeToFile(cpu.getSnapShot(curr));
 
         while(!isAllProcessesComplete())
         {
@@ -34,21 +32,18 @@ public class SJF extends Algorithm{
 
             if(curr == null)
             {
+                writeToFile(cpu.getSnapShot(next));
                 curr = next;
                 cpu.increaseTime(1);    //there are no jobs currently running
                 continue;
             }
             cpu.requestExecuting(curr.getId());
             cpu.increaseTime(curr.getRoutine()[curr.currentRoutineIndex]);
-            System.out.println(cpu.getSnapShot(next));
+            writeToFile(cpu.getSnapShot(next));
             curr = next;
-            if(curr != null) cpu.requestExecuting(curr.getId());
         }
 
-        System.out.println(cpu.getCpuUtilization());
-        System.out.println(cpu.getAvgTurnAroundTime());
-        System.out.println(cpu.getAvgResponseTime());
-        System.out.println(cpu.getAvgWaitTime());
+        System.out.println(cpu.getPerformanceShot());
     }
 
     private Process getNextShortestJob(Process curr)
