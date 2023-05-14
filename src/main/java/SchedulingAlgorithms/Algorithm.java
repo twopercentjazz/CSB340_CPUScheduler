@@ -26,6 +26,6 @@ public abstract class Algorithm implements AlgorithmInterface{
 
     public static enum Type
     {
-        FCFS, MLFQ, MLQ, RR, SJF;
+        FCFS, MLFQ, MLQ, RR, SJF, Priority;
     }
 }

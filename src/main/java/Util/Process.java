@@ -19,12 +19,12 @@ public class Process {
 
     public int currentRoutineIndex;
     private Cpu cpu;    //the cpu this process belongs to
-    public Process(String id, int[] routine)
+    public Process(String id, int[] routine, int priority)
     {
         this.id = id;
         this.routine = routine;
         state = State.READY;
-        priority = 5;
+        this.priority = priority;
 
         arrivalTime = startTime = timeWaiting = 0;
     }
