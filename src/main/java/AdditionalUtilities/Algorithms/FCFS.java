@@ -30,7 +30,8 @@ public class FCFS implements AlgorithmsInterface {
             this.dispatch.contextSwitchIdle(ready, schedule, getAlgorithmType());
         } else {
             this.dispatch.updateResponseTime();
-            for(int i = 0; i < running.getCpuBurstTime(); i++) {
+            int time = running.getCpuBurstTime();
+            for(int i = 0; i < time; i++) {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
                         this.schedule.updateIo(pcb, ready, getAlgorithmType());

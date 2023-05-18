@@ -3,7 +3,7 @@
 package AdditionalUtilities.Utilities;
 import java.util.*;
 
-public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
+public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Cloneable {
     private int pid;
     private Queue<Integer> cycle;
     private int arrivalTime;
@@ -148,6 +148,11 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
         } else {
             return -1;
         }
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     public enum ProcessState {RUNNING, WAITING, READY, COMPLETE }
