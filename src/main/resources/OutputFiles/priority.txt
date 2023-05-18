@@ -1,0 +1,2750 @@
+src/main/resources/OutputFiles/priority.txt
+
+
+
+Current Time: 0
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P6		  11
+		  P1		  5
+		  P4		  3
+		  P3		  8
+		  P2		  4
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+			 [empty]
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 8
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P1		  5
+		  P4		  3
+		  P3		  8
+		  P2		  4
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P5		  24
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 14
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P4		  3
+		  P3		  8
+		  P2		  4
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P5		  18
+		  P6		  22
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 17
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P3		  8
+		  P2		  4
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  27
+		  P5		  15
+		  P6		  19
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 19
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P2		  4
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  25
+		  P4		  35
+		  P5		  13
+		  P6		  17
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 23
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  4
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  21
+		  P3		  33
+		  P4		  31
+		  P5		  9
+		  P6		  13
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 25
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  14
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  19
+		  P2		  48
+		  P3		  31
+		  P4		  29
+		  P5		  7
+		  P6		  11
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 27
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  17
+		  P2		  46
+		  P3		  29
+		  P4		  27
+		  P5		  5
+		  P6		  9
+		  P8		  14
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 32
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  12
+		  P2		  41
+		  P3		  24
+		  P4		  22
+		  P6		  4
+		  P8		  9
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 41
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  5
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  3
+		  P2		  32
+		  P3		  15
+		  P4		  13
+		  P5		  21
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 43
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  1
+		  P2		  30
+		  P3		  13
+		  P4		  11
+		  P5		  19
+		  P6		  8
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 44
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  4
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  29
+		  P3		  12
+		  P4		  10
+		  P5		  18
+		  P6		  7
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 46
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  31
+		  P2		  27
+		  P3		  10
+		  P4		  8
+		  P5		  16
+		  P6		  5
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 48
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  29
+		  P2		  25
+		  P3		  8
+		  P4		  6
+		  P5		  14
+		  P6		  3
+		  P8		  33
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 51
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  26
+		  P2		  22
+		  P3		  5
+		  P4		  3
+		  P5		  11
+		  P8		  30
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 54
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  23
+		  P2		  19
+		  P3		  2
+		  P5		  8
+		  P6		  10
+		  P8		  27
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 56
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  21
+		  P2		  17
+		  P4		  41
+		  P5		  6
+		  P6		  8
+		  P8		  25
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 62
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P3		  6
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  15
+		  P2		  11
+		  P4		  35
+		  P6		  2
+		  P8		  19
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 65
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P3		  6
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  12
+		  P2		  8
+		  P4		  32
+		  P5		  36
+		  P8		  16
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 68
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  9
+		  P2		  5
+		  P4		  29
+		  P5		  33
+		  P6		  12
+		  P8		  13
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 71
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  6
+		  P2		  2
+		  P3		  41
+		  P4		  26
+		  P5		  30
+		  P6		  9
+		  P8		  10
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 73
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  4
+		  P3		  39
+		  P4		  24
+		  P5		  28
+		  P6		  7
+		  P8		  8
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 76
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  1
+		  P2		  44
+		  P3		  36
+		  P4		  21
+		  P5		  25
+		  P6		  4
+		  P8		  5
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 77
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  43
+		  P3		  35
+		  P4		  20
+		  P5		  24
+		  P6		  3
+		  P8		  4
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 80
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P1		  2
+		  P7		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  40
+		  P3		  32
+		  P4		  17
+		  P5		  21
+		  P8		  1
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 84
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  6
+		  P7		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  36
+		  P3		  28
+		  P4		  13
+		  P5		  17
+		  P6		  14
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 85
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  43
+		  P2		  35
+		  P3		  27
+		  P4		  12
+		  P5		  16
+		  P6		  13
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 88
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  40
+		  P2		  32
+		  P3		  24
+		  P4		  9
+		  P5		  13
+		  P6		  10
+		  P8		  51
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 90
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  38
+		  P2		  30
+		  P3		  22
+		  P4		  7
+		  P5		  11
+		  P6		  8
+		  P7		  46
+		  P8		  49
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 97
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  31
+		  P2		  23
+		  P3		  15
+		  P5		  4
+		  P6		  1
+		  P7		  39
+		  P8		  42
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 98
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P4		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  30
+		  P2		  22
+		  P3		  14
+		  P5		  3
+		  P7		  38
+		  P8		  41
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 101
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P6		  6
+		  P4		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  27
+		  P2		  19
+		  P3		  11
+		  P7		  35
+		  P8		  38
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 109
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P4		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  19
+		  P2		  11
+		  P3		  3
+		  P5		  26
+		  P7		  27
+		  P8		  30
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 112
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P3		  18
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  16
+		  P2		  8
+		  P5		  23
+		  P6		  18
+		  P7		  24
+		  P8		  27
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 114
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  14
+		  P2		  6
+		  P4		  45
+		  P5		  21
+		  P6		  16
+		  P7		  22
+		  P8		  25
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 123
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  5
+		  P3		  65
+		  P4		  36
+		  P5		  12
+		  P6		  7
+		  P7		  13
+		  P8		  16
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 127
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  1
+		  P2		  42
+		  P3		  61
+		  P4		  32
+		  P5		  8
+		  P6		  3
+		  P7		  9
+		  P8		  12
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 128
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  41
+		  P3		  60
+		  P4		  31
+		  P5		  7
+		  P6		  2
+		  P7		  8
+		  P8		  11
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 130
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P1		  2
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  39
+		  P3		  58
+		  P4		  29
+		  P5		  5
+		  P7		  6
+		  P8		  9
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 135
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P6		  7
+		  P1		  2
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  34
+		  P3		  53
+		  P4		  24
+		  P7		  1
+		  P8		  4
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 139
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P1		  2
+		  P8		  14
+		  P7		  17
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  30
+		  P3		  49
+		  P4		  20
+		  P5		  31
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 143
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  14
+		  P7		  17
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  26
+		  P3		  45
+		  P4		  16
+		  P5		  27
+		  P6		  24
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 144
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  17
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  18
+		  P2		  25
+		  P3		  44
+		  P4		  15
+		  P5		  26
+		  P6		  23
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 151
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  11
+		  P2		  18
+		  P3		  37
+		  P4		  8
+		  P5		  19
+		  P6		  16
+		  P8		  73
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 159
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  9
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  3
+		  P2		  10
+		  P3		  29
+		  P5		  11
+		  P6		  8
+		  P8		  65
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 161
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  1
+		  P2		  8
+		  P3		  27
+		  P4		  51
+		  P5		  9
+		  P6		  6
+		  P8		  63
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 162
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  8
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  7
+		  P3		  26
+		  P4		  50
+		  P5		  8
+		  P6		  5
+		  P8		  62
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 165
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  22
+		  P2		  4
+		  P3		  23
+		  P4		  47
+		  P5		  5
+		  P6		  2
+		  P8		  59
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 167
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  20
+		  P2		  2
+		  P3		  21
+		  P4		  45
+		  P5		  3
+		  P8		  57
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 170
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P6		  12
+		  P2		  12
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  17
+		  P3		  18
+		  P4		  42
+		  P8		  54
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 177
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P2		  12
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  10
+		  P3		  11
+		  P4		  35
+		  P5		  28
+		  P8		  47
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 183
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  4
+		  P3		  5
+		  P4		  29
+		  P5		  22
+		  P6		  30
+		  P8		  41
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 187
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P2		  8
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P3		  1
+		  P4		  25
+		  P5		  18
+		  P6		  26
+		  P8		  37
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 189
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P2		  8
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  26
+		  P4		  23
+		  P5		  16
+		  P6		  24
+		  P8		  35
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 196
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  19
+		  P3		  21
+		  P4		  16
+		  P5		  9
+		  P6		  17
+		  P8		  28
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 200
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  15
+		  P2		  37
+		  P3		  17
+		  P4		  12
+		  P5		  5
+		  P6		  13
+		  P8		  24
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 203
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  12
+		  P2		  34
+		  P3		  14
+		  P4		  9
+		  P5		  2
+		  P6		  10
+		  P7		  41
+		  P8		  21
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 205
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  10
+		  P2		  32
+		  P3		  12
+		  P4		  7
+		  P6		  8
+		  P7		  39
+		  P8		  19
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 211
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  4
+		  P2		  26
+		  P3		  6
+		  P4		  1
+		  P5		  21
+		  P6		  2
+		  P7		  33
+		  P8		  13
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 212
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  3
+		  P2		  25
+		  P3		  5
+		  P5		  20
+		  P6		  1
+		  P7		  32
+		  P8		  12
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 213
+
+Next process on the CPU:  P6
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P4		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  2
+		  P2		  24
+		  P3		  4
+		  P5		  19
+		  P7		  31
+		  P8		  11
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 217
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P4		  3
+		  P3		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  20
+		  P5		  15
+		  P7		  27
+		  P8		  7
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 219
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P3		  4
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  24
+		  P2		  18
+		  P5		  13
+		  P7		  25
+		  P8		  5
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 221
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  22
+		  P2		  16
+		  P4		  61
+		  P5		  11
+		  P7		  23
+		  P8		  3
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 223
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  20
+		  P2		  14
+		  P3		  61
+		  P4		  59
+		  P5		  9
+		  P7		  21
+		  P8		  1
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 224
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  19
+		  P2		  13
+		  P3		  60
+		  P4		  58
+		  P5		  8
+		  P7		  20
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 232
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  8
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  11
+		  P2		  5
+		  P3		  52
+		  P4		  50
+		  P7		  12
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 235
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  8
+		  P2		  2
+		  P3		  49
+		  P4		  47
+		  P5		  13
+		  P7		  9
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 237
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  6
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  6
+		  P3		  47
+		  P4		  45
+		  P5		  11
+		  P7		  7
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 242
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P1		  1
+		  P2		  76
+		  P3		  42
+		  P4		  40
+		  P5		  6
+		  P7		  2
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 243
+
+Next process on the CPU:  P1
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  5
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  75
+		  P3		  41
+		  P4		  39
+		  P5		  5
+		  P7		  1
+..................................................
+
+Completed:	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 245
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  11
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  73
+		  P3		  39
+		  P4		  37
+		  P5		  3
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 248
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  2
+		  P7		  11
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  70
+		  P3		  36
+		  P4		  34
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 250
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  11
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  68
+		  P3		  34
+		  P4		  32
+		  P5		  11
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 251
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  67
+		  P3		  33
+		  P4		  31
+		  P5		  10
+		  P8		  87
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 257
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  61
+		  P3		  27
+		  P4		  25
+		  P5		  4
+		  P7		  42
+		  P8		  81
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 261
+
+Next process on the CPU:  P5
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  57
+		  P3		  23
+		  P4		  21
+		  P7		  38
+		  P8		  77
+..................................................
+
+Completed:	P1	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 263
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  55
+		  P3		  21
+		  P4		  19
+		  P7		  36
+		  P8		  75
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 282
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  36
+		  P3		  2
+		  P7		  17
+		  P8		  56
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 285
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  33
+		  P4		  54
+		  P7		  14
+		  P8		  53
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 293
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  25
+		  P3		  18
+		  P4		  46
+		  P7		  6
+		  P8		  45
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 299
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  19
+		  P3		  12
+		  P4		  40
+		  P8		  39
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 307
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  11
+		  P3		  4
+		  P4		  32
+		  P7		  21
+		  P8		  31
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 311
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  7
+		  P4		  28
+		  P7		  17
+		  P8		  27
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 318
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P3		  26
+		  P4		  21
+		  P7		  10
+		  P8		  20
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 320
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  41
+		  P3		  24
+		  P4		  19
+		  P7		  8
+		  P8		  18
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 328
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  33
+		  P3		  16
+		  P4		  11
+		  P8		  10
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 330
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  31
+		  P3		  14
+		  P4		  9
+		  P7		  32
+		  P8		  8
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 338
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  23
+		  P3		  6
+		  P4		  1
+		  P7		  24
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 339
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  5
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  22
+		  P3		  5
+		  P7		  23
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 342
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  19
+		  P3		  2
+		  P4		  82
+		  P7		  20
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 344
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P8		  3
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  17
+		  P4		  80
+		  P7		  18
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 347
+
+Next process on the CPU:  P8
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  14
+		  P3		  31
+		  P4		  77
+		  P7		  15
+..................................................
+
+Completed:	P1	P5	P6	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 349
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  12
+		  P3		  29
+		  P4		  75
+		  P7		  13
+..................................................
+
+Completed:	P1	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 361
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P3		  17
+		  P4		  63
+		  P7		  1
+..................................................
+
+Completed:	P1	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 366
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  31
+		  P3		  12
+		  P4		  58
+..................................................
+
+Completed:	P1	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 370
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  27
+		  P3		  8
+		  P4		  54
+		  P7		  19
+..................................................
+
+Completed:	P1	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 378
+
+Next process on the CPU:  P3
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  19
+		  P4		  46
+		  P7		  11
+..................................................
+
+Completed:	P1	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 381
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  16
+		  P4		  43
+		  P7		  8
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 389
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  8
+		  P4		  35
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 397
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+		  P7		  8
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P4		  27
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 401
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  43
+		  P4		  23
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 405
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  39
+		  P4		  19
+		  P7		  33
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 424
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  20
+		  P7		  14
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 427
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  17
+		  P4		  77
+		  P7		  11
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 438
+
+Next process on the CPU:  P7
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  6
+		  P4		  66
+..................................................
+
+Completed:	P1	P3	P5	P6	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 443
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P2		  1
+		  P4		  61
+..................................................
+
+Completed:	P1	P3	P5	P6	P7	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 444
+
+Next process on the CPU:  P2
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P4		  60
+..................................................
+
+Completed:	P1	P3	P5	P6	P7	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 448
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+		  P4		  56
+..................................................
+
+Completed:	P1	P2	P3	P5	P6	P7	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 504
+
+Next process on the CPU:  P4
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+			 [empty]
+..................................................
+
+Completed:	P1	P2	P3	P5	P6	P7	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Current Time: 506
+
+Next process on the CPU:  [idle]
+..................................................
+
+List of processes in the ready queue:
+
+		Process		Burst
+			 [empty]
+..................................................
+
+List of processes in I/O:
+
+		Process		Remaining I/O time
+			 [empty]
+..................................................
+
+Completed:	P1	P2	P3	P4	P5	P6	P7	P8	
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Finished
+
+Total Time:			506
+CPU Utilization:	65.2174%
+
+Waiting Times		P1	P2	P3	P4	P5	P6	P7	P8	
+					33	49	33	37	0	33	145	56	
+Average Wait:		48.25
+
+Turnaround Times	P1	P2	P3	P4	P5	P6	P7	P8	
+					258	476	425	521	309	248	473	365	
+Average Turnaround:	384.375
+
+Response Times		P1	P2	P3	P4	P5	P6	P7	P8	
+					14	23	19	17	0	8	27	25	
+Average Response:	16.625
+

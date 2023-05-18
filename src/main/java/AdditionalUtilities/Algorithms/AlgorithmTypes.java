@@ -6,7 +6,7 @@ public enum AlgorithmTypes {
     FCFS,
     MLFQ,
     MLQ,
-    P,
+    Priority,
     RR,
     SJF
 }

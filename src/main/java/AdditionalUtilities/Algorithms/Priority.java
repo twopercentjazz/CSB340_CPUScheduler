@@ -17,7 +17,7 @@ public class Priority implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
-        return AlgorithmTypes.P;
+        return AlgorithmTypes.Priority;
     }
 
     /** {@inheritDoc} */
@@ -28,7 +28,7 @@ public class Priority implements AlgorithmsInterface {
         if (running == null) {
             this.dispatch.contextSwitchIdle(ready, schedule, getAlgorithmType());
         } else {
-            Boolean preempt = false;
+            boolean preempt = false;
             this.dispatch.updateResponseTime();
             for(int i = 0; i < running.getCpuBurstTime(); i++) {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {

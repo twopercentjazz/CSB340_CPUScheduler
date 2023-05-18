@@ -8,6 +8,7 @@ import java.util.*;
 public class SimulationDriver {
     public static void main(String[] args) throws FileNotFoundException {
         // create Processes with given process data
+
         ProcessControlBlock p1 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
         ProcessControlBlock p2 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
         ProcessControlBlock p3 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
@@ -45,12 +46,14 @@ public class SimulationDriver {
         ProcessControlBlock p32 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
         // Add all process for simulation into lists
+
         ArrayList<ProcessControlBlock> input1 = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
         ArrayList<ProcessControlBlock> input2 = new ArrayList<>(Arrays.asList(p9,p10,p11,p12,p13,p14,p15,p16));
         ArrayList<ProcessControlBlock> input3 = new ArrayList<>(Arrays.asList(p17,p18,p19,p20,p21,p22,p23,p24));
         ArrayList<ProcessControlBlock> input4 = new ArrayList<>(Arrays.asList(p25,p26,p27,p28,p29,p30,p31,p32));
 
         // create new simulation objects for each algorithm
+
         CpuSchedulerSimulation fcfs = new CpuSchedulerSimulation(new SimulationInput(input1),
                 AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE);
 
@@ -58,43 +61,52 @@ public class SimulationDriver {
                 AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE);
 
         CpuSchedulerSimulation priority = new CpuSchedulerSimulation(new SimulationInput(input3,
-                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.P, SchedulingTypes.PREEMPTIVE);
+                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE);
 
         CpuSchedulerSimulation rr = new CpuSchedulerSimulation(new SimulationInput(input4, 5),
                 AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE);
 
         // run each simulation
+
         fcfs.runSim();
         sjf.runSim();
         priority.runSim();
         rr.runSim();
 
+
         // display results to console or file
 
         // first come, first served (non-preemptive) print to file
         createResultsFile(fcfs.getResults(), fcfs.getRecords(),
-                "src/main/java/OutputFiles/fcfs.txt",1);
+                "src/main/resources/OutputFiles/fcfs.txt",1);
         // [To also print to console uncomment below]
+        printHeader(fcfs);
         // printRecord(fcfs.getRecords());
-        // printResults(fcfs.getResults());
+        printResults(fcfs.getResults());
 
         // shortest job first (non-preemptive) print to file
         createResultsFile(sjf.getResults(), sjf.getRecords(),
-                "src/main/java/OutputFiles/sjf.txt",1);
+                "src/main/resources/OutputFiles/sjf.txt",1);
         // [To also print to console uncomment below]
+        printHeader(sjf);
         // printRecord(sjf.getRecords());
-        // printResults(sjf.getResults());
+        printResults(sjf.getResults());
 
         // priority (preemptive) print to file
         createResultsFile(priority.getResults(), priority.getRecords(),
-                "src/main/java/OutputFiles/priority.txt",1);
+                "src/main/resources/OutputFiles/priority.txt",1);
         // [To also print to console uncomment below]
+        printHeader(priority);
         // printRecord(priority.getRecords());
-        // printResults(priority.getResults());
+        printResults(priority.getResults());
 
         // rr
         createResultsFile(rr.getResults(), rr.getRecords(),
-                "src/main/java/OutputFiles/rr.txt",1);
+                "src/main/resources/OutputFiles/rr.txt",1);
+        // [To also print to console uncomment below]
+        printHeader(rr);
+        // printRecord(rr.getRecords());
+        printResults(rr.getResults());
     }
 
     /** This method prints the final results of a simulation instance.
@@ -128,5 +140,10 @@ public class SimulationDriver {
         }
         output.println(SimulationOutput.displayResults(results));
         System.out.println("File Successfully Created: " + file);
+    }
+
+    public static void printHeader(CpuSchedulerSimulation sim) {
+        System.out.println("\n" + sim.getAlgorithmType() + " " + sim.getSchedulingType() +
+                "\n-----------------------------");
     }
 }

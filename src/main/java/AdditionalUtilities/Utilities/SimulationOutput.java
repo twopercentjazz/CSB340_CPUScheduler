@@ -8,7 +8,7 @@ public class SimulationOutput {
         String result = "";
         String labels = processList(results);
         String space = "\t\t\t\t\t";
-        result += "\n\nFinished\n";
+        result += "\nFinished\n";
         result += "\nTotal Time:\t\t\t" + results.getTotalExecutionTime();
         result += String.format("\nCPU Utilization:\t%.4f%%", results.getCpuUtilization() * 100);
         result += "\n\nWaiting Times\t\t" + labels;

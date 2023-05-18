@@ -24,7 +24,7 @@ public class CpuSchedulerSimulation {
     private void assignAlgorithm(SimulationInput input, AlgorithmTypes algorithmType) {
         if(algorithmType == AlgorithmTypes.FCFS) {
             this.algorithm = new FCFS(input);
-        } else if(algorithmType == AlgorithmTypes.P) {
+        } else if(algorithmType == AlgorithmTypes.Priority) {
             this.algorithm = new Priority(input);
         } else if(algorithmType == AlgorithmTypes.SJF) {
             this.algorithm = new SJF(input);
@@ -33,6 +33,14 @@ public class CpuSchedulerSimulation {
         }
         // add MLQ
         // add MLFQ
+    }
+
+    public AlgorithmTypes getAlgorithmType() {
+        return this.algorithmType;
+    }
+
+    public SchedulingTypes getSchedulingType() {
+        return this.schedulingType;
     }
 
     public SimulationInput getInput() {
