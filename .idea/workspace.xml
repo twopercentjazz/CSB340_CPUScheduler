@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/FCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/FCFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/SJF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/SJF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/ProcessControlBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/ProcessControlBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/priority.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/priority.txt" afterDir="false" />
-    </list>
+    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
