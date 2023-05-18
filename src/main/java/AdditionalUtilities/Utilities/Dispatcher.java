@@ -1,6 +1,9 @@
 /** This class helps dispatch the next running process in a simulation (context switching). */
 
 package AdditionalUtilities.Utilities;
+import AdditionalUtilities.Algorithms.AlgorithmTypes;
+
+import java.util.Queue;
 
 public class Dispatcher {
     private int executionTimer;
@@ -36,4 +39,39 @@ public class Dispatcher {
     public void setRunningProcess(ProcessControlBlock pcb) {
         this.runningProcess = pcb;
     }
+
+    public void updateResponseTime() {
+        if(!runningProcess.getHasBeenOnCpu()) {
+            runningProcess.updateResponseTime(this.executionTimer);
+            runningProcess.updateHasBeenOnCpu();
+        }
+    }
+
+    public void contextSwitchIdle(Queue<ProcessControlBlock> ready, Scheduler schedule, AlgorithmTypes type) {
+        while(ready.isEmpty()) {
+            updateExecutionTimer(1);
+            updateIdleTimer(1);
+            for(ProcessControlBlock pcb : schedule.getActive()) {
+                if (pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
+                    schedule.updateIo(pcb, ready, type);
+                }
+            }
+        }
+    }
+
+    public void contextSwitchFinishCpuBurst(Scheduler schedule, ProcessControlBlock running) {
+        if(running.isFinalBurst()) {
+            schedule.flagProcessAsComplete(running);
+        } else {
+            running.setIoTime();
+            running.setState(ProcessControlBlock.ProcessState.WAITING);
+            schedule.getIo().add(running);
+        }
+    }
+
+    public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready) {
+        running.setState(ProcessControlBlock.ProcessState.READY);
+        ready.add(running);
+    }
+
 }

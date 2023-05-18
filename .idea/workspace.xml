@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
+      <change afterPath="$PROJECT_DIR$/src/main/java/OutputFiles/test-fcfs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/FCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/FCFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/SJF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/SJF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/SimulationInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/SimulationInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OutputFiles/fcfs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputFiles/fcfs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OutputFiles/priority.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputFiles/priority.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OutputFiles/sjf.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputFiles/sjf.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,21 +56,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;v1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chris/Desktop/CSB340/CpuSchedulerProject/CSB340_CPUScheduler&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "v1",
+    "last_opened_file_path": "C:/Users/chris/Desktop/CSB340/CpuSchedulerProject/CSB340_CPUScheduler/src/main/java/OutputFiles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chris\Desktop\CSB340\CpuSchedulerProject\CSB340_CPUScheduler\src\main\java\OutputFiles" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="CSB340_CPUScheduler" />

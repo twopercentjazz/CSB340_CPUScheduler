@@ -28,8 +28,9 @@ public class CpuSchedulerSimulation {
             this.algorithm = new Priority(input);
         } else if(algorithmType == AlgorithmTypes.SJF) {
             this.algorithm = new SJF(input);
+        } else if(algorithmType == AlgorithmTypes.RR) {
+            this.algorithm = new RR(input);
         }
-        // add RR
         // add MLQ
         // add MLFQ
     }
@@ -63,8 +64,14 @@ public class CpuSchedulerSimulation {
 
     public void createRecord() {
         LinkedHashMap<Integer, Integer> readyList = new LinkedHashMap<>();
-        for(ProcessControlBlock p : this.algorithm.getReady()) {
+        Queue<ProcessControlBlock> temp = new LinkedList<>();
+        while(!this.algorithm.getReady().isEmpty()) {
+            ProcessControlBlock p = this.algorithm.getReady().poll();
             readyList.put(p.getPid(), p.getCpuBurstTime());
+            temp.add(p);
+        }
+        while(!temp.isEmpty()) {
+            this.algorithm.getReady().add(temp.poll());
         }
         TreeMap<Integer, Integer> ioList = new TreeMap<>();
         for(ProcessControlBlock p : this.algorithm.getScheduler().getIo()) {
@@ -79,7 +86,7 @@ public class CpuSchedulerSimulation {
         if(this.algorithm.getDispatcher().getRunningProcess() != null) {
             currProcess = this.algorithm.getDispatcher().getRunningProcess().getPid();
         }
-        this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(), currProcess,
-                readyList, ioList, completed));
+        this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(),
+                currProcess, readyList, ioList, completed));
     }
 }

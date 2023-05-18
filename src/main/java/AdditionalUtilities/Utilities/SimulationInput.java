@@ -7,12 +7,23 @@ public class SimulationInput {
     private ArrayList<ProcessControlBlock> input;
     private int size;
     private int[] givenInitialPriorities;
-    private int[] givenTimeQuantum;
+    private int givenTimeQuantum;
 
     public SimulationInput(ArrayList<ProcessControlBlock> input) {
         this.input = copyProcesses(input);
         this.givenInitialPriorities = null;
         this.size = input.size();
+    }
+
+    public SimulationInput(ArrayList<ProcessControlBlock> input, int[] givenPriorities) {
+        this(input);
+        this.givenInitialPriorities = givenPriorities;
+        setInitialPriorities();
+    }
+
+    public SimulationInput(ArrayList<ProcessControlBlock> input, int givenTimeQuantum) {
+        this(input);
+        this.givenTimeQuantum = givenTimeQuantum;
     }
 
     private ArrayList<ProcessControlBlock> copyProcesses(ArrayList<ProcessControlBlock> input) {
@@ -21,12 +32,6 @@ public class SimulationInput {
             temp.add(p.copyProcess());
         }
         return temp;
-    }
-
-    public SimulationInput(ArrayList<ProcessControlBlock> input, int[] givenPriorities) {
-        this(input);
-        this.givenInitialPriorities = givenPriorities;
-        setInitialPriorities();
     }
 
     public ArrayList<ProcessControlBlock> getInput() {
@@ -40,6 +45,8 @@ public class SimulationInput {
     public int[] getGivenInitialPriorities() {
         return this.givenInitialPriorities;
     }
+
+    public int getGivenTimeQuantum() { return this.givenTimeQuantum; }
 
     public void setInitialPriorities() {
         for(int i = 0; i < input.size(); i++) {

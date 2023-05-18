@@ -1,7 +1,9 @@
 /** This class helps schedule the next running process in a simulation. */
 
 package AdditionalUtilities.Utilities;
-import java.util.ArrayList;
+import AdditionalUtilities.Algorithms.AlgorithmTypes;
+
+import java.util.*;
 
 public class Scheduler {
     private ArrayList<ProcessControlBlock> io; //
@@ -45,6 +47,41 @@ public class Scheduler {
     public void setTurnAroundTimes() {
         for(ProcessControlBlock p : finalList) {
             p.updateTurnAroundTime();
+        }
+    }
+
+    public void updateIo(ProcessControlBlock pcb, Queue<ProcessControlBlock> ready, AlgorithmTypes type) {
+        pcb.updateIoTime(1);
+        if (pcb.getIoTime() == 0) {
+            pcb.setState(ProcessControlBlock.ProcessState.READY);
+            pcb.setCpuBurstTime();
+            if(type == AlgorithmTypes.SJF) {
+                pcb.setPriority(pcb.getCpuBurstTime());
+            }
+            this.io.remove(pcb);
+            ready.add(pcb);
+        }
+    }
+
+    public Queue<ProcessControlBlock> initializeReady(Queue<ProcessControlBlock> newReady, AlgorithmTypes type) {
+        Queue<ProcessControlBlock> ready = newReady;
+        for(ProcessControlBlock p : active) {
+            p.setCpuBurstTime();
+            if(type == AlgorithmTypes.SJF) {
+                p.setPriority(p.getCpuBurstTime());
+            }
+            ready.add(p);
+        }
+        return ready;
+    }
+
+    public void getNextRunningProcess(Queue<ProcessControlBlock> ready, Dispatcher prepareDispatch) {
+        ProcessControlBlock next = ready.poll();
+        if(next != null) {
+            next.setState(ProcessControlBlock.ProcessState.RUNNING);
+            prepareDispatch.setRunningProcess(next);
+        } else {
+            prepareDispatch.setRunningProcess(null);
         }
     }
 }

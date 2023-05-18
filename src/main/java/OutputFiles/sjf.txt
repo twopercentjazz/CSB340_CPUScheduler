@@ -12,11 +12,11 @@ List of processes in the ready queue:
 		Process		Burst
 		  P2		  4
 		  P8		  4
-		  P3		  8
 		  P1		  5
-		  P5		  16
+		  P3		  8
 		  P6		  11
 		  P7		  14
+		  P5		  16
 ..................................................
 
 List of processes in I/O:
@@ -38,9 +38,9 @@ List of processes in the ready queue:
 		  P8		  4
 		  P1		  5
 		  P3		  8
+		  P6		  11
 		  P7		  14
 		  P5		  16
-		  P6		  11
 ..................................................
 
 List of processes in I/O:
@@ -60,8 +60,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P1		  5
-		  P6		  11
 		  P3		  8
+		  P6		  11
 		  P7		  14
 		  P5		  16
 ..................................................
@@ -85,8 +85,8 @@ List of processes in the ready queue:
 		Process		Burst
 		  P3		  8
 		  P6		  11
-		  P5		  16
 		  P7		  14
+		  P5		  16
 ..................................................
 
 List of processes in I/O:
@@ -252,8 +252,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P2		  5
-		  P5		  16
 		  P3		  12
+		  P5		  16
 ..................................................
 
 List of processes in I/O:
@@ -324,8 +324,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P1		  5
-		  P5		  16
 		  P8		  6
+		  P5		  16
 ..................................................
 
 List of processes in I/O:
@@ -348,8 +348,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P4		  5
-		  P5		  16
 		  P8		  6
+		  P5		  16
 ..................................................
 
 List of processes in I/O:
@@ -612,8 +612,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P8		  14
-		  P3		  18
 		  P5		  17
+		  P3		  18
 ..................................................
 
 List of processes in I/O:
@@ -636,8 +636,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P8		  14
-		  P3		  18
 		  P5		  17
+		  P3		  18
 ..................................................
 
 List of processes in I/O:
@@ -684,10 +684,10 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P4		  4
-		  P6		  12
 		  P7		  11
-		  P3		  18
+		  P6		  12
 		  P5		  17
+		  P3		  18
 ..................................................
 
 List of processes in I/O:
@@ -732,8 +732,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P6		  12
-		  P3		  18
 		  P5		  17
+		  P3		  18
 ..................................................
 
 List of processes in I/O:
@@ -780,8 +780,8 @@ List of processes in the ready queue:
 
 		Process		Burst
 		  P2		  9
-		  P3		  18
 		  P5		  17
+		  P3		  18
 ..................................................
 
 List of processes in I/O:
