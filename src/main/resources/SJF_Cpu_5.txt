@@ -1,0 +1,1964 @@
++------------------------------------------------+
+|Current Time: 0
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  5
+|		  P2	  4
+|		  P3	  8
+|		  P5	  16
+|		  P6	  11
+|		  P7	  14
+|		  P8	  4
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 3
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  5
+|		  P3	  8
+|		  P5	  16
+|		  P6	  11
+|		  P7	  14
+|		  P8	  4
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  35
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 7
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  5
+|		  P3	  8
+|		  P5	  16
+|		  P6	  11
+|		  P7	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  48
+|		  P4	  31
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 11
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  8
+|		  P5	  16
+|		  P6	  11
+|		  P7	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  44
+|		  P4	  27
+|		  P8	  14
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 16
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  16
+|		  P6	  11
+|		  P7	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  27
+|		  P2	  39
+|		  P4	  22
+|		  P8	  9
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 24
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  16
+|		  P7	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  19
+|		  P2	  31
+|		  P3	  33
+|		  P4	  14
+|		  P8	  1
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 35
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  16
+|		  P8	  5
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  8
+|		  P2	  20
+|		  P3	  22
+|		  P4	  3
+|		  P6	  22
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 49
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  3
+|		  P4	  4
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  6
+|		  P3	  8
+|		  P6	  8
+|		  P7	  46
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 54
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P4	  4
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  1
+|		  P3	  3
+|		  P6	  3
+|		  P7	  41
+|		  P8	  33
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 57
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  5
+|		  P3	  12
+|		  P5	  16
+|		  P6	  4
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  31
+|		  P7	  38
+|		  P8	  30
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 61
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  5
+|		  P3	  12
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  27
+|		  P4	  41
+|		  P7	  34
+|		  P8	  26
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 65
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  12
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  23
+|		  P4	  37
+|		  P6	  8
+|		  P7	  30
+|		  P8	  22
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 70
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  18
+|		  P2	  44
+|		  P4	  32
+|		  P6	  3
+|		  P7	  25
+|		  P8	  17
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 82
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P6	  5
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  6
+|		  P2	  32
+|		  P3	  41
+|		  P4	  20
+|		  P7	  13
+|		  P8	  5
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 98
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  5
+|		  P7	  17
+|		  P8	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  16
+|		  P3	  25
+|		  P4	  4
+|		  P5	  24
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 103
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P4	  5
+|		  P7	  17
+|		  P8	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  11
+|		  P3	  20
+|		  P5	  19
+|		  P6	  10
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 108
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P7	  17
+|		  P8	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  43
+|		  P2	  6
+|		  P3	  15
+|		  P5	  14
+|		  P6	  5
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 113
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P6	  6
+|		  P7	  17
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  38
+|		  P2	  1
+|		  P3	  10
+|		  P4	  45
+|		  P5	  9
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 119
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  7
+|		  P7	  17
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  32
+|		  P3	  4
+|		  P4	  39
+|		  P5	  3
+|		  P8	  51
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 125
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P5	  17
+|		  P7	  17
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  26
+|		  P4	  33
+|		  P6	  12
+|		  P8	  45
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 132
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P7	  17
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  19
+|		  P2	  42
+|		  P4	  26
+|		  P6	  5
+|		  P8	  38
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 149
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P6	  7
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  2
+|		  P2	  25
+|		  P4	  9
+|		  P5	  21
+|		  P8	  21
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 166
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  4
+|		  P3	  18
+|		  P4	  3
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  8
+|		  P5	  4
+|		  P7	  41
+|		  P8	  4
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 173
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  4
+|		  P3	  18
+|		  P5	  5
+|		  P8	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  1
+|		  P6	  14
+|		  P7	  34
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 176
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  12
+|		  P3	  18
+|		  P5	  5
+|		  P8	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  51
+|		  P6	  11
+|		  P7	  31
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 180
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  12
+|		  P3	  18
+|		  P8	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  18
+|		  P4	  47
+|		  P6	  7
+|		  P7	  27
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 185
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P8	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  13
+|		  P4	  42
+|		  P5	  36
+|		  P6	  2
+|		  P7	  22
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 197
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P6	  9
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  1
+|		  P2	  37
+|		  P4	  30
+|		  P5	  24
+|		  P7	  10
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 211
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  6
+|		  P3	  18
+|		  P7	  11
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  23
+|		  P4	  16
+|		  P5	  10
+|		  P8	  73
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 220
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P7	  11
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  14
+|		  P4	  7
+|		  P5	  1
+|		  P6	  18
+|		  P8	  64
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 226
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P5	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  22
+|		  P2	  8
+|		  P4	  1
+|		  P6	  12
+|		  P8	  58
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 237
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
+|		  P3	  18
+|		  P4	  4
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  11
+|		  P6	  1
+|		  P7	  42
+|		  P8	  47
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 253
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  4
+|		  P2	  9
+|		  P3	  18
+|		  P6	  12
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P5	  26
+|		  P7	  26
+|		  P8	  31
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 257
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
+|		  P3	  18
+|		  P6	  12
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  61
+|		  P5	  22
+|		  P7	  22
+|		  P8	  27
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 261
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
+|		  P6	  12
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  26
+|		  P4	  57
+|		  P5	  18
+|		  P7	  18
+|		  P8	  23
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 270
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  18
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  17
+|		  P2	  76
+|		  P4	  48
+|		  P5	  9
+|		  P7	  9
+|		  P8	  14
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 282
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  7
+|		  P7	  15
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  5
+|		  P2	  64
+|		  P4	  36
+|		  P6	  24
+|		  P8	  2
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 300
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  3
+|		  P7	  15
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  46
+|		  P3	  65
+|		  P4	  18
+|		  P6	  6
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 307
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P6	  15
+|		  P7	  15
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  39
+|		  P3	  58
+|		  P4	  11
+|		  P5	  31
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 310
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P7	  15
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  24
+|		  P2	  36
+|		  P3	  55
+|		  P4	  8
+|		  P5	  28
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 325
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P4	  5
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P1	  9
+|		  P2	  21
+|		  P3	  40
+|		  P5	  13
+|		  P6	  30
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 340
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P1	  4
+|		  P5	  13
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  6
+|		  P3	  25
+|		  P6	  15
+|		  P7	  21
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 345
+|Next process on the CPU: P1
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  13
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  1
+|		  P3	  20
+|		  P4	  54
+|		  P6	  10
+|		  P7	  16
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 349
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  4
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  16
+|		  P4	  50
+|		  P6	  6
+|		  P7	  12
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 362
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P6	  8
+|		  P7	  4
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  3
+|		  P4	  37
+|		  P5	  28
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 366
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  14
+|		  P6	  8
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  41
+|		  P4	  33
+|		  P5	  24
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 370
+|Next process on the CPU: P6
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  14
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  37
+|		  P4	  29
+|		  P5	  20
+|		  P7	  32
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 378
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P8	  16
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  29
+|		  P4	  21
+|		  P5	  12
+|		  P7	  24
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 392
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  11
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  15
+|		  P3	  21
+|		  P4	  7
+|		  P7	  10
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 408
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
+|		  P4	  6
+|		  P7	  7
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  5
+|		  P8	  87
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 419
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
+|		  P3	  4
+|		  P7	  7
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P5	  21
+|		  P8	  76
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 425
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
+|		  P7	  7
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  82
+|		  P5	  15
+|		  P8	  70
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 429
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  9
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  61
+|		  P4	  78
+|		  P5	  11
+|		  P8	  66
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 436
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  54
+|		  P4	  71
+|		  P5	  4
+|		  P7	  19
+|		  P8	  59
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 445
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  31
+|		  P3	  45
+|		  P4	  62
+|		  P7	  10
+|		  P8	  50
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 445
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  31
+|		  P3	  45
+|		  P4	  62
+|		  P7	  10
+|		  P8	  50
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 452
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  24
+|		  P3	  38
+|		  P4	  55
+|		  P5	  13
+|		  P7	  3
+|		  P8	  43
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 452
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  24
+|		  P3	  38
+|		  P4	  55
+|		  P5	  13
+|		  P7	  3
+|		  P8	  43
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 453
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  23
+|		  P3	  37
+|		  P4	  54
+|		  P5	  12
+|		  P7	  2
+|		  P8	  42
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 454
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  22
+|		  P3	  36
+|		  P4	  53
+|		  P5	  11
+|		  P7	  1
+|		  P8	  41
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 455
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  21
+|		  P3	  35
+|		  P4	  52
+|		  P5	  10
+|		  P8	  40
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 472
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P5	  3
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  4
+|		  P3	  18
+|		  P4	  35
+|		  P7	  33
+|		  P8	  23
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 472
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  4
+|		  P3	  18
+|		  P4	  35
+|		  P7	  33
+|		  P8	  23
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 476
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  7
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  14
+|		  P4	  31
+|		  P5	  11
+|		  P7	  29
+|		  P8	  19
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 476
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  14
+|		  P4	  31
+|		  P5	  11
+|		  P7	  29
+|		  P8	  19
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 484
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  43
+|		  P3	  6
+|		  P4	  23
+|		  P5	  3
+|		  P7	  21
+|		  P8	  11
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 484
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  43
+|		  P3	  6
+|		  P4	  23
+|		  P5	  3
+|		  P7	  21
+|		  P8	  11
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 485
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  42
+|		  P3	  5
+|		  P4	  22
+|		  P5	  2
+|		  P7	  20
+|		  P8	  10
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 486
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  41
+|		  P3	  4
+|		  P4	  21
+|		  P5	  1
+|		  P7	  19
+|		  P8	  9
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 487
+|Next process on the CPU: P5
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  40
+|		  P3	  3
+|		  P4	  20
+|		  P7	  18
+|		  P8	  8
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 492
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  15
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  35
+|		  P4	  15
+|		  P7	  13
+|		  P8	  3
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 492
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  35
+|		  P4	  15
+|		  P7	  13
+|		  P8	  3
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 508
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P4	  5
+|		  P7	  10
+|		  P8	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  19
+|		  P3	  18
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 508
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P7	  10
+|		  P8	  6
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  19
+|		  P3	  18
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 514
+|Next process on the CPU: P8
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P7	  10
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  13
+|		  P3	  12
+|		  P4	  77
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 520
+|Next process on the CPU: P7
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P2	  7
+|		  P3	  6
+|		  P4	  71
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 530
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P2	  8
+|		  P3	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  61
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 530
+|Next process on the CPU: P2
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
+|		  P3	  14
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  61
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 539
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  52
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 553
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  26
+|		  P4	  38
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 553
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  26
+|		  P4	  38
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 554
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  25
+|		  P4	  37
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 555
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  24
+|		  P4	  36
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 556
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  23
+|		  P4	  35
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 557
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  22
+|		  P4	  34
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 558
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  21
+|		  P4	  33
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 559
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  20
+|		  P4	  32
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 560
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  19
+|		  P4	  31
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 561
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  18
+|		  P4	  30
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 562
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  17
+|		  P4	  29
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 563
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  16
+|		  P4	  28
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 564
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  15
+|		  P4	  27
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 565
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  14
+|		  P4	  26
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 566
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  13
+|		  P4	  25
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 567
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  12
+|		  P4	  24
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 568
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  11
+|		  P4	  23
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 569
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  10
+|		  P4	  22
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 570
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  9
+|		  P4	  21
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 571
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  8
+|		  P4	  20
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 572
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  7
+|		  P4	  19
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 573
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  6
+|		  P4	  18
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 574
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  5
+|		  P4	  17
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 575
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  4
+|		  P4	  16
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 576
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  3
+|		  P4	  15
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 577
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  2
+|		  P4	  14
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 578
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  1
+|		  P4	  13
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 579
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P4	  12
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 585
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  31
+|		  P4	  6
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 585
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  31
+|		  P4	  6
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 586
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  30
+|		  P4	  5
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 587
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  29
+|		  P4	  4
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 588
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  28
+|		  P4	  3
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 589
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  27
+|		  P4	  2
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 590
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  26
+|		  P4	  1
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 591
+|Next process on the CPU: P4
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  25
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 595
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  21
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 595
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  21
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 596
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  20
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 597
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  19
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 598
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  18
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 599
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  17
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 600
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  16
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 601
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  15
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 602
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  14
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 603
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  13
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 604
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  12
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 605
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  11
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 606
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  10
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 607
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  9
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 608
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  8
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 609
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  7
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 610
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  6
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 611
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  5
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 612
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  4
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 613
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  3
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 614
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  2
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 615
+|Next process on the CPU: No Process Scheduled Next
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
+|		  P3	  1
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 616
+|Next process on the CPU: P3
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
++------------------------------------------------+
++------------------------------------------------+
+|Current Time: 623
+|Next process on the CPU: All Processes Complete
++------------------------------------------------+
+|List of processes in the ready queue:
+|		Process	Burst
++------------------------------------------------+
+|List of processes in I/O:
+|		Process	Burst
++------------------------------------------------+
