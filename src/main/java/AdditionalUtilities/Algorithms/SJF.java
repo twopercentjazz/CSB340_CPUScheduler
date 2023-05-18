@@ -40,10 +40,9 @@ public class SJF implements AlgorithmsInterface {
                     }
                 }
             }
-            dispatch.contextSwitchFinishCpuBurst(schedule, running);
+            this.dispatch.contextSwitchFinishCpuBurst(schedule, running);
         }
     }
-
 
     /** {@inheritDoc} */
     public Boolean isCompleted() {
