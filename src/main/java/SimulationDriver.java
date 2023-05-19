@@ -2,79 +2,119 @@
 
 import AdditionalUtilities.Algorithms.AlgorithmTypes;
 import AdditionalUtilities.Utilities.*;
+
 import java.io.*;
 import java.util.*;
 
 public class SimulationDriver {
-    public static void main(String[] args) throws FileNotFoundException {
-        // create Processes with given process data
-        ProcessControlBlock p1 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p2 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p3 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p4 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p5 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p6 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p7 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p8 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        ProcessControlBlock p9 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p10 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p11 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p12 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p13 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p14 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p15 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p16 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        ProcessControlBlock p17 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p18 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p19 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p20 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p21 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p22 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p23 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p24 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
-        // Add all process for simulation into lists
-        ArrayList<ProcessControlBlock> input1 = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
-        ArrayList<ProcessControlBlock> input2 = new ArrayList<>(Arrays.asList(p9,p10,p11,p12,p13,p14,p15,p16));
-        ArrayList<ProcessControlBlock> input3 = new ArrayList<>(Arrays.asList(p17,p18,p19,p20,p21,p22,p23,p24));
+    private final static HashMap<String, ProcessControlBlock> processMap;
+    private final static HashMap<String, Integer[]> processRoutine;
+
+    static
+    {
+        processMap = new HashMap<>();
+        processRoutine = new HashMap<>();
+
+        //Reads in the list of processes and creates the objects
+        try (Scanner in = new Scanner(new File("src/main/resources/processList")))
+        {
+            String line = "";
+            String processId;
+
+            //parsing out the different processes
+            while (in.hasNextLine() && !(line = in.nextLine()).contains("For")){
+                if(line.isEmpty()) continue;
+
+                processId = line.substring(0, line.indexOf('{')).strip();
+                line = line.substring(line.indexOf('{')+1, line.indexOf('}'));
+
+                int[] routine;
+                try {
+                    routine = Arrays.stream(line.replaceAll(" ", "").split(",")).mapToInt(Integer::parseInt).toArray();
+                    processMap.put(processId, new ProcessControlBlock(Integer.parseInt(processId.replaceAll("[^0-9]", "")), routine));
+                    processRoutine.put(processId, Arrays.stream(routine).boxed().toArray(Integer[]::new));
+                }catch (NumberFormatException e)
+                {
+                    System.out.println(String.format("The Process %s has a routine [%s] that contains burst cycles and waiting cycles that are not numbers", processId, line));
+                    System.exit(1);
+                }
+            }
+
+            //handle the priority setting for each algorithm
+            String[] processes = line.substring(line.indexOf('{')+1, line.indexOf('}')).replaceAll(" ", "").split(",");
+            line = line.substring(line.indexOf('}')+1);
+            int[] priorities = Arrays.stream(line.substring(line.indexOf('{') + 1, line.indexOf("}")).replaceAll(" ", "").split(",")).mapToInt(Integer::parseInt).toArray();
+
+            if(processes.length != priorities.length)
+            {
+                System.out.println("Failed trying to set priorities, Process Id list was not the same length as Priorities list");
+                System.exit(1);
+            }
+
+            for(int i = 0; i < processes.length; i++)
+            {
+                if(!processMap.containsKey(processes[i]))
+                {
+                    System.out.println(String.format("Failed trying to set priorities failed to find process with id = %s", processes[i]));
+                    System.exit(1);
+                }
+                processMap.get(processes[i]).setPriority(priorities[i]);
+            }
+
+        } catch (FileNotFoundException e)
+        {
+            System.out.println("ProcessList.txt file was not found in resources");
+        }
+    }
+
+    private static ArrayList<ProcessControlBlock> processControlBlocksDeepCopy()
+    {
+        ArrayList<ProcessControlBlock> lst = new ArrayList<>();
+
+        processMap.forEach((id, process) -> {
+            lst.add(new ProcessControlBlock(process.getPid(), Arrays.stream(processRoutine.get(id)).mapToInt(i -> i).toArray()));
+            lst.get(lst.size()-1).setPriority(process.getPriority());
+        });
+
+        return lst;
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+        List<CpuSchedulerSimulation> listOfSimulation = new LinkedList<>();
 
         // create new simulation objects for each algorithm
-        CpuSchedulerSimulation fcfs = new CpuSchedulerSimulation(new SimulationInput(input1),
-                AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE);
-        CpuSchedulerSimulation sjf = new CpuSchedulerSimulation(new SimulationInput(input2),
-                AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE);
-        CpuSchedulerSimulation priority = new CpuSchedulerSimulation(new SimulationInput(input3,
-                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.P, SchedulingTypes.PREEMPTIVE);
+
+        listOfSimulation.add(new CpuSchedulerSimulation(new SimulationInput(processControlBlocksDeepCopy()),
+              AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE));
+
+        listOfSimulation.add(new CpuSchedulerSimulation(new SimulationInput(processControlBlocksDeepCopy()),
+                AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE));
+
+        listOfSimulation.add(new CpuSchedulerSimulation(new SimulationInput(processControlBlocksDeepCopy(),
+                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.P, SchedulingTypes.PREEMPTIVE));
+
+        listOfSimulation.add(new CpuSchedulerSimulation(new SimulationInput(processControlBlocksDeepCopy()),
+                AlgorithmTypes.RR, SchedulingTypes.NON_PREEMPTIVE));
+
 
         // run each simulation
-        fcfs.runSim();
-        sjf.runSim();
-        priority.runSim();
+        listOfSimulation.forEach(sim -> sim.runSim());
 
         // display results to console or file
-
-        // first come, first served (non-preemptive) print to file
-        createResultsFile(fcfs.getResults(), fcfs.getRecords(),
-                "src/main/java/OutputFiles/fcfs.txt",1);
-        // [To also print to console uncomment below]
-        // printRecord(fcfs.getRecords());
-        // printResults(fcfs.getResults());
-
-        // shortest job first (non-preemptive) print to file
-        createResultsFile(sjf.getResults(), sjf.getRecords(),
-                "src/main/java/OutputFiles/sjf.txt",1);
-        // [To also print to console uncomment below]
-        // printRecord(sjf.getRecords());
-        // printResults(sjf.getResults());
-
-        // priority (preemptive) print to file
-        createResultsFile(priority.getResults(), priority.getRecords(),
-                "src/main/java/OutputFiles/priority.txt",1);
-        // [To also print to console uncomment below]
-        // printRecord(priority.getRecords());
-        // printResults(priority.getResults());
+        // for testing comment out adding the other algorithms to the list
+        listOfSimulation.forEach(sim ->{
+            try {
+                createResultsFile(sim.getResults(), sim.getRecords(),
+                        String.format("src/main/java/OutputFiles/%s.txt", sim.getAlgorithmType()),1);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            // [To also print to console uncomment below]
+            // printRecord(fcfs.getRecords());
+            // printResults(fcfs.getResults());
+        });
     }
 
     /** This method prints the final results of a simulation instance.

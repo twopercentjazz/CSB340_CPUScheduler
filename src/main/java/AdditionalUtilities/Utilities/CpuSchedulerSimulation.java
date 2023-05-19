@@ -22,16 +22,16 @@ public class CpuSchedulerSimulation {
     }
 
     private void assignAlgorithm(SimulationInput input, AlgorithmTypes algorithmType) {
-        if(algorithmType == AlgorithmTypes.FCFS) {
-            this.algorithm = new FCFS(input);
-        } else if(algorithmType == AlgorithmTypes.P) {
-            this.algorithm = new Priority(input);
-        } else if(algorithmType == AlgorithmTypes.SJF) {
-            this.algorithm = new SJF(input);
+
+        switch (algorithmType)
+        {
+            case SJF -> algorithm = new SJF(input, this);
+            case RR -> algorithm = new RR(input, this);
+            case FCFS -> algorithm = new FCFS(input, this);
+            case P -> algorithm = new Priority(input, this);
+            case MLQ -> algorithm = new MLQ(input, this);
+            case MLFQ -> algorithm = new MLFQ(input, this);
         }
-        // add RR
-        // add MLQ
-        // add MLFQ
     }
 
     public SimulationInput getInput() {
@@ -41,29 +41,22 @@ public class CpuSchedulerSimulation {
     public SimulationResults getResults() {
         return this.results;
     }
+    public void setResults(SimulationResults results)
+    {
+        this.results = results;
+    }
 
     public ArrayList<SimulationRecord> getRecords() {
         return this.records;
     }
 
     public void runSim() {
-        while(!algorithm.isCompleted()) {
-            this.algorithm.scheduleNextProcess();
-            createRecord();
-            this.algorithm.dispatchNextProcess(this.algorithm.getDispatcher().getRunningProcess());
-        }
-        this.algorithm.getDispatcher().setRunningProcess(null);
-        createRecord();
-        this.algorithm.getScheduler().createFinalList();
-        this.algorithm.getScheduler().setTurnAroundTimes();
-        results = new SimulationResults(algorithm.getScheduler().getFinalList(),
-                algorithm.getDispatcher().getExecutionTimer(),
-                algorithm.getDispatcher().getIdleTimer());
+        algorithm.runSim();
     }
 
-    public void createRecord() {
+    public void createRecord(int indexOfQueue) {
         LinkedHashMap<Integer, Integer> readyList = new LinkedHashMap<>();
-        for(ProcessControlBlock p : this.algorithm.getReady()) {
+        for(ProcessControlBlock p : this.algorithm.getReady(indexOfQueue)) {
             readyList.put(p.getPid(), p.getCpuBurstTime());
         }
         TreeMap<Integer, Integer> ioList = new TreeMap<>();
@@ -81,5 +74,10 @@ public class CpuSchedulerSimulation {
         }
         this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(), currProcess,
                 readyList, ioList, completed));
+    }
+
+    public AlgorithmTypes getAlgorithmType()
+    {
+        return algorithmType;
     }
 }

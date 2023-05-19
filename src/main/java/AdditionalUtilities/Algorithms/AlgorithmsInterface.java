@@ -10,7 +10,7 @@ public interface AlgorithmsInterface {
 
     void scheduleNextProcess();
 
-    void dispatchNextProcess(ProcessControlBlock running);
+    void dispatchNextProcess(int indexOfQueue, ProcessControlBlock running, Integer timeQuantum);
 
     Boolean isCompleted();
 
@@ -18,5 +18,7 @@ public interface AlgorithmsInterface {
 
     Dispatcher getDispatcher();
 
-    Queue<ProcessControlBlock> getReady();
+    Queue<ProcessControlBlock> getReady(int indexOfQueue);
+
+    void runSim();
 }
