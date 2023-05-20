@@ -12,10 +12,12 @@ public class Scheduler {
     private ArrayList<ProcessControlBlock> active; //
     private ArrayList<ProcessControlBlock> completed; //
     private ProcessControlBlock[] finalList;
+    private Queue<Queue<ProcessControlBlock>> queues;
     private int activeQueue;
 
     public Scheduler(SimulationInput input) {
         this.ready = null;
+        this.queues = null;
         this.activeQueue = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
@@ -29,11 +31,13 @@ public class Scheduler {
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = new ArrayList<>();
+        this.queues = new LinkedList<>();
         for(AlgorithmsInterface algorithm: ready) {
             for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
                 this.active.add(pcb);
                 pcb.setPriority(this.ready.indexOf(algorithm));
             }
+            queues.add(algorithm.getReady());
         }
         this.finalList = new ProcessControlBlock[active.size()];
     }
@@ -46,6 +50,8 @@ public class Scheduler {
     public ArrayList<ProcessControlBlock> getActive() { return this.active; }
 
     public ArrayList<ProcessControlBlock> getCompleted() { return this.completed; }
+
+    public Queue<Queue<ProcessControlBlock>> getQueues() { return this.queues; }
 
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);

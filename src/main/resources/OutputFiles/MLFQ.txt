@@ -87,7 +87,7 @@ List of processes in the ready queue:
 		  P6		  11			  Q1
 		  P7		  14			  Q1
 		  P8		  4			  Q1
-		  P3		  3			  Q1
+		  P3		  3			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -110,7 +110,7 @@ List of processes in the ready queue:
 		  P6		  11			  Q1
 		  P7		  14			  Q1
 		  P8		  4			  Q1
-		  P3		  3			  Q1
+		  P3		  3			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -133,8 +133,8 @@ List of processes in the ready queue:
 		Process		Burst		Queue
 		  P7		  14			  Q1
 		  P8		  4			  Q1
-		  P3		  3			  Q1
-		  P5		  11			  Q1
+		  P3		  3			  Q2
+		  P5		  11			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -156,9 +156,9 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P8		  4			  Q1
-		  P3		  3			  Q1
-		  P5		  11			  Q1
-		  P6		  6			  Q1
+		  P3		  3			  Q2
+		  P5		  11			  Q2
+		  P6		  6			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -179,11 +179,11 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  3			  Q1
-		  P5		  11			  Q1
-		  P6		  6			  Q1
+		  P3		  3			  Q2
+		  P5		  11			  Q2
+		  P6		  6			  Q2
 		  P1		  3			  Q1
-		  P7		  9			  Q1
+		  P7		  9			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -203,10 +203,10 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  11			  Q1
-		  P6		  6			  Q1
+		  P5		  11			  Q2
+		  P6		  6			  Q2
 		  P1		  3			  Q1
-		  P7		  9			  Q1
+		  P7		  9			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -227,9 +227,9 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  6			  Q1
+		  P6		  6			  Q2
 		  P1		  3			  Q1
-		  P7		  9			  Q1
+		  P7		  9			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -252,8 +252,8 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P1		  3			  Q1
-		  P7		  9			  Q1
-		  P5		  6			  Q1
+		  P7		  9			  Q2
+		  P5		  6			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -275,9 +275,9 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  9			  Q1
-		  P5		  6			  Q1
-		  P6		  1			  Q1
+		  P7		  9			  Q2
+		  P5		  6			  Q3
+		  P6		  1			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -299,8 +299,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  6			  Q1
-		  P6		  1			  Q1
+		  P5		  6			  Q3
+		  P6		  1			  Q3
 		  P8		  5			  Q1
 		  P4		  4			  Q1
 ..................................................
@@ -323,11 +323,11 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  1			  Q1
+		  P6		  1			  Q3
 		  P8		  5			  Q1
 		  P4		  4			  Q1
 		  P2		  5			  Q1
-		  P7		  4			  Q1
+		  P7		  4			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -350,8 +350,8 @@ List of processes in the ready queue:
 		  P8		  5			  Q1
 		  P4		  4			  Q1
 		  P2		  5			  Q1
-		  P7		  4			  Q1
-		  P5		  1			  Q1
+		  P7		  4			  Q3
+		  P5		  1			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -373,8 +373,8 @@ List of processes in the ready queue:
 		Process		Burst		Queue
 		  P4		  4			  Q1
 		  P2		  5			  Q1
-		  P7		  4			  Q1
-		  P5		  1			  Q1
+		  P7		  4			  Q3
+		  P5		  1			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -396,8 +396,8 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P2		  5			  Q1
-		  P7		  4			  Q1
-		  P5		  1			  Q1
+		  P7		  4			  Q3
+		  P5		  1			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -419,9 +419,9 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  4			  Q1
-		  P5		  1			  Q1
-		  P3		  12			  Q1
+		  P7		  4			  Q3
+		  P5		  1			  Q4
+		  P3		  12			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -443,8 +443,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  1			  Q1
-		  P3		  12			  Q1
+		  P5		  1			  Q4
+		  P3		  12			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -467,7 +467,7 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  12			  Q1
+		  P3		  12			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -516,8 +516,8 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  4			  Q1
-		  P3		  7			  Q1
+		  P6		  4			  Q3
+		  P3		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -540,7 +540,7 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  7			  Q1
+		  P3		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -589,7 +589,7 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  2			  Q1
+		  P3		  2			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -613,9 +613,9 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  5			  Q1
-		  P5		  17			  Q1
-		  P8		  1			  Q1
+		  P6		  5			  Q3
+		  P5		  17			  Q4
+		  P8		  1			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -637,8 +637,8 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  17			  Q1
-		  P8		  1			  Q1
+		  P5		  17			  Q4
+		  P8		  1			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -661,7 +661,7 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  1			  Q1
+		  P8		  1			  Q2
 		  P4		  5			  Q1
 ..................................................
 
@@ -686,7 +686,7 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P4		  5			  Q1
-		  P5		  12			  Q1
+		  P5		  12			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -709,7 +709,7 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  12			  Q1
+		  P5		  12			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -734,7 +734,7 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P2		  7			  Q1
-		  P6		  6			  Q1
+		  P6		  6			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -757,9 +757,9 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  6			  Q1
-		  P7		  17			  Q1
-		  P5		  7			  Q1
+		  P6		  6			  Q3
+		  P7		  17			  Q3
+		  P5		  7			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -781,9 +781,9 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  17			  Q1
-		  P5		  7			  Q1
-		  P2		  2			  Q1
+		  P7		  17			  Q3
+		  P5		  7			  Q6
+		  P2		  2			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -805,10 +805,10 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  7			  Q1
-		  P2		  2			  Q1
+		  P5		  7			  Q6
+		  P2		  2			  Q2
 		  P1		  4			  Q1
-		  P6		  1			  Q1
+		  P6		  1			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -829,10 +829,10 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  2			  Q1
+		  P2		  2			  Q2
 		  P1		  4			  Q1
-		  P6		  1			  Q1
-		  P7		  12			  Q1
+		  P6		  1			  Q4
+		  P7		  12			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -854,10 +854,10 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P1		  4			  Q1
-		  P6		  1			  Q1
-		  P7		  12			  Q1
-		  P3		  18			  Q1
-		  P5		  2			  Q1
+		  P6		  1			  Q4
+		  P7		  12			  Q4
+		  P3		  18			  Q4
+		  P5		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -877,10 +877,10 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  1			  Q1
-		  P7		  12			  Q1
-		  P3		  18			  Q1
-		  P5		  2			  Q1
+		  P6		  1			  Q4
+		  P7		  12			  Q4
+		  P3		  18			  Q4
+		  P5		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -901,9 +901,9 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  12			  Q1
-		  P3		  18			  Q1
-		  P5		  2			  Q1
+		  P7		  12			  Q4
+		  P3		  18			  Q4
+		  P5		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -925,8 +925,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  18			  Q1
-		  P5		  2			  Q1
+		  P3		  18			  Q4
+		  P5		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -949,8 +949,8 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  2			  Q1
-		  P7		  7			  Q1
+		  P5		  2			  Q7
+		  P7		  7			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -973,8 +973,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  7			  Q1
-		  P3		  13			  Q1
+		  P7		  7			  Q5
+		  P3		  13			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -997,8 +997,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  13			  Q1
-		  P6		  7			  Q1
+		  P3		  13			  Q5
+		  P6		  7			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -1021,11 +1021,11 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  7			  Q1
+		  P6		  7			  Q4
 		  P4		  3			  Q1
-		  P8		  14			  Q1
+		  P8		  14			  Q2
 		  P1		  6			  Q1
-		  P7		  2			  Q1
+		  P7		  2			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1046,10 +1046,10 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P4		  3			  Q1
-		  P8		  14			  Q1
+		  P8		  14			  Q2
 		  P1		  6			  Q1
-		  P7		  2			  Q1
-		  P3		  8			  Q1
+		  P7		  2			  Q6
+		  P3		  8			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1069,11 +1069,11 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  14			  Q1
+		  P8		  14			  Q2
 		  P1		  6			  Q1
-		  P7		  2			  Q1
-		  P3		  8			  Q1
-		  P6		  2			  Q1
+		  P7		  2			  Q6
+		  P3		  8			  Q6
+		  P6		  2			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -1094,9 +1094,9 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P1		  6			  Q1
-		  P7		  2			  Q1
-		  P3		  8			  Q1
-		  P6		  2			  Q1
+		  P7		  2			  Q6
+		  P3		  8			  Q6
+		  P6		  2			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -1117,11 +1117,11 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  2			  Q1
-		  P3		  8			  Q1
-		  P6		  2			  Q1
-		  P5		  5			  Q1
-		  P8		  9			  Q1
+		  P7		  2			  Q6
+		  P3		  8			  Q6
+		  P6		  2			  Q5
+		  P5		  5			  Q7
+		  P8		  9			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -1141,12 +1141,12 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  8			  Q1
-		  P6		  2			  Q1
-		  P5		  5			  Q1
-		  P8		  9			  Q1
-		  P2		  12			  Q1
-		  P1		  1			  Q1
+		  P3		  8			  Q6
+		  P6		  2			  Q5
+		  P5		  5			  Q7
+		  P8		  9			  Q3
+		  P2		  12			  Q2
+		  P1		  1			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -1165,11 +1165,11 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  2			  Q1
-		  P5		  5			  Q1
-		  P8		  9			  Q1
-		  P2		  12			  Q1
-		  P1		  1			  Q1
+		  P6		  2			  Q5
+		  P5		  5			  Q7
+		  P8		  9			  Q3
+		  P2		  12			  Q2
+		  P1		  1			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -1189,11 +1189,11 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  5			  Q1
-		  P8		  9			  Q1
-		  P2		  12			  Q1
-		  P1		  1			  Q1
-		  P3		  3			  Q1
+		  P5		  5			  Q7
+		  P8		  9			  Q3
+		  P2		  12			  Q2
+		  P1		  1			  Q2
+		  P3		  3			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1213,10 +1213,10 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  9			  Q1
-		  P2		  12			  Q1
-		  P1		  1			  Q1
-		  P3		  3			  Q1
+		  P8		  9			  Q3
+		  P2		  12			  Q2
+		  P1		  1			  Q2
+		  P3		  3			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1237,9 +1237,9 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  12			  Q1
-		  P1		  1			  Q1
-		  P3		  3			  Q1
+		  P2		  12			  Q2
+		  P1		  1			  Q2
+		  P3		  3			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1261,9 +1261,9 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P1		  1			  Q1
-		  P3		  3			  Q1
-		  P8		  4			  Q1
+		  P1		  1			  Q2
+		  P3		  3			  Q7
+		  P8		  4			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -1285,10 +1285,10 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  3			  Q1
-		  P8		  4			  Q1
-		  P6		  9			  Q1
-		  P2		  7			  Q1
+		  P3		  3			  Q7
+		  P8		  4			  Q4
+		  P6		  9			  Q5
+		  P2		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -1309,9 +1309,9 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  4			  Q1
-		  P6		  9			  Q1
-		  P2		  7			  Q1
+		  P8		  4			  Q4
+		  P6		  9			  Q5
+		  P2		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -1333,8 +1333,8 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  9			  Q1
-		  P2		  7			  Q1
+		  P6		  9			  Q5
+		  P2		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -1357,7 +1357,7 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  7			  Q1
+		  P2		  7			  Q3
 ..................................................
 
 List of processes in I/O:
@@ -1381,7 +1381,7 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  4			  Q1
+		  P6		  4			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1406,7 +1406,7 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P4		  4			  Q1
-		  P2		  2			  Q1
+		  P2		  2			  Q4
 ..................................................
 
 List of processes in I/O:
@@ -1429,8 +1429,8 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  2			  Q1
-		  P7		  11			  Q1
+		  P2		  2			  Q4
+		  P7		  11			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1453,9 +1453,9 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  11			  Q1
-		  P1		  4			  Q1
-		  P5		  16			  Q1
+		  P7		  11			  Q6
+		  P1		  4			  Q2
+		  P5		  16			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1477,8 +1477,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P1		  4			  Q1
-		  P5		  16			  Q1
+		  P1		  4			  Q2
+		  P5		  16			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1501,8 +1501,8 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  16			  Q1
-		  P7		  6			  Q1
+		  P5		  16			  Q7
+		  P7		  6			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1525,7 +1525,7 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  6			  Q1
+		  P7		  6			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1549,8 +1549,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  12			  Q1
-		  P5		  11			  Q1
+		  P6		  12			  Q6
+		  P5		  11			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -1573,8 +1573,8 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  11			  Q1
-		  P7		  1			  Q1
+		  P5		  11			  Q8
+		  P7		  1			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -1597,8 +1597,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  1			  Q1
-		  P6		  7			  Q1
+		  P7		  1			  Q8
+		  P6		  7			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1621,8 +1621,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  7			  Q1
-		  P5		  6			  Q1
+		  P6		  7			  Q7
+		  P5		  6			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -1645,7 +1645,7 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  6			  Q1
+		  P5		  6			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -1669,8 +1669,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P1		  3			  Q1
-		  P6		  2			  Q1
+		  P1		  3			  Q2
+		  P6		  2			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -1693,9 +1693,9 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  2			  Q1
-		  P2		  9			  Q1
-		  P5		  1			  Q1
+		  P6		  2			  Q8
+		  P2		  9			  Q4
+		  P5		  1			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -1717,9 +1717,9 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  9			  Q1
-		  P5		  1			  Q1
-		  P3		  14			  Q1
+		  P2		  9			  Q4
+		  P5		  1			  Q10
+		  P3		  14			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1741,8 +1741,8 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  1			  Q1
-		  P3		  14			  Q1
+		  P5		  1			  Q10
+		  P3		  14			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -1765,8 +1765,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  14			  Q1
-		  P2		  4			  Q1
+		  P3		  14			  Q7
+		  P2		  4			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -1789,7 +1789,7 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  4			  Q1
+		  P2		  4			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -1813,8 +1813,8 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  16			  Q1
-		  P3		  9			  Q1
+		  P8		  16			  Q4
+		  P3		  9			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -1837,7 +1837,7 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  9			  Q1
+		  P3		  9			  Q8
 		  P4		  5			  Q1
 ..................................................
 
@@ -1862,7 +1862,7 @@ List of processes in the ready queue:
 
 		Process		Burst		Queue
 		  P4		  5			  Q1
-		  P8		  11			  Q1
+		  P8		  11			  Q5
 ..................................................
 
 List of processes in I/O:
@@ -1885,10 +1885,10 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  11			  Q1
-		  P1		  4			  Q1
-		  P6		  15			  Q1
-		  P3		  4			  Q1
+		  P8		  11			  Q5
+		  P1		  4			  Q2
+		  P6		  15			  Q8
+		  P3		  4			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -1909,10 +1909,10 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P1		  4			  Q1
-		  P6		  15			  Q1
-		  P3		  4			  Q1
-		  P7		  15			  Q1
+		  P1		  4			  Q2
+		  P6		  15			  Q8
+		  P3		  4			  Q9
+		  P7		  15			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -1933,11 +1933,11 @@ Next process on the CPU:  P1
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  15			  Q1
-		  P3		  4			  Q1
-		  P7		  15			  Q1
-		  P5		  7			  Q1
-		  P8		  6			  Q1
+		  P6		  15			  Q8
+		  P3		  4			  Q9
+		  P7		  15			  Q8
+		  P5		  7			  Q10
+		  P8		  6			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1957,10 +1957,10 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  4			  Q1
-		  P7		  15			  Q1
-		  P5		  7			  Q1
-		  P8		  6			  Q1
+		  P3		  4			  Q9
+		  P7		  15			  Q8
+		  P5		  7			  Q10
+		  P8		  6			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -1983,10 +1983,10 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  15			  Q1
-		  P5		  7			  Q1
-		  P8		  6			  Q1
-		  P6		  10			  Q1
+		  P7		  15			  Q8
+		  P5		  7			  Q10
+		  P8		  6			  Q6
+		  P6		  10			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -2009,9 +2009,9 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  7			  Q1
-		  P8		  6			  Q1
-		  P6		  10			  Q1
+		  P5		  7			  Q10
+		  P8		  6			  Q6
+		  P6		  10			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -2035,9 +2035,9 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  6			  Q1
-		  P6		  10			  Q1
-		  P7		  10			  Q1
+		  P8		  6			  Q6
+		  P6		  10			  Q9
+		  P7		  10			  Q9
 ..................................................
 
 List of processes in I/O:
@@ -2061,9 +2061,9 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  10			  Q1
-		  P7		  10			  Q1
-		  P5		  2			  Q1
+		  P6		  10			  Q9
+		  P7		  10			  Q9
+		  P5		  2			  Q11
 ..................................................
 
 List of processes in I/O:
@@ -2087,9 +2087,9 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  10			  Q1
-		  P5		  2			  Q1
-		  P8		  1			  Q1
+		  P7		  10			  Q9
+		  P5		  2			  Q11
+		  P8		  1			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -2113,9 +2113,9 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  2			  Q1
-		  P8		  1			  Q1
-		  P6		  5			  Q1
+		  P5		  2			  Q11
+		  P8		  1			  Q7
+		  P6		  5			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2139,10 +2139,10 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  1			  Q1
-		  P6		  5			  Q1
-		  P3		  4			  Q1
-		  P7		  5			  Q1
+		  P8		  1			  Q7
+		  P6		  5			  Q10
+		  P3		  4			  Q9
+		  P7		  5			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2165,9 +2165,9 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  5			  Q1
-		  P3		  4			  Q1
-		  P7		  5			  Q1
+		  P6		  5			  Q10
+		  P3		  4			  Q9
+		  P7		  5			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2191,8 +2191,8 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  4			  Q1
-		  P7		  5			  Q1
+		  P3		  4			  Q9
+		  P7		  5			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2217,7 +2217,7 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  5			  Q1
+		  P7		  5			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2296,7 +2296,7 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P4		  1			  Q1
+		  P4		  1			  Q2
 ..................................................
 
 List of processes in I/O:
@@ -2404,8 +2404,8 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  4			  Q1
-		  P5		  8			  Q1
+		  P7		  4			  Q10
+		  P5		  8			  Q12
 ..................................................
 
 List of processes in I/O:
@@ -2430,8 +2430,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  8			  Q1
-		  P6		  3			  Q1
+		  P5		  8			  Q12
+		  P6		  3			  Q11
 ..................................................
 
 List of processes in I/O:
@@ -2456,7 +2456,7 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P6		  3			  Q1
+		  P6		  3			  Q11
 ..................................................
 
 List of processes in I/O:
@@ -2482,7 +2482,7 @@ Next process on the CPU:  P6
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  3			  Q1
+		  P5		  3			  Q13
 ..................................................
 
 List of processes in I/O:
@@ -2639,7 +2639,7 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  10			  Q1
+		  P3		  10			  Q10
 ..................................................
 
 List of processes in I/O:
@@ -2664,8 +2664,8 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  11			  Q1
-		  P7		  2			  Q1
+		  P5		  11			  Q13
+		  P7		  2			  Q11
 ..................................................
 
 List of processes in I/O:
@@ -2689,9 +2689,9 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  2			  Q1
-		  P8		  6			  Q1
-		  P3		  5			  Q1
+		  P7		  2			  Q11
+		  P8		  6			  Q7
+		  P3		  5			  Q11
 ..................................................
 
 List of processes in I/O:
@@ -2714,9 +2714,9 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  6			  Q1
-		  P3		  5			  Q1
-		  P5		  6			  Q1
+		  P8		  6			  Q7
+		  P3		  5			  Q11
+		  P5		  6			  Q14
 ..................................................
 
 List of processes in I/O:
@@ -2739,8 +2739,8 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  5			  Q1
-		  P5		  6			  Q1
+		  P3		  5			  Q11
+		  P5		  6			  Q14
 ..................................................
 
 List of processes in I/O:
@@ -2764,8 +2764,8 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  6			  Q1
-		  P8		  1			  Q1
+		  P5		  6			  Q14
+		  P8		  1			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -2789,8 +2789,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P8		  1			  Q1
-		  P2		  7			  Q1
+		  P8		  1			  Q8
+		  P2		  7			  Q6
 ..................................................
 
 List of processes in I/O:
@@ -2814,9 +2814,9 @@ Next process on the CPU:  P8
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  7			  Q1
-		  P4		  5			  Q1
-		  P5		  1			  Q1
+		  P2		  7			  Q6
+		  P4		  5			  Q2
+		  P5		  1			  Q15
 ..................................................
 
 List of processes in I/O:
@@ -2839,8 +2839,8 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P4		  5			  Q1
-		  P5		  1			  Q1
+		  P4		  5			  Q2
+		  P5		  1			  Q15
 ..................................................
 
 List of processes in I/O:
@@ -2863,9 +2863,9 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  1			  Q1
-		  P7		  16			  Q1
-		  P2		  2			  Q1
+		  P5		  1			  Q15
+		  P7		  16			  Q11
+		  P2		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -2887,8 +2887,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  16			  Q1
-		  P2		  2			  Q1
+		  P7		  16			  Q11
+		  P2		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -2911,7 +2911,7 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  2			  Q1
+		  P2		  2			  Q7
 ..................................................
 
 List of processes in I/O:
@@ -2935,8 +2935,8 @@ Next process on the CPU:  P2
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  14			  Q1
-		  P7		  11			  Q1
+		  P3		  14			  Q11
+		  P7		  11			  Q12
 ..................................................
 
 List of processes in I/O:
@@ -2959,7 +2959,7 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  11			  Q1
+		  P7		  11			  Q12
 ..................................................
 
 List of processes in I/O:
@@ -2983,7 +2983,7 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  9			  Q1
+		  P3		  9			  Q12
 ..................................................
 
 List of processes in I/O:
@@ -3007,7 +3007,7 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  6			  Q1
+		  P7		  6			  Q13
 ..................................................
 
 List of processes in I/O:
@@ -3031,8 +3031,8 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  6			  Q1
-		  P3		  4			  Q1
+		  P5		  6			  Q15
+		  P3		  4			  Q13
 ..................................................
 
 List of processes in I/O:
@@ -3055,8 +3055,8 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P3		  4			  Q1
-		  P7		  1			  Q1
+		  P3		  4			  Q13
+		  P7		  1			  Q14
 ..................................................
 
 List of processes in I/O:
@@ -3079,8 +3079,8 @@ Next process on the CPU:  P3
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  1			  Q1
-		  P5		  1			  Q1
+		  P7		  1			  Q14
+		  P5		  1			  Q16
 ..................................................
 
 List of processes in I/O:
@@ -3103,7 +3103,7 @@ Next process on the CPU:  P7
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P5		  1			  Q1
+		  P5		  1			  Q16
 ..................................................
 
 List of processes in I/O:
@@ -3203,7 +3203,7 @@ Next process on the CPU:  P5
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P2		  3			  Q1
+		  P2		  3			  Q8
 ..................................................
 
 List of processes in I/O:
@@ -3373,7 +3373,7 @@ Next process on the CPU:  P4
 List of processes in the ready queue:
 
 		Process		Burst		Queue
-		  P7		  5			  Q1
+		  P7		  5			  Q15
 ..................................................
 
 List of processes in I/O:

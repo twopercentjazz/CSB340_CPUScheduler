@@ -12,7 +12,7 @@ public class MLFQ implements AlgorithmsInterface {
     public MLFQ(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
-        this.ready = this.schedule.getReadyList().get(this.schedule.getActiveQueue()).getReady();
+        this.ready = this.schedule.getQueues().poll();
     }
 
     /**
@@ -31,19 +31,27 @@ public class MLFQ implements AlgorithmsInterface {
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
         schedule.getReadyList().get(schedule.getActiveQueue()).dispatchNextProcess(running);
         this.dispatch.updateMultiTimer(schedule);
         if(running != null && running.getState() == ProcessControlBlock.ProcessState.COMPLETE) {
             schedule.flagProcessAsComplete(running);
+        } else if(running != null && running.getState() == ProcessControlBlock.ProcessState.READY) {
+            if(schedule.getQueues().size() == 0) {
+                ready.add(dispatch.getPreempt());
+            } else {
+                running.updatePriority(1);
+                this.schedule.getQueues().peek().add(dispatch.getPreempt());
+
+            }
         }
+
+
         if(schedule.getReadyList().get(schedule.getActiveQueue()).isCompleted()) {
-            schedule.updateActiveQueue();
             if(!isCompleted()) {
-                ready = schedule.getReadyList().get(schedule.getActiveQueue()).getReady();
+                ready = this.schedule.getQueues().poll();
+                schedule.updateActiveQueue();
                 schedule.getReadyList().get(getScheduler().getActiveQueue()).getDispatcher().setExecutionTimer(dispatch.getExecutionTimer());
                 schedule.getReadyList().get(getScheduler().getActiveQueue()).getDispatcher().setIdleTimer(dispatch.getIdleTimer());
             }

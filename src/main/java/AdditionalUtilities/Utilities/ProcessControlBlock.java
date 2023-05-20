@@ -70,6 +70,7 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Clo
     public void setPriority(int priority) {
         this.priority = priority;
     }
+    public void updatePriority(int priority) { this.priority += priority; }
 
     public int getWaitingTime() {
         return this.waitingTime;

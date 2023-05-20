@@ -103,14 +103,16 @@ public class CpuSchedulerSimulation {
 
     public void createRecord() {
         LinkedHashMap<Integer, Integer> readyList = new LinkedHashMap<>();
-        LinkedHashMap<Integer, Integer> priorityList = new LinkedHashMap<>();
+        LinkedHashMap<Integer, Integer> QueueList = new LinkedHashMap<>();
         Queue<ProcessControlBlock> temp = new LinkedList<>();
         if(multiList == null) {
             while(!this.algorithm.getReady().isEmpty()) {
                 ProcessControlBlock p = this.algorithm.getReady().poll();
-                readyList.put(p.getPid(), p.getCpuBurstTime());
-                priorityList.put(p.getPid(), p.getPriority());
-                temp.add(p);
+                if(p != null) {
+                    readyList.put(p.getPid(), p.getCpuBurstTime());
+                    QueueList.put(p.getPid(), p.getPriority());
+                    temp.add(p);
+                }
             }
             while(!temp.isEmpty()) {
                 this.algorithm.getReady().add(temp.poll());
@@ -119,9 +121,12 @@ public class CpuSchedulerSimulation {
             for(AlgorithmsInterface alg: algorithm.getScheduler().getReadyList()) {
                 while(!alg.getReady().isEmpty()) {
                     ProcessControlBlock p = alg.getReady().poll();
-                    readyList.put(p.getPid(), p.getCpuBurstTime());
-                    priorityList.put(p.getPid(), p.getPriority());
-                    temp.add(p);
+                    if(p != null) {
+                        readyList.put(p.getPid(), p.getCpuBurstTime());
+                        QueueList.put(p.getPid(), p.getPriority());
+                        temp.add(p);
+                    }
+
                 }
                 while(!temp.isEmpty()) {
                     alg.getReady().add(temp.poll());
@@ -142,6 +147,6 @@ public class CpuSchedulerSimulation {
             currProcess = this.algorithm.getDispatcher().getRunningProcess().getPid();
         }
         this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(),
-                currProcess, readyList, ioList, completed, algorithmType, priorityList));
+                currProcess, readyList, ioList, completed, algorithmType, QueueList));
     }
 }
