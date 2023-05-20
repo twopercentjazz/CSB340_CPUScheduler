@@ -77,88 +77,38 @@ public class SimulationDriver {
         ArrayList<ProcessControlBlock> input7 = new ArrayList<>(Arrays.asList(p41,p42,p43,p44,p45,p46,p47,p48));
 
 
+        ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
+                AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
 
-        // create new simulation objects for each algorithm
-        CpuSchedulerSimulation fcfs = new CpuSchedulerSimulation(new SimulationInput(deepCopy(input1)),
-                AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE);
-        CpuSchedulerSimulation sjf = new CpuSchedulerSimulation(new SimulationInput(deepCopy(input2)),
-                AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE);
-        CpuSchedulerSimulation priority = new CpuSchedulerSimulation(new SimulationInput(deepCopy(input3),
-                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE);
-        CpuSchedulerSimulation rr = new CpuSchedulerSimulation(new SimulationInput(deepCopy(input4), 5),
-                AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE);
-        CpuSchedulerSimulation MLQ = new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
-                        (deepCopy(input5), 4), new SimulationInput(deepCopy(input6)))), AlgorithmTypes.MLQ,
-                SchedulingTypes.PREEMPTIVE, new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS)));
-        CpuSchedulerSimulation MLFQ = new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
+        HashMap<AlgorithmTypes, CpuSchedulerSimulation> resultsMap = new HashMap<>();
+        resultsMap.put(AlgorithmTypes.FCFS, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input1)),
+                AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE));
+        resultsMap.put(AlgorithmTypes.SJF, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input2)),
+                AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE));
+        resultsMap.put(AlgorithmTypes.Priority, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input3),
+                new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE));
+        resultsMap.put(AlgorithmTypes.RR, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input4), 5),
+                AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE));
+        resultsMap.put(AlgorithmTypes.MLQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
+                (deepCopy(input5), 4), new SimulationInput(deepCopy(input6)))), AlgorithmTypes.MLQ,
+                SchedulingTypes.PREEMPTIVE, new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
+        resultsMap.put(AlgorithmTypes.MLFQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
                 (deepCopy(input7), 5), new SimulationInput(new ArrayList<>(),10), new
                 SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
-                new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS)));
+                new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
 
 
-
-        // run each simulation
-        fcfs.runSim();
-        sjf.runSim();
-        priority.runSim();
-        rr.runSim();
-        MLQ.runSim();
-        MLFQ.runSim();
-
-
-
-
-        // display results to console and file.
-        // file results in src/main/resources/OutputFiles
-
-        // first come, first served (non-preemptive) print to file
-        createResultsFile(fcfs.getResults(), fcfs.getRecords(),
-                "src/main/resources/OutputFiles/fcfs.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(fcfs);
-        // printRecord(fcfs.getRecords());
-        printResults(fcfs.getResults());
-
-        // shortest job first (non-preemptive) print to file
-        createResultsFile(sjf.getResults(), sjf.getRecords(),
-                "src/main/resources/OutputFiles/sjf.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(sjf);
-        // printRecord(sjf.getRecords());
-        printResults(sjf.getResults());
-
-        // priority (preemptive) print to file
-        createResultsFile(priority.getResults(), priority.getRecords(),
-                "src/main/resources/OutputFiles/priority.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(priority);
-        // printRecord(priority.getRecords());
-        printResults(priority.getResults());
-
-        // rr
-        createResultsFile(rr.getResults(), rr.getRecords(),
-                "src/main/resources/OutputFiles/rr.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(rr);
-        // printRecord(rr.getRecords());
-        printResults(rr.getResults());
-
-        // MLQ
-        createResultsFile(MLQ.getResults(), MLQ.getRecords(),
-                "src/main/resources/OutputFiles/MLQ.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(MLQ);
-        // printRecord(MLQ.getRecords());
-        printResults(MLQ.getResults());
-
-        // MLFQ
-        createResultsFile(MLFQ.getResults(), MLFQ.getRecords(),
-                "src/main/resources/OutputFiles/MLFQ.txt",1);
-        // [To also print records to console uncomment below]
-        printHeader(MLFQ);
-        // printRecord(MLFQ.getRecords());
-        printResults(MLFQ.getResults());
+        for(CpuSchedulerSimulation sim: resultsMap.values()) {
+            sim.runSim();
+            createResultsFile(sim.getResults(), sim.getRecords(),
+                    "src/main/resources/OutputFiles/" + sim.getAlgorithmType() + ".txt",1);
+            printHeader(sim);
+            //printRecord(sim.getRecords());
+            printResults(sim.getResults());
+        }
+        printResultsToCsvSet1(resultsMap, order);
+        printResultsToCsvSet2(resultsMap, order);
 
     }
 
@@ -206,5 +156,64 @@ public class SimulationDriver {
             temp.add((ProcessControlBlock)pcb.clone());
         }
         return temp;
+    }
+
+
+    public static void printResultsToCsvSet1(HashMap<AlgorithmTypes, CpuSchedulerSimulation> results,
+                                             ArrayList<AlgorithmTypes> order) throws FileNotFoundException {
+        String fileName = "src/main/resources/OutputFiles/ResultsSet1.csv";
+        PrintStream output = new PrintStream(fileName);
+        output.print("\n,");
+        for(AlgorithmTypes header: order) {
+            output.print(header + ",");
+        }
+        output.print("\nCPU Utilization,");
+        for(AlgorithmTypes header: order) {
+            output.printf("%.4f%%,", results.get(header).getResults().getCpuUtilization() * 100);
+        }
+        output.print("\nAVG Waiting Time,");
+        for(AlgorithmTypes header: order) {
+            output.printf("%.3f,", results.get(header).getResults().getAvgWait());
+        }
+        output.print("\nAVG Turnaround Time,");
+        for(AlgorithmTypes header: order) {
+            output.printf("%.3f,", results.get(header).getResults().getAvgTurnAround());
+        }
+        output.print("\nAVG Response Time,");
+        for(AlgorithmTypes header: order) {
+            output.printf("%.3f,", results.get(header).getResults().getAvgResponse());
+        }
+    }
+
+    public static void printResultsToCsvSet2(HashMap<AlgorithmTypes, CpuSchedulerSimulation> results,
+                                             ArrayList<AlgorithmTypes> order) throws FileNotFoundException {
+        String fileName = "src/main/resources/OutputFiles/ResultsSet2.csv";
+        PrintStream output = new PrintStream(fileName);
+        output.print("\n,");
+        for(AlgorithmTypes header: order) {
+            output.print(header + ",,,");
+        }
+        output.print("\n,");
+        for(AlgorithmTypes header: order) {
+            output.printf("CPU Utilization %.4f%%,,,", results.get(header).getResults().getCpuUtilization() * 100);
+        }
+        output.print("\n,");
+        for(AlgorithmTypes header: order) {
+            output.print("AvgWait,AvgTurnAround,AvgResponse,");
+        }
+        for(int i = 0; i < 8; i++) {
+            output.print("\nP" + (i + 1) + ",");
+            for(AlgorithmTypes header: order) {
+                output.print(results.get(header).getResults().getAllWaitTimes().get(i) + ","
+                        + results.get(header).getResults().getAllTurnAroundTimes().get(i) + ","
+                        + results.get(header).getResults().getAllResponseTimes().get(i) + ",");
+            }
+        }
+        output.print("\nAVG,");
+        for(AlgorithmTypes header: order) {
+            output.printf("%.3f,", results.get(header).getResults().getAvgWait());
+            output.printf("%.3f,", results.get(header).getResults().getAvgTurnAround());
+            output.printf("%.3f,", results.get(header).getResults().getAvgResponse());
+        }
     }
 }
