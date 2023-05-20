@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Test_Temp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLQ.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/fcfs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/priority.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/rr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/sjf.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

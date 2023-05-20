@@ -31,9 +31,7 @@ public class MLFQ implements AlgorithmsInterface {
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
         schedule.getReadyList().get(schedule.getActiveQueue()).dispatchNextProcess(running);
         this.dispatch.updateMultiTimer(schedule);

@@ -32,7 +32,6 @@ public class Scheduler {
         for(AlgorithmsInterface algorithm: ready) {
             for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
                 this.active.add(pcb);
-                pcb.setPriority(this.ready.indexOf(algorithm));
             }
         }
         this.finalList = new ProcessControlBlock[active.size()];
