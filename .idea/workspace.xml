@@ -7,9 +7,20 @@
     <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/Priority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/ProcessControlBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/ProcessControlBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/FCFS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/FCFS.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLQ.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLQ.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/Priority.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/Priority.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/RR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/RR.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/SJF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/SJF.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +105,7 @@
       <workItem from="1683226853617" duration="41000" />
       <workItem from="1683310535266" duration="473000" />
       <workItem from="1684097449716" duration="3000" />
+      <workItem from="1684621913141" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, unfinished solution">
       <created>1678299887009</created>

@@ -110,7 +110,7 @@ public class CpuSchedulerSimulation {
                 ProcessControlBlock p = this.algorithm.getReady().poll();
                 if(p != null) {
                     readyList.put(p.getPid(), p.getCpuBurstTime());
-                    QueueList.put(p.getPid(), algorithm.getScheduler().getActiveQueue());
+                    QueueList.put(p.getPid(), p.getPriority());
                     temp.add(p);
                 }
             }
@@ -123,7 +123,7 @@ public class CpuSchedulerSimulation {
                     ProcessControlBlock p = alg.getReady().poll();
                     if(p != null) {
                         readyList.put(p.getPid(), p.getCpuBurstTime());
-                        QueueList.put(p.getPid(), alg.getScheduler().getActiveQueue());
+                        QueueList.put(p.getPid(), p.getPriority());
                         temp.add(p);
                     }
 
