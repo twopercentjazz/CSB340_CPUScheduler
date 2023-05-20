@@ -11,17 +11,34 @@ public class CpuSchedulerSimulation {
     private AlgorithmsInterface algorithm;
     private SimulationResults results;
     private ArrayList<SimulationRecord> records;
+    private ArrayList<AlgorithmTypes> multiList;
+    private ArrayList<SimulationInput> multiInput;
 
     public CpuSchedulerSimulation(SimulationInput input, AlgorithmTypes algorithmType, SchedulingTypes schedulingType) {
         this.input = input;
         this.algorithmType = algorithmType;
         this.schedulingType = schedulingType;
-        assignAlgorithm(input, algorithmType);
+        assignAlgorithm();
         this.results = null;
         this.records = new ArrayList<>();
+        this.multiList = null;
+        this.multiInput = null;
     }
 
-    private void assignAlgorithm(SimulationInput input, AlgorithmTypes algorithmType) {
+    public CpuSchedulerSimulation(ArrayList<SimulationInput> multiInput, AlgorithmTypes algorithmType, SchedulingTypes schedulingType,
+                                  ArrayList<AlgorithmTypes> multiList) {
+        this.input = null;
+        this.multiInput = multiInput;
+        this.multiList = multiList;
+        this.algorithmType = algorithmType;
+        this.schedulingType = schedulingType;
+        assignAlgorithm();
+        this.results = null;
+        this.records = new ArrayList<>();
+
+    }
+
+    private void assignAlgorithm() {
         if(algorithmType == AlgorithmTypes.FCFS) {
             this.algorithm = new FCFS(input);
         } else if(algorithmType == AlgorithmTypes.Priority) {
@@ -30,9 +47,23 @@ public class CpuSchedulerSimulation {
             this.algorithm = new SJF(input);
         } else if(algorithmType == AlgorithmTypes.RR) {
             this.algorithm = new RR(input);
+        } else if(algorithmType == AlgorithmTypes.MLQ){
+            this.algorithm = new MLQ(assignMultiAlgorithm());
+        } else {
+            this.algorithm = new MLFQ(assignMultiAlgorithm());
         }
-        // add MLQ
-        // add MLFQ
+    }
+
+    private ArrayList<AlgorithmsInterface> assignMultiAlgorithm() {
+        ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
+        for(int i = 0; i < multiList.size(); i++) {
+            if(multiList.get(i) == AlgorithmTypes.RR) {
+                readyList.add(new RR(multiInput.get(i)));
+            } else {
+                readyList.add(new FCFS(multiInput.get(i)));
+            }
+        }
+        return readyList;
     }
 
     public AlgorithmTypes getAlgorithmType() {
@@ -72,14 +103,30 @@ public class CpuSchedulerSimulation {
 
     public void createRecord() {
         LinkedHashMap<Integer, Integer> readyList = new LinkedHashMap<>();
+        LinkedHashMap<Integer, Integer> priorityList = new LinkedHashMap<>();
         Queue<ProcessControlBlock> temp = new LinkedList<>();
-        while(!this.algorithm.getReady().isEmpty()) {
-            ProcessControlBlock p = this.algorithm.getReady().poll();
-            readyList.put(p.getPid(), p.getCpuBurstTime());
-            temp.add(p);
-        }
-        while(!temp.isEmpty()) {
-            this.algorithm.getReady().add(temp.poll());
+        if(multiList == null) {
+            while(!this.algorithm.getReady().isEmpty()) {
+                ProcessControlBlock p = this.algorithm.getReady().poll();
+                readyList.put(p.getPid(), p.getCpuBurstTime());
+                priorityList.put(p.getPid(), p.getPriority());
+                temp.add(p);
+            }
+            while(!temp.isEmpty()) {
+                this.algorithm.getReady().add(temp.poll());
+            }
+        } else {
+            for(AlgorithmsInterface alg: algorithm.getScheduler().getReadyList()) {
+                while(!alg.getReady().isEmpty()) {
+                    ProcessControlBlock p = alg.getReady().poll();
+                    readyList.put(p.getPid(), p.getCpuBurstTime());
+                    priorityList.put(p.getPid(), p.getPriority());
+                    temp.add(p);
+                }
+                while(!temp.isEmpty()) {
+                    alg.getReady().add(temp.poll());
+                }
+            }
         }
         TreeMap<Integer, Integer> ioList = new TreeMap<>();
         for(ProcessControlBlock p : this.algorithm.getScheduler().getIo()) {
@@ -95,6 +142,6 @@ public class CpuSchedulerSimulation {
             currProcess = this.algorithm.getDispatcher().getRunningProcess().getPid();
         }
         this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(),
-                currProcess, readyList, ioList, completed));
+                currProcess, readyList, ioList, completed, algorithmType, priorityList));
     }
 }
