@@ -26,12 +26,20 @@ public class Scheduler {
         return this.completed;
     }
 
+    /**
+     * Move a process from active to completed list.
+     * @param pcb a recently completed process
+     */
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);
         active.remove(pcb);
         completed.add(pcb);
     }
 
+    /**
+     * Create a final list of completed processes.
+     * Useful for calculating results.
+     */
     public void createFinalList() {
         for(ProcessControlBlock p : completed) {
             finalList[p.getPid() - 1] = p;
@@ -42,6 +50,10 @@ public class Scheduler {
         return this.finalList;
     }
 
+    /**
+     * Make sure all processes have turn around times are updated.
+     * Use before calculating simulation results.
+     */
     public void setTurnAroundTimes() {
         for(ProcessControlBlock p : finalList) {
             p.updateTurnAroundTime();
