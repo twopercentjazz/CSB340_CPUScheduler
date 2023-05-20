@@ -2,31 +2,50 @@
 
 package AdditionalUtilities.Utilities;
 import AdditionalUtilities.Algorithms.AlgorithmTypes;
+import AdditionalUtilities.Algorithms.AlgorithmsInterface;
 
 import java.util.*;
 
 public class Scheduler {
+    private ArrayList<AlgorithmsInterface> ready;
     private ArrayList<ProcessControlBlock> io; //
     private ArrayList<ProcessControlBlock> active; //
     private ArrayList<ProcessControlBlock> completed; //
     private ProcessControlBlock[] finalList;
+    private int activeQueue;
 
     public Scheduler(SimulationInput input) {
+        this.ready = null;
+        this.activeQueue = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = input.getInput();
         this.finalList = new ProcessControlBlock[input.getSize()];
     }
 
+    public Scheduler(ArrayList<AlgorithmsInterface> ready) {
+        this.ready = ready;
+        this.activeQueue = 0;
+        this.io = new ArrayList<>();
+        this.completed = new ArrayList<>();
+        this.active = new ArrayList<>();
+        for(AlgorithmsInterface algorithm: ready) {
+            for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
+                this.active.add(pcb);
+                pcb.setPriority(this.ready.indexOf(algorithm));
+            }
+        }
+        this.finalList = new ProcessControlBlock[active.size()];
+    }
+    public ArrayList<AlgorithmsInterface> getReadyList() { return this.ready; }
+
     public ArrayList<ProcessControlBlock> getIo() { return this.io; }
 
-    public ArrayList<ProcessControlBlock> getActive() {
-        return this.active;
-    }
+    public void setIo(ArrayList<ProcessControlBlock> newIo) { this.io = newIo; }
 
-    public ArrayList<ProcessControlBlock> getCompleted() {
-        return this.completed;
-    }
+    public ArrayList<ProcessControlBlock> getActive() { return this.active; }
+
+    public ArrayList<ProcessControlBlock> getCompleted() { return this.completed; }
 
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);
@@ -83,5 +102,21 @@ public class Scheduler {
         } else {
             prepareDispatch.setRunningProcess(null);
         }
+    }
+
+    public int getActiveQueue() {
+        return this.activeQueue;
+    }
+
+    public void updateActiveQueue() {
+        this.activeQueue++;
+    }
+
+    public boolean isNotLastQueue() {
+        return activeQueue < ready.size() - 1;
+    }
+
+    public boolean isMulti() {
+        return this.ready != null;
     }
 }

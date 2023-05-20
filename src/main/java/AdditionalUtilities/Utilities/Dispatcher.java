@@ -24,6 +24,8 @@ public class Dispatcher {
         this.executionTimer += time;
     }
 
+    public void setExecutionTimer(int time) { this.executionTimer = time; }
+
     public int getIdleTimer() {
         return this.idleTimer;
     }
@@ -31,6 +33,8 @@ public class Dispatcher {
     public void updateIdleTimer(int time) {
         this.idleTimer += time;
     }
+
+    public void setIdleTimer(int time) { this.idleTimer = time; }
 
     public ProcessControlBlock getRunningProcess() {
         return this.runningProcess;
@@ -69,9 +73,21 @@ public class Dispatcher {
         }
     }
 
-    public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready) {
+    public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready, Scheduler s) {
         running.setState(ProcessControlBlock.ProcessState.READY);
         ready.add(running);
+    }
+
+    public void updateMultiTimer(Scheduler schedule) {
+        int time = getExecutionTimer();
+        setExecutionTimer(schedule.getReadyList().get(schedule.getActiveQueue()).getDispatcher().getExecutionTimer());
+        setIdleTimer(schedule.getReadyList().get(schedule.getActiveQueue()).getDispatcher().getIdleTimer());
+        schedule.setIo(schedule.getReadyList().get(schedule.getActiveQueue()).getScheduler().getIo());
+        for(int i = schedule.getActiveQueue() + 1; i < schedule.getReadyList().size(); i++) {
+            for(ProcessControlBlock pcb: schedule.getReadyList().get(i).getReady()) {
+                pcb.updateWaitingTime(getExecutionTimer() - time);
+            }
+        }
     }
 
 }

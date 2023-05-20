@@ -2,6 +2,8 @@
 
 package AdditionalUtilities.Utilities;
 
+import AdditionalUtilities.Algorithms.AlgorithmTypes;
+
 public class SimulationOutput {
 
     public static String displayResults(SimulationResults results) {
@@ -53,11 +55,20 @@ public class SimulationOutput {
         rec += "\n" + line();
         rec += "\n\nList of processes in the ready queue:\n";
         rec += "\n\t\tProcess\t\tBurst";
+        if(record.getType() == AlgorithmTypes.MLQ || record.getType() == AlgorithmTypes.MLFQ) {
+            rec += "\t\tQueue";
+        }
         if(record.getReady().isEmpty()) {
             rec += "\n\t\t\t [empty]";
         } else {
-            for(Integer i : record.getReady().keySet()) {
-                rec += "\n\t\t  P" + i + "\t\t  " + record.getReady().get(i);
+            if(record.getType() != AlgorithmTypes.MLQ && record.getType() != AlgorithmTypes.MLFQ) {
+                for(Integer i : record.getReady().keySet()) {
+                    rec += "\n\t\t  P" + i + "\t\t  " + record.getReady().get(i);
+                }
+            } else {
+                for(Integer i : record.getReady().keySet()) {
+                    rec += "\n\t\t  P" + i + "\t\t  " + record.getReady().get(i) + "\t\t\t  Q" + (record.getPriority().get(i) + 1);
+                }
             }
         }
         rec += "\n" + line();

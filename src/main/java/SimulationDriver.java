@@ -43,11 +43,40 @@ public class SimulationDriver {
         ProcessControlBlock p30 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
         ProcessControlBlock p31 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
         ProcessControlBlock p32 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
+        // to do: make deep copy
+        //mlq1
+        ProcessControlBlock p33 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
+        ProcessControlBlock p34 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
+        ProcessControlBlock p35 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
+        ProcessControlBlock p36 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
+        //mlq2
+        ProcessControlBlock p37 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
+        ProcessControlBlock p38 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
+        ProcessControlBlock p39 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
+        ProcessControlBlock p40 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
+
+        // to do: make deep copy
+        ProcessControlBlock p41 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
+        ProcessControlBlock p42 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
+        ProcessControlBlock p43 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
+        ProcessControlBlock p44 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
+        ProcessControlBlock p45 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
+        ProcessControlBlock p46 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
+        ProcessControlBlock p47 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
+        ProcessControlBlock p48 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
+
         // Add processes for simulation into list (to do: deep copy)
         ArrayList<ProcessControlBlock> input1 = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
         ArrayList<ProcessControlBlock> input2 = new ArrayList<>(Arrays.asList(p9,p10,p11,p12,p13,p14,p15,p16));
         ArrayList<ProcessControlBlock> input3 = new ArrayList<>(Arrays.asList(p17,p18,p19,p20,p21,p22,p23,p24));
         ArrayList<ProcessControlBlock> input4 = new ArrayList<>(Arrays.asList(p25,p26,p27,p28,p29,p30,p31,p32));
+
+        ArrayList<ProcessControlBlock> input5 = new ArrayList<>(Arrays.asList(p33,p34,p35,p36));
+        ArrayList<ProcessControlBlock> input6 = new ArrayList<>(Arrays.asList(p37,p38,p39,p40));
+
+        ArrayList<ProcessControlBlock> input7 = new ArrayList<>(Arrays.asList(p41,p42,p43,p44,p45,p46,p47,p48));
+
+
 
 
         // create new simulation objects for each algorithm
@@ -59,6 +88,14 @@ public class SimulationDriver {
                 new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE);
         CpuSchedulerSimulation rr = new CpuSchedulerSimulation(new SimulationInput(deepCopy(input4), 5),
                 AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE);
+        CpuSchedulerSimulation MLQ = new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
+                        (deepCopy(input5), 4), new SimulationInput(deepCopy(input6)))), AlgorithmTypes.MLQ,
+                SchedulingTypes.PREEMPTIVE, new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS)));
+        CpuSchedulerSimulation MLFQ = new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
+                (deepCopy(input7), 5), new SimulationInput(new ArrayList<>(),10), new
+                SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
+                new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS)));
+
 
 
         // run each simulation
@@ -66,6 +103,10 @@ public class SimulationDriver {
         sjf.runSim();
         priority.runSim();
         rr.runSim();
+        MLQ.runSim();
+        MLFQ.runSim();
+
+
 
 
         // display results to console and file.
@@ -102,6 +143,23 @@ public class SimulationDriver {
         printHeader(rr);
         // printRecord(rr.getRecords());
         printResults(rr.getResults());
+
+        // MLQ
+        createResultsFile(MLQ.getResults(), MLQ.getRecords(),
+                "src/main/resources/OutputFiles/MLQ.txt",1);
+        // [To also print records to console uncomment below]
+        printHeader(MLQ);
+        // printRecord(MLQ.getRecords());
+        printResults(MLQ.getResults());
+
+        // MLFQ
+        createResultsFile(MLFQ.getResults(), MLFQ.getRecords(),
+                "src/main/resources/OutputFiles/MLFQ.txt",1);
+        // [To also print records to console uncomment below]
+        printHeader(MLFQ);
+        // printRecord(MLFQ.getRecords());
+        printResults(MLFQ.getResults());
+
     }
 
     /** This method prints the final results of a simulation instance.

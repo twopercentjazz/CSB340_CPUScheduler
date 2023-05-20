@@ -46,7 +46,7 @@ public class Priority implements AlgorithmsInterface {
                     }
                 }
                 if(preempt) {
-                    this.dispatch.contextSwitchPreemptProcess(running, ready);
+                    this.dispatch.contextSwitchPreemptProcess(running, ready, schedule);
                     break;
                 }
             }
