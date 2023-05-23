@@ -10,7 +10,6 @@ public class RR implements AlgorithmsInterface {
     private Queue<ProcessControlBlock> ready;
     private int timeQuantum;
 
-
     public RR(SimulationInput input) {
         this.schedule = new Scheduler(input);
         this.dispatch = new Dispatcher();

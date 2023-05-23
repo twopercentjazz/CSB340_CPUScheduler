@@ -2,8 +2,6 @@
 
 package AdditionalUtilities.Utilities;
 import AdditionalUtilities.Algorithms.*;
-
-
 import java.util.*;
 
 public class CpuSchedulerSimulation {
@@ -51,23 +49,11 @@ public class CpuSchedulerSimulation {
         } else if(algorithmType == AlgorithmTypes.MLQ) {
             this.algorithm = new MLQ(assignMultiAlgorithm());
         } else {
-            this.algorithm = new MLFQ(assignMultiQueueAlgorithm());
+            this.algorithm = new MLFQ(assignMultiAlgorithm());
         }
     }
 
     private ArrayList<AlgorithmsInterface> assignMultiAlgorithm() {
-        ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
-        for(int i = 0; i < multiList.size(); i++) {
-            if(multiList.get(i) == AlgorithmTypes.RR) {
-                readyList.add(new RR(multiInput.get(i)));
-            } else {
-                readyList.add(new FCFS(multiInput.get(i)));
-            }
-        }
-        return readyList;
-    }
-
-    private ArrayList<AlgorithmsInterface> assignMultiQueueAlgorithm() {
         ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
         for(int i = 0; i < multiList.size(); i++) {
             if(multiList.get(i) == AlgorithmTypes.RR) {
@@ -100,24 +86,9 @@ public class CpuSchedulerSimulation {
     }
 
     public void runSim() {
-        int count = 0;  /////////////////////////////////////////
-
-
         while(!algorithm.isCompleted()) {
             this.algorithm.scheduleNextProcess();
             createRecord();
-
-            /*
-            if(count < 100) {
-                if(algorithmType == AlgorithmTypes.MLFQ) {
-                    System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
-                }
-
-            }
-            //System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
-            count++; ////////////////////////////////
-            */
-
             this.algorithm.dispatchNextProcess(this.algorithm.getDispatcher().getRunningProcess());
         }
         this.algorithm.getDispatcher().setRunningProcess(null);

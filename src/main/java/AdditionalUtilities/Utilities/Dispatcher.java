@@ -10,14 +10,11 @@ public class Dispatcher {
     private int executionTimer;
     private int idleTimer;
     private ProcessControlBlock runningProcess;
-    private ProcessControlBlock preempt;
-
 
     public Dispatcher() {
         this.executionTimer = 0;
         this.idleTimer = 0;
         this.runningProcess = null;
-        this.preempt = null;
     }
 
     public int getExecutionTimer() {
@@ -47,8 +44,6 @@ public class Dispatcher {
     public void setRunningProcess(ProcessControlBlock pcb) {
         this.runningProcess = pcb;
     }
-
-    public ProcessControlBlock getPreempt() { return this.preempt; }
 
     public void updateResponseTime() {
         if(!runningProcess.getHasBeenOnCpu()) {
@@ -81,11 +76,7 @@ public class Dispatcher {
 
     public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready, Scheduler s, AlgorithmTypes type) {
         running.setState(ProcessControlBlock.ProcessState.READY);
-        if(type != AlgorithmTypes.multiRR || type != AlgorithmTypes.multiFCFS) {
-            ready.add(running);
-        } else {
-            this.preempt = running;
-        }
+        ready.add(running);
     }
 
     public void updateMultiTimer(Scheduler schedule) {

@@ -12,14 +12,12 @@ public class Scheduler {
     private ArrayList<ProcessControlBlock> active; //
     private ArrayList<ProcessControlBlock> completed; //
     private ProcessControlBlock[] finalList;
-    private ArrayList<ProcessControlBlock> tempIO;
     private int readyIndex;
     private int timeQuantum;
 
 
     public Scheduler(SimulationInput input) {
         this.ready = null;
-        this.tempIO = new ArrayList<>();
         this.readyIndex = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
@@ -34,7 +32,6 @@ public class Scheduler {
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = new ArrayList<>();
-        this.tempIO = new ArrayList<>();
         this.timeQuantum = 0;
         for(AlgorithmsInterface algorithm: ready) {
             for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
@@ -56,11 +53,7 @@ public class Scheduler {
 
     public ArrayList<ProcessControlBlock> getCompleted() { return this.completed; }
 
-    public ArrayList<ProcessControlBlock> getTempIO() { return this.tempIO; }
-
-
     public int getTimeQuantum() { return this.timeQuantum; }
-    public void setTimeQuantum(int time) { this.timeQuantum = time; }
 
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);
@@ -126,16 +119,6 @@ public class Scheduler {
     }
 
     public boolean isReadyListEmpty() {
-        /*
-        boolean empty = true;
-        for(AlgorithmsInterface ready: this.getReadyList()) {
-            if(ready.getReady().isEmpty()) {
-                empty = false;
-                break;
-            }
-        }
-
-         */
         boolean empty = true;
         for(int i = 0; i < getReadyList().size(); i++) {
             if(!getReadyList().get(i).getReady().isEmpty()) {
@@ -143,8 +126,6 @@ public class Scheduler {
                 break;
             }
         }
-
-
         return empty;
     }
 
@@ -173,13 +154,5 @@ public class Scheduler {
 
     public void decrementReadyIndex() {
         this.readyIndex--;
-    }
-
-    public boolean isNotLastQueue() {
-        return readyIndex < ready.size() - 1;
-    }
-
-    public boolean isMulti() {
-        return this.ready != null;
     }
 }
