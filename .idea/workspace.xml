@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MultiQueueVersion/multiFCFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MultiQueueVersion/multiRR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/AlgorithmTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/AlgorithmTypes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLFQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MLQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/RR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MultiQueueVersion/multiFCFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Algorithms/MultiQueueVersion/multiRR.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/CpuSchedulerSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Dispatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdditionalUtilities/Utilities/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLFQ.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLQ.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/MLQ.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OutputFiles/ResultsSet1.csv" afterDir="false" />
@@ -106,7 +103,8 @@
       <workItem from="1683226853617" duration="41000" />
       <workItem from="1683310535266" duration="473000" />
       <workItem from="1684097449716" duration="3000" />
-      <workItem from="1684621913141" duration="45211000" />
+      <workItem from="1684621913141" duration="45279000" />
+      <workItem from="1684825518177" duration="10102000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, unfinished solution">
       <created>1678299887009</created>

@@ -92,12 +92,8 @@ public class Scheduler {
             if(type == AlgorithmTypes.SJF) {
                 pcb.setPriority(pcb.getCpuBurstTime());
             }
-            if(type == AlgorithmTypes.multiRR || type == AlgorithmTypes.multiFCFS) {
-                tempIO.add(pcb);
-            } else {
-                this.io.remove(pcb);
-                ready.add(pcb);
-            }
+            this.io.remove(pcb);
+            ready.add(pcb);
         }
     }
 
@@ -130,6 +126,7 @@ public class Scheduler {
     }
 
     public boolean isReadyListEmpty() {
+        /*
         boolean empty = true;
         for(AlgorithmsInterface ready: this.getReadyList()) {
             if(ready.getReady().isEmpty()) {
@@ -137,6 +134,17 @@ public class Scheduler {
                 break;
             }
         }
+
+         */
+        boolean empty = true;
+        for(int i = 0; i < getReadyList().size(); i++) {
+            if(!getReadyList().get(i).getReady().isEmpty()) {
+                empty = false;
+                break;
+            }
+        }
+
+
         return empty;
     }
 

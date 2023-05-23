@@ -2,7 +2,7 @@
 
 package AdditionalUtilities.Utilities;
 import AdditionalUtilities.Algorithms.*;
-import AdditionalUtilities.Algorithms.MultiQueueVersion.*;
+
 
 import java.util.*;
 
@@ -50,19 +50,15 @@ public class CpuSchedulerSimulation {
             this.algorithm = new RR(input);
         } else if(algorithmType == AlgorithmTypes.MLQ) {
             this.algorithm = new MLQ(assignMultiAlgorithm());
-        } else if(algorithmType == AlgorithmTypes.MLFQ) {
-            this.algorithm = new MLFQ(assignMultiQueueAlgorithm());
-        } else if(algorithmType == AlgorithmTypes.multiRR) {
-            this.algorithm = new multiRR(input);
         } else {
-            this.algorithm = new multiFCFS(input);
+            this.algorithm = new MLFQ(assignMultiQueueAlgorithm());
         }
     }
 
     private ArrayList<AlgorithmsInterface> assignMultiAlgorithm() {
         ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
         for(int i = 0; i < multiList.size(); i++) {
-            if(multiList.get(i) == AlgorithmTypes.multiRR) {
+            if(multiList.get(i) == AlgorithmTypes.RR) {
                 readyList.add(new RR(multiInput.get(i)));
             } else {
                 readyList.add(new FCFS(multiInput.get(i)));
@@ -74,10 +70,10 @@ public class CpuSchedulerSimulation {
     private ArrayList<AlgorithmsInterface> assignMultiQueueAlgorithm() {
         ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
         for(int i = 0; i < multiList.size(); i++) {
-            if(multiList.get(i) == AlgorithmTypes.multiRR) {
-                readyList.add(new multiRR(multiInput.get(i)));
+            if(multiList.get(i) == AlgorithmTypes.RR) {
+                readyList.add(new RR(multiInput.get(i)));
             } else {
-                readyList.add(new multiFCFS(multiInput.get(i)));
+                readyList.add(new FCFS(multiInput.get(i)));
             }
         }
         return readyList;
@@ -105,13 +101,22 @@ public class CpuSchedulerSimulation {
 
     public void runSim() {
         int count = 0;  /////////////////////////////////////////
+
+
         while(!algorithm.isCompleted()) {
             this.algorithm.scheduleNextProcess();
             createRecord();
 
-            //System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
-            //count++; ////////////////////////////////
+            /*
+            if(count < 100) {
+                if(algorithmType == AlgorithmTypes.MLFQ) {
+                    System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
+                }
 
+            }
+            //System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
+            count++; ////////////////////////////////
+            */
 
             this.algorithm.dispatchNextProcess(this.algorithm.getDispatcher().getRunningProcess());
         }

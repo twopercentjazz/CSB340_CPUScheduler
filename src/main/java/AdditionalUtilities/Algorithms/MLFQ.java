@@ -26,7 +26,17 @@ public class MLFQ implements AlgorithmsInterface {
      * {@inheritDoc}
      */
     public void scheduleNextProcess() {
-        ProcessControlBlock next = this.ready.poll();
+
+
+
+
+
+
+
+
+
+        //ProcessControlBlock next = this.ready.poll();
+        ProcessControlBlock next = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady().poll();
         if(next != null) {
             next.setState(ProcessControlBlock.ProcessState.RUNNING);
             this.dispatch.setRunningProcess(next);
@@ -70,21 +80,23 @@ public class MLFQ implements AlgorithmsInterface {
                             this.schedule.getIo().remove(pcb);
                             //ready.add(pcb);
                             this.schedule.getReadyList().get(pcb.getPriority()).getReady().add(pcb);
-
                         }
                     }
                 }
             }
         } else {
             int time;
-            boolean rr;
-            if(schedule.getReadyList().get(schedule.getReadyIndex()).getAlgorithmType() == AlgorithmTypes.FCFS) {
+
+            //if(schedule.getReadyList().get(schedule.getReadyIndex()).getAlgorithmType() == AlgorithmTypes.FCFS) {
+            if(schedule.getReadyIndex() == schedule.getReadyList().size() - 1) {
                 time = running.getCpuBurstTime();
-                rr = false;  /////////
+
             } else {
                 time = schedule.getReadyList().get(schedule.getReadyIndex()).getScheduler().getTimeQuantum();
-                rr = true;  /////////////////
+
             }
+
+            //System.out.println(time);
 
             boolean queuePreempt = false;
             boolean rrPreempt = true;
@@ -129,12 +141,14 @@ public class MLFQ implements AlgorithmsInterface {
                     break;
                 }
                 if(queuePreempt) {
+
                     running.setState(ProcessControlBlock.ProcessState.READY);
                     this.schedule.getReadyList().get(running.getPriority()).getReady().add(running);
+
                     break;
                 }
             }
-            if(rrPreempt) {
+            if(rrPreempt && !queuePreempt) {
                 //this.dispatch.contextSwitchPreemptProcess(running, ready, schedule, getAlgorithmType());
                 running.setState(ProcessControlBlock.ProcessState.READY);
 
@@ -158,7 +172,11 @@ public class MLFQ implements AlgorithmsInterface {
                 break;
             }
         }
-        this.ready = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady();
+        //this.ready = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady();
+
+
+
+
 
 
 
