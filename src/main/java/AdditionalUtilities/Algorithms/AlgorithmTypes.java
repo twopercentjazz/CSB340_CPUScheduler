@@ -8,5 +8,7 @@ public enum AlgorithmTypes {
     MLQ,
     Priority,
     RR,
-    SJF
+    SJF,
+    multiFCFS,
+    multiRR,
 }

@@ -2,6 +2,7 @@
 
 package AdditionalUtilities.Utilities;
 import AdditionalUtilities.Algorithms.AlgorithmTypes;
+import AdditionalUtilities.Algorithms.AlgorithmsInterface;
 
 import java.util.Queue;
 
@@ -10,6 +11,7 @@ public class Dispatcher {
     private int idleTimer;
     private ProcessControlBlock runningProcess;
     private ProcessControlBlock preempt;
+
 
     public Dispatcher() {
         this.executionTimer = 0;
@@ -79,26 +81,41 @@ public class Dispatcher {
 
     public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready, Scheduler s, AlgorithmTypes type) {
         running.setState(ProcessControlBlock.ProcessState.READY);
-        if(type != AlgorithmTypes.MLFQ) {
+        if(type != AlgorithmTypes.multiRR || type != AlgorithmTypes.multiFCFS) {
             ready.add(running);
         } else {
             this.preempt = running;
-            if(s.getQueues().size() != 0) {
-                s.getActive().remove(running);
-            }
         }
     }
 
     public void updateMultiTimer(Scheduler schedule) {
         int time = getExecutionTimer();
-        setExecutionTimer(schedule.getReadyList().get(schedule.getActiveQueue()).getDispatcher().getExecutionTimer());
-        setIdleTimer(schedule.getReadyList().get(schedule.getActiveQueue()).getDispatcher().getIdleTimer());
-        schedule.setIo(schedule.getReadyList().get(schedule.getActiveQueue()).getScheduler().getIo());
-        for(int i = schedule.getActiveQueue() + 1; i < schedule.getReadyList().size(); i++) {
+        setExecutionTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getExecutionTimer());
+        setIdleTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getIdleTimer());
+        schedule.setIo(schedule.getReadyList().get(schedule.getReadyIndex()).getScheduler().getIo());
+        for(int i = schedule.getReadyIndex() + 1; i < schedule.getReadyList().size(); i++) {
             for(ProcessControlBlock pcb: schedule.getReadyList().get(i).getReady()) {
                 pcb.updateWaitingTime(getExecutionTimer() - time);
             }
         }
     }
 
+    public void syncMultiQueueTimers(Scheduler schedule, int execution, int idle) {
+        updateExecutionTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getExecutionTimer() - execution);
+        updateIdleTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getIdleTimer() - idle);
+        for(AlgorithmsInterface algorithm: schedule.getReadyList()) {
+            algorithm.getDispatcher().setExecutionTimer(getExecutionTimer());
+            algorithm.getDispatcher().setIdleTimer(getIdleTimer());
+        }
+    }
+
+    public void updateMultiQueueWaitTimes(Scheduler schedule, int time) {
+        for(AlgorithmsInterface algorithm: schedule.getReadyList()) {
+            if(schedule.getReadyList().indexOf(algorithm) != schedule.getReadyIndex() && !algorithm.getReady().isEmpty()) {
+                for(ProcessControlBlock pcb: algorithm.getReady()) {
+                    pcb.updateWaitingTime(getExecutionTimer() - time);
+                }
+            }
+        }
+    }
 }

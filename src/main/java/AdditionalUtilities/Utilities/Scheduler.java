@@ -12,32 +12,35 @@ public class Scheduler {
     private ArrayList<ProcessControlBlock> active; //
     private ArrayList<ProcessControlBlock> completed; //
     private ProcessControlBlock[] finalList;
-    private Queue<Queue<ProcessControlBlock>> queues;
-    private int activeQueue;
+    private ArrayList<ProcessControlBlock> tempIO;
+    private int readyIndex;
+    private int timeQuantum;
+
 
     public Scheduler(SimulationInput input) {
         this.ready = null;
-        this.queues = null;
-        this.activeQueue = 0;
+        this.tempIO = new ArrayList<>();
+        this.readyIndex = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = input.getInput();
+        this.timeQuantum = input.getGivenTimeQuantum();
         this.finalList = new ProcessControlBlock[input.getSize()];
     }
 
     public Scheduler(ArrayList<AlgorithmsInterface> ready) {
         this.ready = ready;
-        this.activeQueue = 0;
+        this.readyIndex = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = new ArrayList<>();
-        this.queues = new LinkedList<>();
+        this.tempIO = new ArrayList<>();
+        this.timeQuantum = 0;
         for(AlgorithmsInterface algorithm: ready) {
             for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
                 this.active.add(pcb);
                 pcb.setPriority(this.ready.indexOf(algorithm));
             }
-            queues.add(algorithm.getReady());
         }
         this.finalList = new ProcessControlBlock[active.size()];
     }
@@ -49,9 +52,15 @@ public class Scheduler {
 
     public ArrayList<ProcessControlBlock> getActive() { return this.active; }
 
+    public void setActive(ArrayList<ProcessControlBlock> newActive) { this.active = newActive; }
+
     public ArrayList<ProcessControlBlock> getCompleted() { return this.completed; }
 
-    public Queue<Queue<ProcessControlBlock>> getQueues() { return this.queues; }
+    public ArrayList<ProcessControlBlock> getTempIO() { return this.tempIO; }
+
+
+    public int getTimeQuantum() { return this.timeQuantum; }
+    public void setTimeQuantum(int time) { this.timeQuantum = time; }
 
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);
@@ -83,8 +92,12 @@ public class Scheduler {
             if(type == AlgorithmTypes.SJF) {
                 pcb.setPriority(pcb.getCpuBurstTime());
             }
-            this.io.remove(pcb);
-            ready.add(pcb);
+            if(type == AlgorithmTypes.multiRR || type == AlgorithmTypes.multiFCFS) {
+                tempIO.add(pcb);
+            } else {
+                this.io.remove(pcb);
+                ready.add(pcb);
+            }
         }
     }
 
@@ -110,16 +123,52 @@ public class Scheduler {
         }
     }
 
-    public int getActiveQueue() {
-        return this.activeQueue;
+    public void syncActiveLists(Scheduler s) {
+        for(AlgorithmsInterface algorithm: s.getReadyList()) {
+            algorithm.getScheduler().setActive(s.getActive());
+        }
     }
 
-    public void updateActiveQueue() {
-        this.activeQueue++;
+    public boolean isReadyListEmpty() {
+        boolean empty = true;
+        for(AlgorithmsInterface ready: this.getReadyList()) {
+            if(ready.getReady().isEmpty()) {
+                empty = false;
+                break;
+            }
+        }
+        return empty;
+    }
+
+    public boolean isQueuePriorityChanged() {
+        boolean priorityChange = false;
+        for(int i = 0; i < readyIndex; i++) {
+            if(!getReadyList().get(i).getReady().isEmpty()) {
+                priorityChange = true;
+                break;
+            }
+        }
+        return priorityChange;
+    }
+
+    public int getReadyIndex() {
+        return this.readyIndex;
+    }
+
+    public void setReadyIndex(int i) {
+        this.readyIndex = i;
+    }
+
+    public void incrementReadyIndex() {
+        this.readyIndex++;
+    }
+
+    public void decrementReadyIndex() {
+        this.readyIndex--;
     }
 
     public boolean isNotLastQueue() {
-        return activeQueue < ready.size() - 1;
+        return readyIndex < ready.size() - 1;
     }
 
     public boolean isMulti() {

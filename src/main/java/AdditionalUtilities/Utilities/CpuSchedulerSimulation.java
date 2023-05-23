@@ -2,6 +2,8 @@
 
 package AdditionalUtilities.Utilities;
 import AdditionalUtilities.Algorithms.*;
+import AdditionalUtilities.Algorithms.MultiQueueVersion.*;
+
 import java.util.*;
 
 public class CpuSchedulerSimulation {
@@ -35,7 +37,6 @@ public class CpuSchedulerSimulation {
         assignAlgorithm();
         this.results = null;
         this.records = new ArrayList<>();
-
     }
 
     private void assignAlgorithm() {
@@ -47,20 +48,36 @@ public class CpuSchedulerSimulation {
             this.algorithm = new SJF(input);
         } else if(algorithmType == AlgorithmTypes.RR) {
             this.algorithm = new RR(input);
-        } else if(algorithmType == AlgorithmTypes.MLQ){
+        } else if(algorithmType == AlgorithmTypes.MLQ) {
             this.algorithm = new MLQ(assignMultiAlgorithm());
+        } else if(algorithmType == AlgorithmTypes.MLFQ) {
+            this.algorithm = new MLFQ(assignMultiQueueAlgorithm());
+        } else if(algorithmType == AlgorithmTypes.multiRR) {
+            this.algorithm = new multiRR(input);
         } else {
-            this.algorithm = new MLFQ(assignMultiAlgorithm());
+            this.algorithm = new multiFCFS(input);
         }
     }
 
     private ArrayList<AlgorithmsInterface> assignMultiAlgorithm() {
         ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
         for(int i = 0; i < multiList.size(); i++) {
-            if(multiList.get(i) == AlgorithmTypes.RR) {
+            if(multiList.get(i) == AlgorithmTypes.multiRR) {
                 readyList.add(new RR(multiInput.get(i)));
             } else {
                 readyList.add(new FCFS(multiInput.get(i)));
+            }
+        }
+        return readyList;
+    }
+
+    private ArrayList<AlgorithmsInterface> assignMultiQueueAlgorithm() {
+        ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
+        for(int i = 0; i < multiList.size(); i++) {
+            if(multiList.get(i) == AlgorithmTypes.multiRR) {
+                readyList.add(new multiRR(multiInput.get(i)));
+            } else {
+                readyList.add(new multiFCFS(multiInput.get(i)));
             }
         }
         return readyList;
@@ -87,9 +104,15 @@ public class CpuSchedulerSimulation {
     }
 
     public void runSim() {
+        int count = 0;  /////////////////////////////////////////
         while(!algorithm.isCompleted()) {
             this.algorithm.scheduleNextProcess();
             createRecord();
+
+            //System.out.println(SimulationOutput.displayRecord(getRecords().get(count)));////////////////////////////////
+            //count++; ////////////////////////////////
+
+
             this.algorithm.dispatchNextProcess(this.algorithm.getDispatcher().getRunningProcess());
         }
         this.algorithm.getDispatcher().setRunningProcess(null);
@@ -126,7 +149,6 @@ public class CpuSchedulerSimulation {
                         QueueList.put(p.getPid(), p.getPriority());
                         temp.add(p);
                     }
-
                 }
                 while(!temp.isEmpty()) {
                     alg.getReady().add(temp.poll());

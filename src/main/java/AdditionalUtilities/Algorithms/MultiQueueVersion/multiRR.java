@@ -1,17 +1,24 @@
 /** Round Robin */
 
-package AdditionalUtilities.Algorithms;
-import AdditionalUtilities.Utilities.*;
-import java.util.*;
+package AdditionalUtilities.Algorithms.MultiQueueVersion;
 
-public class RR implements AlgorithmsInterface {
+import AdditionalUtilities.Algorithms.AlgorithmTypes;
+import AdditionalUtilities.Algorithms.AlgorithmsInterface;
+import AdditionalUtilities.Utilities.Dispatcher;
+import AdditionalUtilities.Utilities.ProcessControlBlock;
+import AdditionalUtilities.Utilities.Scheduler;
+import AdditionalUtilities.Utilities.SimulationInput;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class multiRR implements AlgorithmsInterface {
     private Scheduler schedule;
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
     private int timeQuantum;
 
-
-    public RR(SimulationInput input) {
+    public multiRR(SimulationInput input) {
         this.schedule = new Scheduler(input);
         this.dispatch = new Dispatcher();
         this.timeQuantum = input.getGivenTimeQuantum();
@@ -20,7 +27,7 @@ public class RR implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
-        return AlgorithmTypes.RR;
+        return AlgorithmTypes.multiRR;
     }
 
     /** {@inheritDoc} */
@@ -31,28 +38,38 @@ public class RR implements AlgorithmsInterface {
         if (running == null) {
             this.dispatch.contextSwitchIdle(ready, schedule, getAlgorithmType());
         } else {
-            boolean preempt = true;
+            boolean preemptQueue = false;
+            boolean preemptProcess = true;
             this.dispatch.updateResponseTime();
             for(int i = 0; i < this.timeQuantum; i++) {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
                         this.schedule.updateIo(pcb, ready, getAlgorithmType());
+                        if(!this.schedule.getTempIO().isEmpty()) {
+                            preemptQueue = true;
+                        }
                     } else if(pcb.getState() == ProcessControlBlock.ProcessState.READY) {
                         pcb.updateWaitingTime(1);
                     } else {
                         this.dispatch.updateExecutionTimer(1);
                         pcb.updateCpuBurstTime(1);
                         if(pcb.getCpuBurstTime() == 0) {
-                            preempt = false;
+                            preemptProcess = false;
                         }
                     }
                 }
-                if(!preempt) {
+
+                if(!preemptProcess) {
                     this.dispatch.contextSwitchFinishCpuBurst(schedule, running);
                     break;
                 }
+                if(preemptQueue) {
+                    preemptProcess = false;
+                    break;
+                }
+
             }
-            if(preempt) {
+            if(preemptProcess) {
                 this.dispatch.contextSwitchPreemptProcess(running, ready, schedule, getAlgorithmType());
             }
         }
