@@ -35,7 +35,6 @@ public class CpuSchedulerSimulation {
         assignAlgorithm();
         this.results = null;
         this.records = new ArrayList<>();
-
     }
 
     private void assignAlgorithm() {
@@ -47,7 +46,7 @@ public class CpuSchedulerSimulation {
             this.algorithm = new SJF(input);
         } else if(algorithmType == AlgorithmTypes.RR) {
             this.algorithm = new RR(input);
-        } else if(algorithmType == AlgorithmTypes.MLQ){
+        } else if(algorithmType == AlgorithmTypes.MLQ) {
             this.algorithm = new MLQ(assignMultiAlgorithm());
         } else {
             this.algorithm = new MLFQ(assignMultiAlgorithm());
@@ -126,7 +125,6 @@ public class CpuSchedulerSimulation {
                         QueueList.put(p.getPid(), p.getPriority());
                         temp.add(p);
                     }
-
                 }
                 while(!temp.isEmpty()) {
                     alg.getReady().add(temp.poll());

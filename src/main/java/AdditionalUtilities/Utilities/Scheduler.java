@@ -12,32 +12,32 @@ public class Scheduler {
     private ArrayList<ProcessControlBlock> active; //
     private ArrayList<ProcessControlBlock> completed; //
     private ProcessControlBlock[] finalList;
-    private Queue<Queue<ProcessControlBlock>> queues;
-    private int activeQueue;
+    private int readyIndex;
+    private int timeQuantum;
+
 
     public Scheduler(SimulationInput input) {
         this.ready = null;
-        this.queues = null;
-        this.activeQueue = 0;
+        this.readyIndex = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = input.getInput();
+        this.timeQuantum = input.getGivenTimeQuantum();
         this.finalList = new ProcessControlBlock[input.getSize()];
     }
 
     public Scheduler(ArrayList<AlgorithmsInterface> ready) {
         this.ready = ready;
-        this.activeQueue = 0;
+        this.readyIndex = 0;
         this.io = new ArrayList<>();
         this.completed = new ArrayList<>();
         this.active = new ArrayList<>();
-        this.queues = new LinkedList<>();
+        this.timeQuantum = 0;
         for(AlgorithmsInterface algorithm: ready) {
             for(ProcessControlBlock pcb: algorithm.getScheduler().getActive()) {
                 this.active.add(pcb);
                 pcb.setPriority(this.ready.indexOf(algorithm));
             }
-            queues.add(algorithm.getReady());
         }
         this.finalList = new ProcessControlBlock[active.size()];
     }
@@ -49,9 +49,11 @@ public class Scheduler {
 
     public ArrayList<ProcessControlBlock> getActive() { return this.active; }
 
+    public void setActive(ArrayList<ProcessControlBlock> newActive) { this.active = newActive; }
+
     public ArrayList<ProcessControlBlock> getCompleted() { return this.completed; }
 
-    public Queue<Queue<ProcessControlBlock>> getQueues() { return this.queues; }
+    public int getTimeQuantum() { return this.timeQuantum; }
 
     public void flagProcessAsComplete(ProcessControlBlock pcb) {
         pcb.setState(ProcessControlBlock.ProcessState.COMPLETE);
@@ -110,19 +112,47 @@ public class Scheduler {
         }
     }
 
-    public int getActiveQueue() {
-        return this.activeQueue;
+    public void syncActiveLists(Scheduler s) {
+        for(AlgorithmsInterface algorithm: s.getReadyList()) {
+            algorithm.getScheduler().setActive(s.getActive());
+        }
     }
 
-    public void updateActiveQueue() {
-        this.activeQueue++;
+    public boolean isReadyListEmpty() {
+        boolean empty = true;
+        for(int i = 0; i < getReadyList().size(); i++) {
+            if(!getReadyList().get(i).getReady().isEmpty()) {
+                empty = false;
+                break;
+            }
+        }
+        return empty;
     }
 
-    public boolean isNotLastQueue() {
-        return activeQueue < ready.size() - 1;
+    public boolean isQueuePriorityChanged() {
+        boolean priorityChange = false;
+        for(int i = 0; i < readyIndex; i++) {
+            if(!getReadyList().get(i).getReady().isEmpty()) {
+                priorityChange = true;
+                break;
+            }
+        }
+        return priorityChange;
     }
 
-    public boolean isMulti() {
-        return this.ready != null;
+    public int getReadyIndex() {
+        return this.readyIndex;
+    }
+
+    public void setReadyIndex(int i) {
+        this.readyIndex = i;
+    }
+
+    public void incrementReadyIndex() {
+        this.readyIndex++;
+    }
+
+    public void decrementReadyIndex() {
+        this.readyIndex--;
     }
 }
