@@ -1,7 +1,7 @@
 /** Driver for CPU Scheduler Project to test and display results. */
 
-import AdditionalUtilities.Algorithms.AlgorithmTypes;
-import AdditionalUtilities.Utilities.*;
+import Algorithms.*;
+import Utilities.*;
 import java.io.*;
 import java.util.*;
 
