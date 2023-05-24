@@ -1,12 +1,12 @@
 /** Driver for CPU Scheduler Project to test and display results. */
 
-import AdditionalUtilities.Algorithms.AlgorithmTypes;
-import AdditionalUtilities.Utilities.*;
+import Algorithms.*;
+import Utilities.*;
 import java.io.*;
 import java.util.*;
 
 public class SimulationDriver {
-    public static void main(String[] args) throws FileNotFoundException, CloneNotSupportedException {
+    public static void main(String[] args) throws FileNotFoundException {
         // create Processes with given process data
         ProcessControlBlock p1 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
         ProcessControlBlock p2 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
@@ -17,12 +17,8 @@ public class SimulationDriver {
         ProcessControlBlock p7 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
         ProcessControlBlock p8 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
-        // Add processes for simulation into list
+        // Add processes for simulation into list (for copying)
         ArrayList<ProcessControlBlock> input = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
-
-        // List used to print in a specified order
-        ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
-                AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
         // create results map
         HashMap<AlgorithmTypes, CpuSchedulerSimulation> resultsMap = new HashMap<>();
@@ -34,28 +30,30 @@ public class SimulationDriver {
                 AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE));
         resultsMap.put(AlgorithmTypes.Priority, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input),
                 new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE));
-        resultsMap.put(AlgorithmTypes.RR, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input), 5),
-                AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE));
-        resultsMap.put(AlgorithmTypes.MLQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
-                (deepCopy(input, 0, 3), 4), new SimulationInput(deepCopy(input, 4,7)))), AlgorithmTypes.MLQ,
-                SchedulingTypes.PREEMPTIVE, new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
+        resultsMap.put(AlgorithmTypes.RR, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input),
+                5), AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE));
+        resultsMap.put(AlgorithmTypes.MLQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new
+                SimulationInput (deepCopy(input, 0, 3), 4), new SimulationInput(deepCopy(input,
+                4,7)))), AlgorithmTypes.MLQ, SchedulingTypes.PREEMPTIVE, new
+                ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
         resultsMap.put(AlgorithmTypes.MLFQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
                 (deepCopy(input), 5), new SimulationInput(new ArrayList<>(),10), new
                 SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
                 new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
 
+        // List used to print in a specified order
+        ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
+                AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
+
         // run simulations and create output
         for(CpuSchedulerSimulation sim: resultsMap.values()) {
             sim.runSim();
-            createResultsFile(sim.getResults(), sim.getRecords(),
-                    "src/main/resources/OutputFiles/" + sim.getAlgorithmType() + ".txt",1);
-            printHeader(sim);
-            //printRecord(sim.getRecords());
-            printResults(sim.getResults());
+            // set flag to 1 for detailed results, set flag to 0 for summary only
+            createResultsFile(sim, "src/main/resources/OutputFiles/" + sim.getAlgorithmType() + ".txt", 1);
+            printToConsole(sim, 0);
         }
         printResultsToCsvSet1(resultsMap, order);
         printResultsToCsvSet2(resultsMap, order);
-
     }
 
     /** This method prints the final results of a simulation instance.
@@ -72,30 +70,52 @@ public class SimulationDriver {
         }
     }
 
+    /** This method prints a simulations records and results to console.
+     * @param sim scheduler algorithm simulation
+     * @param flag 1 for records and results, 0 for just results */
+    public static void printToConsole(CpuSchedulerSimulation sim, int flag) {
+        System.out.println(header(sim));
+        if(flag == 1) {
+            printRecord(sim.getRecords());
+        }
+        printResults(sim.getResults());
+    }
+
     /** This method prints a simulations records and results to file.
-     * @param results
-     * @param records
-     * @param file
+     * @param sim scheduler algorithm simulation
+     * @param file name of output file
      * @param flag 1 for records and results, 0 for just results
      * @throws FileNotFoundException */
-    public static void createResultsFile(SimulationResults results, ArrayList<SimulationRecord> records,
-                                         String file, int flag) throws FileNotFoundException {
-        PrintStream output = new PrintStream(new File(file));
-        output.println(file + "\n");
+    public static void createResultsFile(CpuSchedulerSimulation sim, String file, int flag) throws FileNotFoundException {
+        PrintStream output = new PrintStream(file);
+        output.println(header(sim));
         if(flag == 1) {
-            for(SimulationRecord rec: records) {
+            for(SimulationRecord rec: sim.getRecords()) {
                 output.println(SimulationOutput.displayRecord(rec));
             }
         }
-        output.println(SimulationOutput.displayResults(results));
-        System.out.println("File Successfully Created: " + file);
+        output.println(SimulationOutput.displayResults(sim.getResults()));
+        System.out.println("\n\nFile Successfully Created: " + file);
     }
 
-    public static void printHeader(CpuSchedulerSimulation sim) {
-        System.out.println("\n" + sim.getAlgorithmType() + " " + sim.getSchedulingType() +
-                "\n-----------------------------");
+    /** This method prints an algorithm type header for the output
+     * @param sim scheduler algorithm simulation
+     * @return header
+     */
+    public static String header(CpuSchedulerSimulation sim) {
+        return headerLine() + "\n\t\t\t\t\t" + sim.getAlgorithmType() + " " +
+                sim.getSchedulingType() + " RESULTS\n" + headerLine();
     }
 
+    /** This method creates a line for the header.
+     * @return header line */
+    public static String headerLine() {
+        return "-----------------------------------------------------------------";
+    }
+
+    /** This method makes a deep copy of the input array of process control blocks.
+     * @param original the given input
+     * @return a deep copy of all the inputs */
     public static ArrayList<ProcessControlBlock> deepCopy(ArrayList<ProcessControlBlock> original) {
         ArrayList<ProcessControlBlock> temp = new ArrayList<>();
         for(ProcessControlBlock pcb: original) {
@@ -104,6 +124,11 @@ public class SimulationDriver {
         return temp;
     }
 
+    /** This method makes a deep copy of part of the input array of process control blocks given a range.
+     * @param original the given input
+     * @param start index to start copy at
+     * @param end index to end copy at
+     * @return a deep copy of all the inputs in a given range */
     public static ArrayList<ProcessControlBlock> deepCopy(ArrayList<ProcessControlBlock> original, int start, int end) {
         ArrayList<ProcessControlBlock> temp = new ArrayList<>();
         for(int i = start; i <= end; i++) {
@@ -112,7 +137,10 @@ public class SimulationDriver {
         return temp;
     }
 
-
+    /** This method prints a csv for the first table for the report.
+     * @param results A summary of the results from a simulation
+     * @param order The order to display results
+     * @throws FileNotFoundException */
     public static void printResultsToCsvSet1(HashMap<AlgorithmTypes, CpuSchedulerSimulation> results,
                                              ArrayList<AlgorithmTypes> order) throws FileNotFoundException {
         String fileName = "src/main/resources/OutputFiles/ResultsSet1.csv";
@@ -139,6 +167,10 @@ public class SimulationDriver {
         }
     }
 
+    /** This method prints a csv for the second table for the report.
+     * @param results A summary of the results from a simulation
+     * @param order The order to display results
+     * @throws FileNotFoundException */
     public static void printResultsToCsvSet2(HashMap<AlgorithmTypes, CpuSchedulerSimulation> results,
                                              ArrayList<AlgorithmTypes> order) throws FileNotFoundException {
         String fileName = "src/main/resources/OutputFiles/ResultsSet2.csv";
