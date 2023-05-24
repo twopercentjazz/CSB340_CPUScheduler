@@ -10,6 +10,8 @@ public class FCFS implements AlgorithmsInterface {
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
+    /** Constructor for FCFS algorithm.
+     * @param input the processes to schedule */
     public FCFS(SimulationInput input) {
         this.schedule = new Scheduler(input);
         this.dispatch = new Dispatcher();

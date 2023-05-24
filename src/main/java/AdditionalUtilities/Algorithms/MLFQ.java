@@ -1,4 +1,5 @@
-/** Multilevel Queue */
+/** Multilevel Feedback Queue CPU Scheduling Algorithm
+ * @author Chris */
 
 package AdditionalUtilities.Algorithms;
 import AdditionalUtilities.Utilities.*;
@@ -9,22 +10,20 @@ public class MLFQ implements AlgorithmsInterface {
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
+    /** Constructor for MLFQ algorithm.
+     * @param ready the multiple types of algorithms (with input processes) used to schedule */
     public MLFQ(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
         this.ready = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
         return AlgorithmTypes.MLFQ;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     public void scheduleNextProcess() {
         ProcessControlBlock next = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady().poll();
         if(next != null) {
