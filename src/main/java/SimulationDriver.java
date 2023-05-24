@@ -17,12 +17,8 @@ public class SimulationDriver {
         ProcessControlBlock p7 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
         ProcessControlBlock p8 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
-        // Add processes for simulation into list
+        // Add processes for simulation into list (for copying)
         ArrayList<ProcessControlBlock> input = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
-
-        // List used to print in a specified order
-        ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
-                AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
         // create results map
         HashMap<AlgorithmTypes, CpuSchedulerSimulation> resultsMap = new HashMap<>();
@@ -44,6 +40,10 @@ public class SimulationDriver {
                 (deepCopy(input), 5), new SimulationInput(new ArrayList<>(),10), new
                 SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
                 new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
+
+        // List used to print in a specified order
+        ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
+                AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
         // run simulations and create output
         for(CpuSchedulerSimulation sim: resultsMap.values()) {
