@@ -18,7 +18,6 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
     private Boolean hasBeenOnCpu;
     private int cycleSum;
 
-
     public ProcessControlBlock(int pid, int[] input) {
         this.pid = pid;
         this.arrivalTime = 0;
@@ -147,7 +146,6 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
     }
 
     public enum ProcessState { RUNNING, WAITING, READY, COMPLETE }
-
 
     public ProcessControlBlock copy() {
         return new ProcessControlBlock(this.pid, this.input);

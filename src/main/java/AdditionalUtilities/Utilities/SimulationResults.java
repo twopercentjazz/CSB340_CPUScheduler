@@ -1,4 +1,4 @@
-/** This class manages all the final results from a scheduling simulation. */
+/** This class manages all the final results for a scheduling simulation. */
 
 package AdditionalUtilities.Utilities;
 import java.util.ArrayList;
