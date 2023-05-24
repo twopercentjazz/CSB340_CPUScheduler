@@ -1,5 +1,6 @@
-src/main/resources/OutputFiles/FCFS.txt
-
+-----------------------------------------------------------------
+					FCFS NON_PREEMPTIVE RESULTS
+-----------------------------------------------------------------
 
 
 Current Time: 0

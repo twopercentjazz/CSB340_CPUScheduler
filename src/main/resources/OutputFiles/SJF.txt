@@ -1,5 +1,6 @@
-src/main/resources/OutputFiles/SJF.txt
-
+-----------------------------------------------------------------
+					SJF NON_PREEMPTIVE RESULTS
+-----------------------------------------------------------------
 
 
 Current Time: 0
