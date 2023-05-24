@@ -2,13 +2,11 @@
 
 import AdditionalUtilities.Algorithms.AlgorithmTypes;
 import AdditionalUtilities.Utilities.*;
-import Util.Cpu;
-
 import java.io.*;
 import java.util.*;
 
 public class SimulationDriver {
-    public static void main(String[] args) throws FileNotFoundException, CloneNotSupportedException {
+    public static void main(String[] args) throws FileNotFoundException {
         // create Processes with given process data
         ProcessControlBlock p1 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
         ProcessControlBlock p2 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
