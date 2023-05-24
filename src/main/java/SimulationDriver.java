@@ -16,89 +16,35 @@ public class SimulationDriver {
         ProcessControlBlock p6 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
         ProcessControlBlock p7 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
         ProcessControlBlock p8 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        ProcessControlBlock p9 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p10 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p11 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p12 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p13 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p14 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p15 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p16 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        ProcessControlBlock p17 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p18 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p19 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p20 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p21 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p22 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p23 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p24 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        ProcessControlBlock p25 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p26 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p27 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p28 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p29 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p30 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p31 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p32 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
-        // to do: make deep copy
-        //mlq1
-        ProcessControlBlock p33 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p34 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p35 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p36 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        //mlq2
-        ProcessControlBlock p37 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p38 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p39 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p40 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
-        // to do: make deep copy
-        ProcessControlBlock p41 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
-        ProcessControlBlock p42 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
-        ProcessControlBlock p43 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
-        ProcessControlBlock p44 = new ProcessControlBlock(4, new int[]{3, 35, 4, 41, 5, 45, 3, 51, 4, 61, 5, 54, 6, 82, 5, 77, 3});
-        ProcessControlBlock p45 = new ProcessControlBlock(5, new int[]{16, 24, 17, 21, 5, 36, 16, 26, 7, 31, 13, 28, 11, 21, 6, 13, 3, 11, 4});
-        ProcessControlBlock p46 = new ProcessControlBlock(6, new int[]{11, 22, 4, 8, 5, 10, 6, 12, 7, 14, 9, 18, 12, 24, 15, 30, 8});
-        ProcessControlBlock p47 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
-        ProcessControlBlock p48 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
+        // Add processes for simulation into list
+        ArrayList<ProcessControlBlock> input = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
 
-        // Add processes for simulation into list (to do: deep copy)
-        ArrayList<ProcessControlBlock> input1 = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
-        ArrayList<ProcessControlBlock> input2 = new ArrayList<>(Arrays.asList(p9,p10,p11,p12,p13,p14,p15,p16));
-        ArrayList<ProcessControlBlock> input3 = new ArrayList<>(Arrays.asList(p17,p18,p19,p20,p21,p22,p23,p24));
-        ArrayList<ProcessControlBlock> input4 = new ArrayList<>(Arrays.asList(p25,p26,p27,p28,p29,p30,p31,p32));
-
-        ArrayList<ProcessControlBlock> input5 = new ArrayList<>(Arrays.asList(p33,p34,p35,p36));
-        ArrayList<ProcessControlBlock> input6 = new ArrayList<>(Arrays.asList(p37,p38,p39,p40));
-
-        ArrayList<ProcessControlBlock> input7 = new ArrayList<>(Arrays.asList(p41,p42,p43,p44,p45,p46,p47,p48));
-
-
+        // List used to print in a specified order
         ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
                 AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
-
+        // create results map
         HashMap<AlgorithmTypes, CpuSchedulerSimulation> resultsMap = new HashMap<>();
-        resultsMap.put(AlgorithmTypes.FCFS, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input1)),
+
+        // put simulations into results map
+        resultsMap.put(AlgorithmTypes.FCFS, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input)),
                 AlgorithmTypes.FCFS, SchedulingTypes.NON_PREEMPTIVE));
-        resultsMap.put(AlgorithmTypes.SJF, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input2)),
+        resultsMap.put(AlgorithmTypes.SJF, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input)),
                 AlgorithmTypes.SJF, SchedulingTypes.NON_PREEMPTIVE));
-        resultsMap.put(AlgorithmTypes.Priority, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input3),
+        resultsMap.put(AlgorithmTypes.Priority, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input),
                 new int[]{3,6,5,4,1,2,8,7}), AlgorithmTypes.Priority, SchedulingTypes.PREEMPTIVE));
-        resultsMap.put(AlgorithmTypes.RR, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input4), 5),
+        resultsMap.put(AlgorithmTypes.RR, new CpuSchedulerSimulation(new SimulationInput(deepCopy(input), 5),
                 AlgorithmTypes.RR, SchedulingTypes.PREEMPTIVE));
         resultsMap.put(AlgorithmTypes.MLQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
-                (deepCopy(input5), 4), new SimulationInput(deepCopy(input6)))), AlgorithmTypes.MLQ,
+                (deepCopy(input, 0, 3), 4), new SimulationInput(deepCopy(input, 4,7)))), AlgorithmTypes.MLQ,
                 SchedulingTypes.PREEMPTIVE, new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
         resultsMap.put(AlgorithmTypes.MLFQ, new CpuSchedulerSimulation(new ArrayList<>(Arrays.asList(new SimulationInput
-                (deepCopy(input7), 5), new SimulationInput(new ArrayList<>(),10), new
+                (deepCopy(input), 5), new SimulationInput(new ArrayList<>(),10), new
                 SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
                 new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
 
-
+        // run simulations and create output
         for(CpuSchedulerSimulation sim: resultsMap.values()) {
             sim.runSim();
             createResultsFile(sim.getResults(), sim.getRecords(),
@@ -150,10 +96,18 @@ public class SimulationDriver {
                 "\n-----------------------------");
     }
 
-    public static ArrayList<ProcessControlBlock> deepCopy(ArrayList<ProcessControlBlock> original) throws CloneNotSupportedException {
+    public static ArrayList<ProcessControlBlock> deepCopy(ArrayList<ProcessControlBlock> original) {
         ArrayList<ProcessControlBlock> temp = new ArrayList<>();
         for(ProcessControlBlock pcb: original) {
-            temp.add((ProcessControlBlock)pcb.clone());
+            temp.add(pcb.copy());
+        }
+        return temp;
+    }
+
+    public static ArrayList<ProcessControlBlock> deepCopy(ArrayList<ProcessControlBlock> original, int start, int end) {
+        ArrayList<ProcessControlBlock> temp = new ArrayList<>();
+        for(int i = start; i <= end; i++) {
+            temp.add(original.get(i).copy());
         }
         return temp;
     }

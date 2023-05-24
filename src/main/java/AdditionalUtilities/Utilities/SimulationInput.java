@@ -10,7 +10,7 @@ public class SimulationInput {
     private int givenTimeQuantum;
 
     public SimulationInput(ArrayList<ProcessControlBlock> input) {
-        this.input = copyProcesses(input);
+        this.input = input;
         this.givenInitialPriorities = null;
         this.size = input.size();
     }
@@ -24,14 +24,6 @@ public class SimulationInput {
     public SimulationInput(ArrayList<ProcessControlBlock> input, int givenTimeQuantum) {
         this(input);
         this.givenTimeQuantum = givenTimeQuantum;
-    }
-
-    private ArrayList<ProcessControlBlock> copyProcesses(ArrayList<ProcessControlBlock> input) {
-        ArrayList<ProcessControlBlock> temp = new ArrayList<>();
-        for(ProcessControlBlock p : input) {
-            temp.add(p.copyProcess());
-        }
-        return temp;
     }
 
     public ArrayList<ProcessControlBlock> getInput() {

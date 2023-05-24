@@ -6,13 +6,9 @@ import Util.CpuManager;
 public class Main {
     public static void main(String[] args) {
 
-        //CpuManager manager = new CpuManager();
+        CpuManager manager = new CpuManager();
 
-        //manager.runExperiments();
-
-        System.out.println("test");
-
-
+        manager.runExperiments();
 
     }
 }

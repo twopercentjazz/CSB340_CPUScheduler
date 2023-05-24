@@ -3,8 +3,9 @@
 package AdditionalUtilities.Utilities;
 import java.util.*;
 
-public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Cloneable {
+public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
     private int pid;
+    private int[] input;
     private Queue<Integer> cycle;
     private int arrivalTime;
     private int priority;
@@ -17,7 +18,8 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Clo
     private Boolean hasBeenOnCpu;
     private int cycleSum;
 
-    public ProcessControlBlock(int pid) {
+
+    public ProcessControlBlock(int pid, int[] input) {
         this.pid = pid;
         this.arrivalTime = 0;
         this.waitingTime = 0;
@@ -27,15 +29,8 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Clo
         this.cpuBurstTime = 0;
         this.ioTime = 0;
         this.hasBeenOnCpu = false;
-    }
-    public ProcessControlBlock(int pid, int[] cycle) {
-        this(pid);
-        this.cycle = createCycleQueue(cycle);
-    }
-
-    public ProcessControlBlock(int pid, Queue<Integer> cycle) {
-        this(pid);
-        this.cycle = cycle;
+        this.input = input;
+        this.cycle = createCycleQueue(input);
         this.cycleSum = getCycleSum(cycle);
     }
 
@@ -151,15 +146,11 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>, Clo
         }
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+    public enum ProcessState { RUNNING, WAITING, READY, COMPLETE }
 
-    public enum ProcessState {RUNNING, WAITING, READY, COMPLETE }
 
-    public ProcessControlBlock copyProcess() {
-        return new ProcessControlBlock(this.pid, this.cycle);
+    public ProcessControlBlock copy() {
+        return new ProcessControlBlock(this.pid, this.input);
     }
 
     public Boolean isFinalBurst() {
