@@ -64,6 +64,18 @@ public class Dispatcher {
         }
     }
 
+    public void contextSwitchIdle(Scheduler schedule, AlgorithmTypes type) {
+        while(schedule.isReadyListEmpty()) {
+            updateExecutionTimer(1);
+            updateIdleTimer(1);
+            for(ProcessControlBlock pcb : schedule.getActive()) {
+                if (pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
+                    schedule.updateIo(pcb, schedule.getOtherReady(pcb), type);
+                }
+            }
+        }
+    }
+
     public void contextSwitchFinishCpuBurst(Scheduler schedule, ProcessControlBlock running) {
         if(running.isFinalBurst()) {
             schedule.flagProcessAsComplete(running);
@@ -74,9 +86,17 @@ public class Dispatcher {
         }
     }
 
-    public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready, Scheduler s, AlgorithmTypes type) {
+    public void contextSwitchPreemptProcess(ProcessControlBlock running, Queue<ProcessControlBlock> ready) {
         running.setState(ProcessControlBlock.ProcessState.READY);
         ready.add(running);
+    }
+
+    public void contextSwitchPreemptProcess(ProcessControlBlock running, Scheduler s) {
+        running.setState(ProcessControlBlock.ProcessState.READY);
+        if(running.getPriority() != s.getReadyList().size() - 1) {
+            running.updatePriority(1);
+        }
+        s.getOtherReady(running).add(running);
     }
 
     public void updateMultiTimer(Scheduler schedule) {
