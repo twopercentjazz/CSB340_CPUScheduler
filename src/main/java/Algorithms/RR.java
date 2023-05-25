@@ -52,7 +52,7 @@ public class RR implements AlgorithmsInterface {
                 }
             }
             if(preempt) {
-                this.dispatch.contextSwitchPreemptProcess(running, ready, schedule, getAlgorithmType());
+                this.dispatch.contextSwitchPreemptProcess(running, ready);
             }
         }
     }

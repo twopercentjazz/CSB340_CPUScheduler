@@ -15,7 +15,7 @@ public class MLFQ implements AlgorithmsInterface {
     public MLFQ(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
-        this.ready = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady();
+        this.ready = schedule.getCurrReady();
     }
 
     /** {@inheritDoc} */
@@ -25,55 +25,24 @@ public class MLFQ implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public void scheduleNextProcess() {
-        ProcessControlBlock next = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady().poll();
-        if(next != null) {
-            next.setState(ProcessControlBlock.ProcessState.RUNNING);
-            this.dispatch.setRunningProcess(next);
-        } else {
-            this.dispatch.setRunningProcess(null);
-        }
+        this.schedule.getNextRunningProcess(this.ready, this.dispatch);
     }
 
     /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
         if (running == null) {
-            while(this.schedule.isReadyListEmpty()) {
-                this.dispatch.updateExecutionTimer(1);
-                this.dispatch.updateIdleTimer(1);
-                for(ProcessControlBlock pcb : this.schedule.getActive()) {
-                    if (pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
-                        pcb.updateIoTime(1);
-                        if (pcb.getIoTime() == 0) {
-                            pcb.setState(ProcessControlBlock.ProcessState.READY);
-                            pcb.setCpuBurstTime();
-                            this.schedule.getIo().remove(pcb);
-                            this.schedule.getReadyList().get(pcb.getPriority()).getReady().add(pcb);
-                        }
-                    }
-                }
-            }
+            dispatch.contextSwitchIdle(this.schedule, getAlgorithmType());
         } else {
-            int time;
-            if(schedule.getReadyIndex() == schedule.getReadyList().size() - 1) {
-                time = running.getCpuBurstTime();
-            } else {
-                time = schedule.getReadyList().get(schedule.getReadyIndex()).getScheduler().getTimeQuantum();
-            }
+            int time = schedule.getTimeToProcess(running);
             boolean queuePreempt = false;
             boolean rrPreempt = true;
             this.dispatch.updateResponseTime();
             for(int i = 0; i < time; i++) {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
-                        pcb.updateIoTime(1);
-                        if (pcb.getIoTime() == 0) {
-                            pcb.setState(ProcessControlBlock.ProcessState.READY);
-                            pcb.setCpuBurstTime();
-                            this.schedule.getIo().remove(pcb);
-                            schedule.getReadyList().get(pcb.getPriority()).getReady().add(pcb);
-                            if(schedule.isQueuePriorityChanged()) {
-                                queuePreempt = true;
-                            }
+                        this.schedule.updateIo(pcb, this.schedule.getOtherReady(pcb), getAlgorithmType());
+                        if(schedule.isQueuePriorityChanged()) {
+                            queuePreempt = true;
                         }
                     } else if(pcb.getState() == ProcessControlBlock.ProcessState.READY) {
                         pcb.updateWaitingTime(1);
@@ -86,39 +55,20 @@ public class MLFQ implements AlgorithmsInterface {
                     }
                 }
                 if(!rrPreempt) {
-                    if(running.isFinalBurst()) {
-                        schedule.flagProcessAsComplete(running);
-                    } else {
-                        running.setIoTime();
-                        running.setState(ProcessControlBlock.ProcessState.WAITING);
-                        schedule.getIo().add(running);
-                    }
+                    this.dispatch.contextSwitchFinishCpuBurst(this.schedule, running);
                     break;
                 }
                 if(queuePreempt) {
-
                     running.setState(ProcessControlBlock.ProcessState.READY);
-                    this.schedule.getReadyList().get(running.getPriority()).getReady().add(running);
-
+                    this.schedule.getOtherReady(running).add(running);
                     break;
                 }
             }
             if(rrPreempt && !queuePreempt) {
-                running.setState(ProcessControlBlock.ProcessState.READY);
-                if(running.getPriority() == schedule.getReadyList().size() - 1) {
-                    this.schedule.getReadyList().get(running.getPriority()).getReady().add(running);
-                } else {
-                    running.updatePriority(1);
-                    this.schedule.getReadyList().get(running.getPriority()).getReady().add(running);
-                }
+                dispatch.contextSwitchPreemptProcess(running, this.schedule);
             }
         }
-        for(AlgorithmsInterface algorithm: schedule.getReadyList()) {
-            if(!algorithm.getReady().isEmpty()) {
-                schedule.setReadyIndex(schedule.getReadyList().indexOf(algorithm));
-                break;
-            }
-        }
+        ready = this.schedule.getNextReady();
     }
 
     /** {@inheritDoc} */

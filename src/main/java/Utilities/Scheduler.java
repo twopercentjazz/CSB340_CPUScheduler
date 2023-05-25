@@ -155,4 +155,36 @@ public class Scheduler {
     public void decrementReadyIndex() {
         this.readyIndex--;
     }
+
+    public Queue<ProcessControlBlock> getCurrReady() {
+        return getReadyList().get(getReadyIndex()).getReady();
+    }
+
+    public Queue<ProcessControlBlock> getOtherReady(ProcessControlBlock pcb) {
+        return getReadyList().get(pcb.getPriority()).getReady();
+    }
+
+    public int getCurrTimeQuantum() {
+        return getReadyList().get(getReadyIndex()).getScheduler().getTimeQuantum();
+    }
+
+    public Queue<ProcessControlBlock> getNextReady() {
+        for(AlgorithmsInterface algorithm: getReadyList()) {
+            if(!algorithm.getReady().isEmpty()) {
+                setReadyIndex(getReadyList().indexOf(algorithm));
+                break;
+            }
+        }
+        return getCurrReady();
+    }
+
+    public int getTimeToProcess(ProcessControlBlock running) {
+        int time;
+        if(getReadyIndex() == getReadyList().size() - 1) {
+            time = running.getCpuBurstTime();
+        } else {
+            time = getCurrTimeQuantum();
+        }
+        return time;
+    }
 }
