@@ -1,5 +1,4 @@
-/** Multilevel Feedback Queue CPU Scheduling Algorithm
- * @author Chris */
+/** Temp */
 
 package Algorithms;
 import Utilities.*;
