@@ -112,12 +112,6 @@ public class Scheduler {
         }
     }
 
-    public void syncActiveLists(Scheduler s) {
-        for(AlgorithmsInterface algorithm: s.getReadyList()) {
-            algorithm.getScheduler().setActive(s.getActive());
-        }
-    }
-
     public boolean isReadyListEmpty() {
         boolean empty = true;
         for(int i = 0; i < getReadyList().size(); i++) {
@@ -146,14 +140,6 @@ public class Scheduler {
 
     public void setReadyIndex(int i) {
         this.readyIndex = i;
-    }
-
-    public void incrementReadyIndex() {
-        this.readyIndex++;
-    }
-
-    public void decrementReadyIndex() {
-        this.readyIndex--;
     }
 
     public Queue<ProcessControlBlock> getCurrReady() {
