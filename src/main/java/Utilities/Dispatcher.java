@@ -35,8 +35,6 @@ public class Dispatcher {
         this.idleTimer += time;
     }
 
-    public void setIdleTimer(int time) { this.idleTimer = time; }
-
     public ProcessControlBlock getRunningProcess() {
         return this.runningProcess;
     }
@@ -97,36 +95,5 @@ public class Dispatcher {
             running.updatePriority(1);
         }
         s.getOtherReady(running).add(running);
-    }
-
-    public void updateMultiTimer(Scheduler schedule) {
-        int time = getExecutionTimer();
-        setExecutionTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getExecutionTimer());
-        setIdleTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getIdleTimer());
-        schedule.setIo(schedule.getReadyList().get(schedule.getReadyIndex()).getScheduler().getIo());
-        for(int i = schedule.getReadyIndex() + 1; i < schedule.getReadyList().size(); i++) {
-            for(ProcessControlBlock pcb: schedule.getReadyList().get(i).getReady()) {
-                pcb.updateWaitingTime(getExecutionTimer() - time);
-            }
-        }
-    }
-
-    public void syncMultiQueueTimers(Scheduler schedule, int execution, int idle) {
-        updateExecutionTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getExecutionTimer() - execution);
-        updateIdleTimer(schedule.getReadyList().get(schedule.getReadyIndex()).getDispatcher().getIdleTimer() - idle);
-        for(AlgorithmsInterface algorithm: schedule.getReadyList()) {
-            algorithm.getDispatcher().setExecutionTimer(getExecutionTimer());
-            algorithm.getDispatcher().setIdleTimer(getIdleTimer());
-        }
-    }
-
-    public void updateMultiQueueWaitTimes(Scheduler schedule, int time) {
-        for(AlgorithmsInterface algorithm: schedule.getReadyList()) {
-            if(schedule.getReadyList().indexOf(algorithm) != schedule.getReadyIndex() && !algorithm.getReady().isEmpty()) {
-                for(ProcessControlBlock pcb: algorithm.getReady()) {
-                    pcb.updateWaitingTime(getExecutionTimer() - time);
-                }
-            }
-        }
     }
 }
