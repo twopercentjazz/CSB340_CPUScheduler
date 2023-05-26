@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +62,7 @@
       <recent name="C:\Users\chris\Desktop\CSB340\CpuSchedulerProject\CSB340_CPUScheduler\src\main\java\OutputFiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chris\Desktop\CSB340\CpuSchedulerProject\CSB340_CPUScheduler\src\main\resources\Final Report\Report Assets" />
       <recent name="C:\Users\chris\Desktop\CSB340\CpuSchedulerProject\CSB340_CPUScheduler\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -99,7 +98,7 @@
       <workItem from="1683310535266" duration="473000" />
       <workItem from="1684097449716" duration="3000" />
       <workItem from="1684621913141" duration="45279000" />
-      <workItem from="1684825518177" duration="48142000" />
+      <workItem from="1684825518177" duration="48410000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, unfinished solution">
       <created>1678299887009</created>
