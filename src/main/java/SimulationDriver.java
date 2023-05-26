@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SimulationDriver {
     public static void main(String[] args) throws FileNotFoundException {
-        // create Processes with given process data
+        /** create Processes with given process data */
         ProcessControlBlock p1 = new ProcessControlBlock(1, new int[]{5, 27, 3, 31, 5, 43, 4, 18, 6, 22, 4, 26, 3, 24, 4});
         ProcessControlBlock p2 = new ProcessControlBlock(2, new int[]{4, 48, 5, 44, 7, 42, 12, 37, 9, 76, 4, 41, 9, 31, 7, 43, 8});
         ProcessControlBlock p3 = new ProcessControlBlock(3, new int[]{8, 33, 12, 41, 18, 65, 14, 21, 4, 61, 15, 18, 14, 26, 5, 31, 6});
@@ -17,10 +17,10 @@ public class SimulationDriver {
         ProcessControlBlock p7 = new ProcessControlBlock(7, new int[]{14, 46, 17, 41, 11, 42, 15, 21, 4, 32, 7, 19, 16, 33, 10});
         ProcessControlBlock p8 = new ProcessControlBlock(8, new int[]{4, 14, 5, 33, 6, 51, 14, 73, 16, 87, 6});
 
-        // Add processes for simulation into list (for copying)
+        /** Add processes for simulation into list (for copying) */
         ArrayList<ProcessControlBlock> input = new ArrayList<>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8));
 
-        // create results map
+        /** create results map */
         HashMap<AlgorithmTypes, CpuSchedulerSimulation> resultsMap = new HashMap<>();
 
         // put simulations into results map
@@ -41,14 +41,14 @@ public class SimulationDriver {
                 SimulationInput(new ArrayList<>()))), AlgorithmTypes.MLFQ, SchedulingTypes.PREEMPTIVE,
                 new ArrayList<>(Arrays.asList(AlgorithmTypes.RR, AlgorithmTypes.RR, AlgorithmTypes.FCFS))));
 
-        // List used to print in a specified order
+        /** List used to print in a specified order */
         ArrayList<AlgorithmTypes> order = new ArrayList<>(Arrays.asList(AlgorithmTypes.FCFS, AlgorithmTypes.SJF,
                 AlgorithmTypes.Priority, AlgorithmTypes.RR, AlgorithmTypes.MLQ, AlgorithmTypes.MLFQ));
 
-        // run simulations and create output
+        /** run simulations and create output */
         for(CpuSchedulerSimulation sim: resultsMap.values()) {
             sim.runSim();
-            // set flag to 1 for detailed results, set flag to 0 for summary only
+            /** set flag to 1 for detailed results, set flag to 0 for summary only */
             createResultsFile(sim, "src/main/resources/OutputFiles/" + sim.getAlgorithmType() + ".txt", 1);
             printToConsole(sim, 0);
         }

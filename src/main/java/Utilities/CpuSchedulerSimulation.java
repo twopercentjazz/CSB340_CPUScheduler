@@ -47,7 +47,7 @@ public class CpuSchedulerSimulation {
         } else if(algorithmType == AlgorithmTypes.RR) {
             this.algorithm = new RR(input);
         } else if(algorithmType == AlgorithmTypes.MLQ) {
-            this.algorithm = new MLQ(assignMultiAlgorithm());
+            this.algorithm = new MLQ2(assignMultiAlgorithm());
         } else {
             this.algorithm = new MLFQ(assignMultiAlgorithm());
         }

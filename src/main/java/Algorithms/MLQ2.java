@@ -5,14 +5,14 @@ package Algorithms;
 import Utilities.*;
 import java.util.*;
 
-public class MLFQ implements AlgorithmsInterface {
+public class MLQ2 implements AlgorithmsInterface {
     private Scheduler schedule;
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
     /** Constructor for MLFQ algorithm.
      * @param ready the multiple types of algorithms (with input processes) used to schedule */
-    public MLFQ(ArrayList<AlgorithmsInterface> ready) {
+    public MLQ2(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
         this.ready = schedule.getCurrReady();
@@ -20,7 +20,7 @@ public class MLFQ implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public AlgorithmTypes getAlgorithmType() {
-        return AlgorithmTypes.MLFQ;
+        return AlgorithmTypes.MLQ;
     }
 
     /** {@inheritDoc} */
