@@ -91,9 +91,9 @@ public class Dispatcher {
         ready.add(running);
     }
 
-    public void contextSwitchPreemptProcess(ProcessControlBlock running, Scheduler s) {
+    public void contextSwitchPreemptProcess(ProcessControlBlock running, Scheduler s, AlgorithmTypes type) {
         running.setState(ProcessControlBlock.ProcessState.READY);
-        if(running.getPriority() != s.getReadyList().size() - 1) {
+        if(type == AlgorithmTypes.MLFQ && running.getPriority() != s.getReadyList().size() - 1) {
             running.updatePriority(1);
         }
         s.getOtherReady(running).add(running);
