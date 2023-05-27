@@ -10,8 +10,8 @@ public class MLFQ implements AlgorithmsInterface {
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
-    /** Constructor for MLFQ algorithm.
-     * @param ready the multiple types of algorithms (with input processes) used to schedule */
+    /** Constructor for MLFQ scheduling algorithm.
+     * @param ready instances of the multiple types of algorithms (with input processes) used to schedule */
     public MLFQ(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
@@ -24,16 +24,16 @@ public class MLFQ implements AlgorithmsInterface {
     }
 
     /** {@inheritDoc} */
-    public void scheduleNextProcess() {
-        this.schedule.getNextRunningProcess(this.ready, this.dispatch);
-    }
+    public void scheduleNextProcess() { this.schedule.getNextRunningProcess(this.ready, this.dispatch); }
 
     /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
+        // if idle
         if (running == null) {
             dispatch.contextSwitchIdle(this.schedule, getAlgorithmType());
+        // if not idle
         } else {
-            int time = schedule.getTimeToProcess(running);
+            int time = this.schedule.getTimeToProcess(running);
             boolean queuePreempt = false;
             boolean rrPreempt = true;
             this.dispatch.updateResponseTime();
@@ -65,10 +65,10 @@ public class MLFQ implements AlgorithmsInterface {
                 }
             }
             if(rrPreempt && !queuePreempt) {
-                dispatch.contextSwitchPreemptProcess(running, this.schedule, getAlgorithmType());
+                this.dispatch.contextSwitchPreemptProcess(running, this.schedule, getAlgorithmType());
             }
         }
-        ready = this.schedule.getNextReady();
+        this.ready = this.schedule.getNextReady();
     }
 
     /** {@inheritDoc} */

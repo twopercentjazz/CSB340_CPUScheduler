@@ -1,15 +1,16 @@
 /** This class creates strings representations of a simulations results and records for output. */
 
 package Utilities;
-
 import Algorithms.AlgorithmTypes;
 
 public class SimulationOutput {
 
+    /** This method displays the final results.
+     * @param results The results from a scheduling simulation
+     * @return A string representation of the results */
     public static String displayResults(SimulationResults results) {
         String result = "";
         String labels = processList(results);
-        String space = "\t\t\t\t\t";
         result += String.format("\n%-20s", "Finished");
         result += String.format("\n\n%-20s%d", "Total Time:", results.getTotalExecutionTime());
         result += String.format("\n%-20s%.4f%%", "CPU Utilization:", results.getCpuUtilization() * 100);
@@ -34,6 +35,9 @@ public class SimulationOutput {
         return result;
     }
 
+    /** This method creates labels for the list of processes used in the simulation.
+     * @param results The results from a scheduling simulation
+     * @return A formatted list of processes */
     public static String processList(SimulationResults results) {
         String temp = "";
         for(int i = 1; i <= results.getAllWaitTimes().size(); i++) {
@@ -42,6 +46,9 @@ public class SimulationOutput {
         return temp;
     }
 
+    /** This method displays a record (for one concurrent step of the simulation).
+     * @param record The record from a scheduling simulation
+     * @return A string representation of the record */
     public static String displayRecord(SimulationRecord record) {
         String rec = "";
         rec += String.format("\n\n\n%-14s%d", "Current Time:", record.getCurrentExecutionTime());
@@ -93,6 +100,8 @@ public class SimulationOutput {
         return rec;
     }
 
+    /** This method draws a line for formatting output.
+     * @return The line */
     public static String line() {
         return "\n..................................................";
     }
