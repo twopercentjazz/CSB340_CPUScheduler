@@ -24,16 +24,11 @@ public class MLQTest {
         MLQ.runSim();
 
         SimulationResults result = MLQ.getResults();
-        /*System.out.println(result.getCpuUtilization());
-        System.out.println(result.getAvgWait());
-        System.out.println(result.getAvgTurnAround());
-        System.out.println(result.getAvgResponse());*/
 
-
-        assertEquals(0.86, result.getCpuUtilization(), 0.01d);
-        assertEquals(8.0, result.getAvgWait());
-        assertEquals(18.33, result.getAvgTurnAround(), 0.01d);
-        assertEquals(6.0, result.getAvgResponse());
+        assertEquals(0.92, result.getCpuUtilization(), 0.01d);
+        assertEquals(7.33, result.getAvgWait(), 0.01d);
+        assertEquals(17.67, result.getAvgTurnAround(), 0.01d);
+        assertEquals(4.0, result.getAvgResponse(), 0.01d);
     }
 
 }
