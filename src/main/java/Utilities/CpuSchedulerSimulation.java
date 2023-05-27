@@ -1,4 +1,5 @@
-/** This class represents an instance of a CPU scheduling simulation. */
+/** This class represents an instance of a CPU scheduling simulation. This class runs instances of
+ *  the scheduling algorithms (with given input processes) and saves the results. */
 
 package Utilities;
 import Algorithms.*;
@@ -14,6 +15,10 @@ public class CpuSchedulerSimulation {
     private ArrayList<AlgorithmTypes> multiList;
     private ArrayList<SimulationInput> multiInput;
 
+    /** This constructs a new scheduler simulation (for FCFS, Priority, RR, SJF).
+     * @param input The processes to schedule
+     * @param algorithmType The type of scheduling algorithm being used
+     * @param schedulingType either preemptive or non-preemptive */
     public CpuSchedulerSimulation(SimulationInput input, AlgorithmTypes algorithmType, SchedulingTypes schedulingType) {
         this.input = input;
         this.algorithmType = algorithmType;
@@ -25,6 +30,11 @@ public class CpuSchedulerSimulation {
         this.multiInput = null;
     }
 
+    /** This constructs a new scheduler simulation with multiple queues (for MLQ, MLFQ).
+     * @param multiInput The processes to schedule for each queue
+     * @param algorithmType The type of scheduling algorithm being used
+     * @param schedulingType Either preemptive or non-preemptive
+     * @param multiList The types of scheduling algorithms used for each queue */
     public CpuSchedulerSimulation(ArrayList<SimulationInput> multiInput, AlgorithmTypes algorithmType, SchedulingTypes schedulingType,
                                   ArrayList<AlgorithmTypes> multiList) {
         this.input = null;
@@ -37,6 +47,8 @@ public class CpuSchedulerSimulation {
         this.records = new ArrayList<>();
     }
 
+    /** This method assigns an instance of a scheduling algorithm for the simulation based
+     * on the given algorithm type. */
     private void assignAlgorithm() {
         if(algorithmType == AlgorithmTypes.FCFS) {
             this.algorithm = new FCFS(input);
@@ -53,40 +65,43 @@ public class CpuSchedulerSimulation {
         }
     }
 
+    /** This method is used to assign the algorithms that are used for the multiple queues of MLQ and MLFQ.
+     * @return A list of the algorithm types (queues) in priority order. */
     private ArrayList<AlgorithmsInterface> assignMultiAlgorithm() {
         ArrayList<AlgorithmsInterface> readyList = new ArrayList<>();
-        for(int i = 0; i < multiList.size(); i++) {
-            if(multiList.get(i) == AlgorithmTypes.RR) {
-                readyList.add(new RR(multiInput.get(i)));
+        for(int i = 0; i < this.multiList.size(); i++) {
+            if(this.multiList.get(i) == AlgorithmTypes.RR) {
+                readyList.add(new RR(this.multiInput.get(i)));
             } else {
-                readyList.add(new FCFS(multiInput.get(i)));
+                readyList.add(new FCFS(this.multiInput.get(i)));
             }
         }
         return readyList;
     }
 
-    public AlgorithmTypes getAlgorithmType() {
-        return this.algorithmType;
-    }
+    /** This method gets the algorithm type.
+     * @return The algorithm type */
+    public AlgorithmTypes getAlgorithmType() { return this.algorithmType; }
 
-    public SchedulingTypes getSchedulingType() {
-        return this.schedulingType;
-    }
+    /** This method gets the scheduling type.
+     * @return The algorithms scheduling type */
+    public SchedulingTypes getSchedulingType() { return this.schedulingType; }
 
-    public SimulationInput getInput() {
-        return this.input;
-    }
+    /** This method gets the input for scheduling.
+     * @return The algorithms scheduling input */
+    public SimulationInput getInput() { return this.input; }
 
-    public SimulationResults getResults() {
-        return this.results;
-    }
+    /** This method gets the results for a scheduling simulation.
+     * @return The scheduling simulation results */
+    public SimulationResults getResults() { return this.results; }
 
-    public ArrayList<SimulationRecord> getRecords() {
-        return this.records;
-    }
+    /** This method gets the (step-by-step) records for a scheduling simulation.
+     * @return The scheduling simulation records */
+    public ArrayList<SimulationRecord> getRecords() { return this.records; }
 
+    /** This method runs an instance of a simulation. */
     public void runSim() {
-        while(!algorithm.isCompleted()) {
+        while(!this.algorithm.isCompleted()) {
             this.algorithm.scheduleNextProcess();
             createRecord();
             this.algorithm.dispatchNextProcess(this.algorithm.getDispatcher().getRunningProcess());
@@ -95,16 +110,17 @@ public class CpuSchedulerSimulation {
         createRecord();
         this.algorithm.getScheduler().createFinalList();
         this.algorithm.getScheduler().setTurnAroundTimes();
-        results = new SimulationResults(algorithm.getScheduler().getFinalList(),
-                algorithm.getDispatcher().getExecutionTimer(),
-                algorithm.getDispatcher().getIdleTimer());
+        this.results = new SimulationResults(this.algorithm.getScheduler().getFinalList(),
+                this.algorithm.getDispatcher().getExecutionTimer(),
+                this.algorithm.getDispatcher().getIdleTimer());
     }
 
+    /** This method creates the (step-by-step) records for a scheduling simulation. */
     public void createRecord() {
         LinkedHashMap<Integer, Integer> readyList = new LinkedHashMap<>();
         LinkedHashMap<Integer, Integer> QueueList = new LinkedHashMap<>();
         Queue<ProcessControlBlock> temp = new LinkedList<>();
-        if(multiList == null) {
+        if(this.multiList == null) {
             while(!this.algorithm.getReady().isEmpty()) {
                 ProcessControlBlock p = this.algorithm.getReady().poll();
                 if(p != null) {
@@ -117,7 +133,7 @@ public class CpuSchedulerSimulation {
                 this.algorithm.getReady().add(temp.poll());
             }
         } else {
-            for(AlgorithmsInterface alg: algorithm.getScheduler().getReadyList()) {
+            for(AlgorithmsInterface alg: this.algorithm.getScheduler().getReadyList()) {
                 while(!alg.getReady().isEmpty()) {
                     ProcessControlBlock p = alg.getReady().poll();
                     if(p != null) {
@@ -145,6 +161,6 @@ public class CpuSchedulerSimulation {
             currProcess = this.algorithm.getDispatcher().getRunningProcess().getPid();
         }
         this.records.add(new SimulationRecord(this.algorithm.getDispatcher().getExecutionTimer(),
-                currProcess, readyList, ioList, completed, algorithmType, QueueList));
+                currProcess, readyList, ioList, completed, this.algorithmType, QueueList));
     }
 }

@@ -1,4 +1,4 @@
-/** This class represents a process control block, which are the simulations inputs. */
+/** This class represents a process control block, which are the scheduling simulations inputs. */
 
 package Utilities;
 import java.util.*;
@@ -18,6 +18,9 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
     private Boolean hasBeenOnCpu;
     private int cycleSum;
 
+    /** Constructs a new Process Control Block.
+     * @param pid The process id number
+     * @param input List of given CPU/IO burst times. */
     public ProcessControlBlock(int pid, int[] input) {
         this.pid = pid;
         this.arrivalTime = 0;
@@ -33,6 +36,9 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
         this.cycleSum = getCycleSum(cycle);
     }
 
+    /** This method calculates a processes total sum of both CPU burst times and I/O burst times.
+     * @param cycle The initial list of CPU/IO burst times
+     * @return The sum of both CPU burst times and I/O burst times */
     private int getCycleSum(Queue<Integer> cycle) { //total cpuBurst + total io
         int sum = 0;
         for(Integer i : cycle) {
@@ -41,6 +47,9 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
         return sum;
     }
 
+    /** This method creates a queue of CPU/IO bursts (for the simulation) from the given input burst cycle.
+     * @param cycle The given (input) burst cycle list
+     * @return A queue containing the given burst cycle */
     private Queue<Integer> createCycleQueue(int[] cycle) {
         Queue<Integer> temp = new LinkedList<>();
         for(Integer i : cycle) {
@@ -49,91 +58,89 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
         return temp;
     }
 
-    public int getPid() {
-        return this.pid;
-    }
+    /** This method gets a processes id number.
+     * @return The processes id number */
+    public int getPid() { return this.pid; }
 
-    public int getArrivalTime() {
-        return this.arrivalTime;
-    }
+    /** This method gets a processes arrival time
+     * @return The processes arrival time */
+    public int getArrivalTime() { return this.arrivalTime; }
 
-    public int getPriority() {
-        return this.priority;
-    }
+    /** This method gets a processes priority number.
+     * @return The processes priority number */
+    public int getPriority() { return this.priority; }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
+    /** This method sets a processes priority number.
+     * @param priority The processes new priority number */
+    public void setPriority(int priority) { this.priority = priority; }
+
+    /** This method updates a processes priority number.
+     * @param priority The processes old priority incremented by the given number */
     public void updatePriority(int priority) { this.priority += priority; }
 
-    public int getWaitingTime() {
-        return this.waitingTime;
-    }
+    /** This method gets a processes priority number.
+     * @return The processes priority number */
+    public int getWaitingTime() { return this.waitingTime; }
 
-    public void updateWaitingTime(int time) {
-        this.waitingTime += time;
-    }
+    /** This method updates a processes waiting time.
+     * @param time The processes old wait time incremented by the given time */
+    public void updateWaitingTime(int time) { this.waitingTime += time; }
 
-    public int getTurnAroundTime() {
-        return this.turnAroundTime;
-    }
+    /** This method gets a processes turnaround time.
+     * @return The processes turnaround time */
+    public int getTurnAroundTime() { return this.turnAroundTime; }
 
-    public void updateTurnAroundTime() {
-        this.turnAroundTime = this.cycleSum + this.waitingTime;
-    }
+    /** This method calculates and updates a processes turnaround time. */
+    public void updateTurnAroundTime() { this.turnAroundTime = this.cycleSum + this.waitingTime; }
 
-    public int getResponseTime() {
-        return this.responseTime;
-    }
+    /** This method gets a processes response time.
+     * @return The processes response time */
+    public int getResponseTime() { return this.responseTime; }
 
-    public void updateResponseTime(int time) {
-        this.responseTime = time;
-    }
+    /** This method updates a processes response time with the given time. */
+    public void updateResponseTime(int time) { this.responseTime = time; }
 
-    private int getNext() {
-        return cycle.poll();
-    }
+    /** This method gets the next CPU/IO burst time for the process.
+     * @return The next CPU/IO burst time */
+    private int getNext() { return cycle.poll(); }
 
-    public int getCpuBurstTime() {
-        return this.cpuBurstTime;
-    }
+    /** This method gets a processes current CPU burst time.
+     * @return The current CPU burst time */
+    public int getCpuBurstTime() { return this.cpuBurstTime; }
 
-    public void updateCpuBurstTime(int time) {
-        this.cpuBurstTime -= time;
-    }
+    /** This method updates a processes current CPU burst by subtracting the given time. */
+    public void updateCpuBurstTime(int time) { this.cpuBurstTime -= time; }
 
-    public void setCpuBurstTime() {
-        this.cpuBurstTime = getNext();
-    }
+    /** This method sets a processes next CPU burst time. */
+    public void setCpuBurstTime() { this.cpuBurstTime = getNext(); }
 
-    public int getIoTime() {
-        return this.ioTime;
-    }
+    /** This method gets a processes current IO burst time.
+     * @return The current IO burst time */
+    public int getIoTime() { return this.ioTime; }
 
-    public void updateIoTime(int time) {
-        this.ioTime -= time;
-    }
+    /** This method updates a processes current IO burst by subtracting the given time. */
+    public void updateIoTime(int time) { this.ioTime -= time; }
 
-    public void setIoTime() {
-        this.ioTime = getNext();
-    }
+    /** This method sets a processes next IO burst time. */
+    public void setIoTime() { this.ioTime = getNext(); }
 
-    public ProcessState getState() {
-        return this.state;
-    }
+    /** This method gets a processes current state (running, waiting, ready, complete).
+     * @return The processes state */
+    public ProcessState getState() { return this.state; }
 
-    public void setState(ProcessState state) {
-        this.state = state;
-    }
+    /** This method sets a processes current state with the given state. */
+    public void setState(ProcessState state) { this.state = state; }
 
-    public Boolean getHasBeenOnCpu() {
-        return this.hasBeenOnCpu;
-    }
+    /** This method indicates if a process has had the CPU.
+     * @return True if the process has been on the CPU */
+    public Boolean getHasBeenOnCpu() { return this.hasBeenOnCpu; }
 
-    public void updateHasBeenOnCpu() {
-        this.hasBeenOnCpu = true;
-    }
+    /** This method flags the process when it has been on the CPU. */
+    public void updateHasBeenOnCpu() { this.hasBeenOnCpu = true; }
 
+    /** This method over-rides compareTo to sort processes by their priority.
+     * @param other the process to be compared.
+     * @return An int that represents the compare to relationship */
     @Override
     public int compareTo(ProcessControlBlock other) {
         if(this.priority == other.getPriority()) {
@@ -145,14 +152,15 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock> {
         }
     }
 
+    /** This enum represents all the process states. */
     public enum ProcessState { RUNNING, WAITING, READY, COMPLETE }
 
-    public ProcessControlBlock copy() {
-        return new ProcessControlBlock(this.pid, this.input);
-    }
+    /** This method copies a process control block.
+     * @return A copy of this process control block */
+    public ProcessControlBlock copy() { return new ProcessControlBlock(this.pid, this.input); }
 
-    public Boolean isFinalBurst() {
-        return this.cycle.isEmpty();
-    }
+    /** This method flags when the process is on its final CPU burst.
+     * @return True if there are no bursts remaining */
+    public Boolean isFinalBurst() { return this.cycle.isEmpty(); }
 }
 

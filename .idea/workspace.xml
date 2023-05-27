@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution" />
+    <list default="true" id="3b51e607-7950-479a-8cd0-2e296af43b14" name="Changes" comment="Initial commit, unfinished solution">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmsInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/FCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/FCFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/MLFQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/MLFQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimulationDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/CpuSchedulerSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/CpuSchedulerSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/ProcessControlBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/ProcessControlBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SchedulingTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/SchedulingTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SimulationInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/SimulationInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SimulationOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/SimulationOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SimulationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/SimulationRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/SimulationResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/SimulationResults.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

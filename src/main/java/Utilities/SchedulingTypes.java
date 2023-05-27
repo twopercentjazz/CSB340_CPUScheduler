@@ -1,4 +1,4 @@
-/** This class represents scheduling types for the algorithms. */
+/** This class represents the scheduling types for the algorithms. */
 
 package Utilities;
 

@@ -10,7 +10,7 @@ public class FCFS implements AlgorithmsInterface {
     private Dispatcher dispatch;
     private Queue<ProcessControlBlock> ready;
 
-    /** Constructor for FCFS algorithm.
+    /** Constructor for FCFS scheduling algorithm.
      * @param input the processes to schedule */
     public FCFS(SimulationInput input) {
         this.schedule = new Scheduler(input);
@@ -24,19 +24,21 @@ public class FCFS implements AlgorithmsInterface {
     }
 
     /** {@inheritDoc} */
-    public void scheduleNextProcess() { this.schedule.getNextRunningProcess(ready, dispatch); }
+    public void scheduleNextProcess() { this.schedule.getNextRunningProcess(this.ready, this.dispatch); }
 
     /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
+        // if idle
         if (running == null) {
-            this.dispatch.contextSwitchIdle(ready, schedule, getAlgorithmType());
+            this.dispatch.contextSwitchIdle(this.ready, this.schedule, getAlgorithmType());
+        // if not idle
         } else {
             this.dispatch.updateResponseTime();
             int time = running.getCpuBurstTime();
             for(int i = 0; i < time; i++) {
                 for(ProcessControlBlock pcb : this.schedule.getActive()) {
                     if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
-                        this.schedule.updateIo(pcb, ready, getAlgorithmType());
+                        this.schedule.updateIo(pcb, this.ready, getAlgorithmType());
                     } else if(pcb.getState() == ProcessControlBlock.ProcessState.READY) {
                         pcb.updateWaitingTime(1);
                     } else {
@@ -44,7 +46,7 @@ public class FCFS implements AlgorithmsInterface {
                     }
                 }
             }
-            this.dispatch.contextSwitchFinishCpuBurst(schedule, running);
+            this.dispatch.contextSwitchFinishCpuBurst(this.schedule, running);
         }
     }
 
