@@ -1,4 +1,4 @@
-/** Multilevel Queue */
+/** MLQ */
 
 package Algorithms;
 import Utilities.*;
@@ -12,7 +12,7 @@ public class MLQ implements AlgorithmsInterface {
     public MLQ(ArrayList<AlgorithmsInterface> ready) {
         this.schedule = new Scheduler(ready);
         this.dispatch = new Dispatcher();
-        this.ready = this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getReady();
+        this.ready = schedule.getCurrReady();
     }
 
     /** {@inheritDoc} */
@@ -22,26 +22,50 @@ public class MLQ implements AlgorithmsInterface {
 
     /** {@inheritDoc} */
     public void scheduleNextProcess() {
-        this.schedule.getNextRunningProcess(ready, this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getDispatcher());
-        this.dispatch.setRunningProcess(this.schedule.getReadyList().get(this.schedule.getReadyIndex()).getDispatcher().getRunningProcess());
-
+        this.schedule.getNextRunningProcess(this.ready, this.dispatch);
     }
 
     /** {@inheritDoc} */
     public void dispatchNextProcess(ProcessControlBlock running) {
-        schedule.getReadyList().get(schedule.getReadyIndex()).dispatchNextProcess(running);
-        this.dispatch.updateMultiTimer(schedule);
-        if(running != null && running.getState() == ProcessControlBlock.ProcessState.COMPLETE) {
-            schedule.flagProcessAsComplete(running);
-        }
-        if(schedule.getReadyList().get(schedule.getReadyIndex()).isCompleted()) {
-            schedule.incrementReadyIndex();
-            if(!isCompleted()) {
-                ready = schedule.getReadyList().get(schedule.getReadyIndex()).getReady();
-                schedule.getReadyList().get(getScheduler().getReadyIndex()).getDispatcher().setExecutionTimer(dispatch.getExecutionTimer());
-                schedule.getReadyList().get(getScheduler().getReadyIndex()).getDispatcher().setIdleTimer(dispatch.getIdleTimer());
+        if (running == null) {
+            dispatch.contextSwitchIdle(this.schedule, getAlgorithmType());
+        } else {
+            int time = schedule.getTimeToProcess(running);
+            boolean queuePreempt = false;
+            boolean rrPreempt = true;
+            this.dispatch.updateResponseTime();
+            for(int i = 0; i < time; i++) {
+                for(ProcessControlBlock pcb : this.schedule.getActive()) {
+                    if(pcb.getState() == ProcessControlBlock.ProcessState.WAITING) {
+                        this.schedule.updateIo(pcb, this.schedule.getOtherReady(pcb), getAlgorithmType());
+                        if(schedule.isQueuePriorityChanged()) {
+                            queuePreempt = true;
+                        }
+                    } else if(pcb.getState() == ProcessControlBlock.ProcessState.READY) {
+                        pcb.updateWaitingTime(1);
+                    } else {
+                        this.dispatch.updateExecutionTimer(1);
+                        pcb.updateCpuBurstTime(1);
+                        if(pcb.getCpuBurstTime() == 0) {
+                            rrPreempt = false;
+                        }
+                    }
+                }
+                if(!rrPreempt) {
+                    this.dispatch.contextSwitchFinishCpuBurst(this.schedule, running);
+                    break;
+                }
+                if(queuePreempt) {
+                    running.setState(ProcessControlBlock.ProcessState.READY);
+                    this.schedule.getOtherReady(running).add(running);
+                    break;
+                }
+            }
+            if(rrPreempt && !queuePreempt) {
+                dispatch.contextSwitchPreemptProcess(running, this.schedule, getAlgorithmType());
             }
         }
+        ready = this.schedule.getNextReady();
     }
 
     /** {@inheritDoc} */
