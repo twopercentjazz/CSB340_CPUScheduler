@@ -1,4 +1,4 @@
-/** This interface represents all algorithm types. */
+/** This interface represents all the CPU scheduling algorithm types. */
 
 package Algorithms;
 import Utilities.*;

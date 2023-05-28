@@ -1,4 +1,4 @@
-/** This class represents the algorithm types for the simulations. */
+/** This class represents the CPU scheduling algorithm types for the simulations. */
 
 package Algorithms;
 

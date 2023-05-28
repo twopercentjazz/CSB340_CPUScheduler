@@ -1,4 +1,4 @@
-/** Driver for CPU Scheduler Project to test and display results. */
+/** Driver for CPU Scheduler Project to test and display/output results. */
 
 import Algorithms.*;
 import Utilities.*;
