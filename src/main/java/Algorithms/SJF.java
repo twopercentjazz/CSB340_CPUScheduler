@@ -1,4 +1,5 @@
-/** Shortest job First */
+/** Shortest job First CPU Scheduling Algorithm (Non-Preemptive).
+ * @author Riko */
 
 package Algorithms;
 import Utilities.*;

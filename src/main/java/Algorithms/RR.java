@@ -1,4 +1,5 @@
-/** Round Robin */
+/** Round Robin CPU Scheduling Algorithm (Preemptive).
+ * @author Riko */
 
 package Algorithms;
 import Utilities.*;

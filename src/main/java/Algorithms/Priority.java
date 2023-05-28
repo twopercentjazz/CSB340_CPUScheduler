@@ -1,4 +1,5 @@
-/** Priority Scheduling Preemptive*/
+/** Priority CPU Scheduling Algorithm (Preemptive).
+ * @author Yen */
 
 package Algorithms;
 import Utilities.*;

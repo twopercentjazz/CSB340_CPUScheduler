@@ -1,4 +1,4 @@
-/** First Come, First Served CPU Scheduling Algorithm
+/** First Come, First Served CPU Scheduling Algorithm (Non-Preemptive).
  * @author Chris */
 
 package Algorithms;

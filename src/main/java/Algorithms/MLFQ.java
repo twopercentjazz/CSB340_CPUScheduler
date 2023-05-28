@@ -1,4 +1,4 @@
-/** Multilevel Feedback Queue CPU Scheduling Algorithm
+/** Multilevel Feedback Queue CPU Scheduling Algorithm (Preemptive).
  * @author Chris */
 
 package Algorithms;

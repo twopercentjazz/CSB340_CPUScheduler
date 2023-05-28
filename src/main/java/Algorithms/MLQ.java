@@ -1,4 +1,5 @@
-/** MLQ */
+/** Multilevel Queue CPU Scheduling Algorithm (Preemptive).
+ * @author Yen */
 
 package Algorithms;
 import Utilities.*;
