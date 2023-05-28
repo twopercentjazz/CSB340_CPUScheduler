@@ -1,4 +1,4 @@
-/** FCFS Tests
+/** MLFQ Tests
  * @author Chris */
 
 import Algorithms.AlgorithmTypes;
